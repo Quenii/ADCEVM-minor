@@ -1,0 +1,97 @@
+; Installation INF for the Cypress Generic USB Driver for Windows 2000/XP
+;
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%CYPRESS%
+;---Uncomment and complete below to support WHQL submission---;
+;CatalogFile=cyusb.cat
+;DriverVer=mm/dd/yyyy,x.y.v.z
+;-------------------------------------------------------------;
+
+[SourceDisksNames]
+1=%CYUSB_INSTALL%,,,
+
+[SourceDisksFiles]
+CyUsb.sys = 1
+CyUsb.spt = 1
+
+[Manufacturer]
+%MfgName%=Cypress
+
+[Cypress]
+%VID_0547&PID_1002.DeviceDesc%=CYUSB, USB\VID_0547&PID_1002
+
+%VID_04B4&PID_8613.DeviceDesc%=MYDEVICE, USB\VID_04B4&PID_8613
+
+%VID_04B4&PID_0081.DeviceDesc%=CyUsb, USB\VID_04B4&PID_0081
+
+%VID_0524&PID_0210.DeviceDesc%=CyUsb, USB\VID_0524&PID_0210
+
+%VID_0525&PID_0210.DeviceDesc%=CyUsb, USB\VID_0525&PID_0210
+
+[DestinationDirs]
+CYUSB.Files = 10,System32\Drivers
+MYDEVICE.Files = 10,System32\MYDEVICE
+
+
+[MYDEVICE.Files]
+CyTest.SPT
+
+[MYDEVICE.NT]
+CopyFiles=CYUSB.Files, MYDEVICE.Files
+AddReg=CYUSB.AddReg
+
+[MYDEVICE.NT.HW]
+AddReg=MYDEVICE.AddReg.Guid
+
+[MYDEVICE.NT.Services]
+Addservice = CYUSB, 0x00000002, CYUSB.AddService
+
+[MYDEVICE.AddReg.Guid]
+HKR,,DriverGUID,,%CYUSB.GUID%
+HKR,,DriverEXECSCRIPT,,%MYDEVICE.EXECSCRIPT%
+
+
+[CYUSB.Files]
+CYUSB.SYS
+
+[CYUSB.NT]
+CopyFiles=CYUSB.Files
+AddReg=CYUSB.AddReg
+
+[CYUSB.NT.HW]
+AddReg=CYUSB.AddReg.Guid
+
+[CYUSB.NT.Services]
+Addservice = CYUSB, 0x00000002, CYUSB.AddService
+
+[CYUSB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,CyUsb.sys
+
+[CYUSB.AddReg.Guid]
+HKR,,DriverGUID,,%CYUSB.GUID%
+
+[CYUSB.AddService]
+DisplayName = %CYUSB.SvcDesc%
+ServiceType = 1 ; SERVICE_KERNEL_DRIVER
+StartType = 3 ; SERVICE_DEMAND_START
+ErrorControl = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\System32\Drivers\CYUSB.SYS
+LoadOrderGroup = Base
+
+[Strings]
+PROVIDER="Cypress"
+MFGNAME="Cypress Semiconductor"
+CYUSB_INSTALL="Cypress Installation Disk"
+VID_04B4&PID_8613.DeviceDesc="Initial USB"
+VID_04B4&PID_0081.DeviceDesc="ADC EVM Platform"
+VID_0525&PID_0210.DeviceDesc="ADC EVM Platform"
+VID_0524&PID_0210.DeviceDesc="ADC EVM Platform"
+VID_0547&PID_1002.DeviceDesc="ADC EVM Platform"
+CYUSB.SvcDesc="Cypress USB Device"
+CYUSB.GUID="{AE18AA60-7F6A-11d4-97DD-00010229B959}"
+MYDEVICE.EXECSCRIPT="\systemroot\system32\MYDEVICE\CyTest.spt"

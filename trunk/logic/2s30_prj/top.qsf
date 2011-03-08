@@ -1,0 +1,427 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 08:24:50  May 10, 2010
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name DEVICE EP2S30F672I4
+set_global_assignment -name FAMILY "Stratix II"
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:24:50  MAY 10, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION "8.0 SP1"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name MISC_FILE "E:/FPGA_project/quartus/da/top.dpf"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+set_location_assignment PIN_P23 -to FX_CLK_i
+
+set_location_assignment PIN_C25 -to FX2FD_io[0]
+set_location_assignment PIN_C26 -to FX2FD_io[1]
+set_location_assignment PIN_D25 -to FX2FD_io[2]
+set_location_assignment PIN_E25 -to FX2FD_io[3]
+set_location_assignment PIN_E26 -to FX2FD_io[4]
+set_location_assignment PIN_F25 -to FX2FD_io[5]
+set_location_assignment PIN_F26 -to FX2FD_io[6]
+set_location_assignment PIN_G25 -to FX2FD_io[7]
+set_location_assignment PIN_H25 -to FX2FD_io[8]
+set_location_assignment PIN_J26 -to FX2FD_io[9]
+set_location_assignment PIN_J25 -to FX2FD_io[10]
+set_location_assignment PIN_K26 -to FX2FD_io[11]
+set_location_assignment PIN_K25 -to FX2FD_io[12]
+set_location_assignment PIN_L25 -to FX2FD_io[13]
+set_location_assignment PIN_M26 -to FX2FD_io[14]
+set_location_assignment PIN_M25 -to FX2FD_io[15]
+
+set_location_assignment PIN_G26 -to FLAGA_i
+set_location_assignment PIN_E23 -to FLAGB_i
+set_location_assignment PIN_D24 -to FLAGC_i
+
+set_location_assignment PIN_J23 -to SLRD_n_o
+set_location_assignment PIN_J24 -to SLWR_n_o
+
+set_location_assignment PIN_AC2 -to rx_in_i[0]
+set_location_assignment PIN_AC3 -to "rx_in_i[0](n)"
+set_location_assignment PIN_AD1 -to rx_in_i[1]
+set_location_assignment PIN_AD2 -to "rx_in_i[1](n)"
+set_location_assignment PIN_AB1 -to rx_in_i[2]
+set_location_assignment PIN_AB2 -to "rx_in_i[2](n)"
+set_location_assignment PIN_AA1 -to rx_in_i[3]
+set_location_assignment PIN_AA2 -to "rx_in_i[3](n)"
+set_location_assignment PIN_Y1 -to rx_in_i[4]
+set_location_assignment PIN_Y2 -to "rx_in_i[4](n)"
+set_location_assignment PIN_W1 -to rx_in_i[5]
+set_location_assignment PIN_W2 -to "rx_in_i[5](n)"
+set_location_assignment PIN_V1 -to rx_in_i[6]
+set_location_assignment PIN_V2 -to "rx_in_i[6](n)"
+set_location_assignment PIN_U1 -to rx_in_i[7]
+set_location_assignment PIN_U2 -to "rx_in_i[7](n)"
+set_location_assignment PIN_M1 -to rx_in_i[8]
+set_location_assignment PIN_M2 -to "rx_in_i[8](n)"
+set_location_assignment PIN_L2 -to rx_in_i[9]
+set_location_assignment PIN_L3 -to "rx_in_i[9](n)"
+set_location_assignment PIN_K1 -to rx_in_i[10]
+set_location_assignment PIN_K2 -to "rx_in_i[10](n)"
+set_location_assignment PIN_J1 -to rx_in_i[11]
+set_location_assignment PIN_J2 -to "rx_in_i[11](n)"
+set_location_assignment PIN_H1 -to rx_in_i[12]
+set_location_assignment PIN_H2 -to "rx_in_i[12](n)"
+set_location_assignment PIN_G1 -to rx_in_i[13]
+set_location_assignment PIN_G2 -to "rx_in_i[13](n)"
+set_location_assignment PIN_F1 -to rx_in_i[14]
+set_location_assignment PIN_F2 -to "rx_in_i[14](n)"
+set_location_assignment PIN_E1 -to rx_in_i[15]
+set_location_assignment PIN_E2 -to "rx_in_i[15](n)"
+
+set_instance_assignment -name IO_STANDARD LVDS -to rx_in_i[1]
+set_instance_assignment -name IO_STANDARD LVDS -to rx_in_i[2]
+set_instance_assignment -name IO_STANDARD LVDS -to rx_in_i[3]
+set_instance_assignment -name IO_STANDARD LVDS -to "rx_in_i[0](n)"
+set_instance_assignment -name IO_STANDARD LVDS -to rx_in_i
+set_instance_assignment -name IO_STANDARD LVDS -to rx_in_i[15]
+set_instance_assignment -name IO_STANDARD LVDS -to rx_inclock_i
+set_location_assignment PIN_R1 -to rx_inclock_i
+set_location_assignment PIN_R2 -to "rx_inclock_i(n)"
+
+
+
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE ../stp/kad5514p_jtag_spi_v2.stp
+set_global_assignment -name STATE_MACHINE_PROCESSING "ONE-HOT"
+set_global_assignment -name SAFE_STATE_MACHINE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
+set_global_assignment -name FMAX_REQUIREMENT "300 MHz" -section_id "lvds_i:lvds_i_1|rx_inclock"
+set_location_assignment PIN_F24 -to SL_OE_n_o
+set_location_assignment PIN_H23 -to FIFOADR_o[1]
+set_location_assignment PIN_G24 -to FIFOADR_o[0]
+set_location_assignment PIN_H24 -to PKTEND_o
+set_location_assignment PIN_A22 -to LTC2656_clr_o
+set_location_assignment PIN_A21 -to LTC2656_sdi_i
+set_location_assignment PIN_A20 -to LTC2656_sdo_o
+set_location_assignment PIN_A19 -to LTC2656_sck_o
+set_location_assignment PIN_A18 -to LTC2656_ld_cs_n_o
+set_location_assignment PIN_A17 -to LTC2656_ldac_n_o
+set_location_assignment PIN_A24 -to LTC2656_pos_o
+#set_location_assignment PIN_C21 -to KAD5514P_sck_o
+#set_location_assignment PIN_C19 -to KAD5514P_sdo_o
+#set_location_assignment PIN_C17 -to KAD5514P_sdi_i
+#set_location_assignment PIN_C16 -to KAD5514P_cs_n_o
+set_location_assignment PIN_AC14 -to clk_80m
+
+# SSRAM
+set_location_assignment PIN_AE22 -to ssram0_bwe_n_o
+set_location_assignment PIN_AE21 -to ssram0_ce_n_o
+set_location_assignment PIN_AC21 -to ssram0_ce2_n_o
+set_location_assignment PIN_AD21 -to ssram0_ce2_o
+set_location_assignment PIN_AE13 -to ssram0_clk_o
+set_location_assignment PIN_AE23 -to ssram0_adv_n_o
+set_location_assignment PIN_AF22 -to ssram0_gw_n_o
+set_location_assignment PIN_AC8 -to ssram0_mode_o
+set_location_assignment PIN_AD22 -to ssram0_oe_n_o
+set_location_assignment PIN_AD16 -to ssram0_zz_o
+
+set_location_assignment PIN_AE6 -to ssram0_adr_o[0]
+set_location_assignment PIN_AF6 -to ssram0_adr_o[1]
+set_location_assignment PIN_AF7 -to ssram0_adr_o[2]
+set_location_assignment PIN_AE7 -to ssram0_adr_o[3]
+set_location_assignment PIN_AD7 -to ssram0_adr_o[4]
+set_location_assignment PIN_AC7 -to ssram0_adr_o[5]
+set_location_assignment PIN_AF24 -to ssram0_adr_o[6]
+set_location_assignment PIN_AD23 -to ssram0_adr_o[7]
+set_location_assignment PIN_AD5 -to ssram0_adr_o[8]
+set_location_assignment PIN_AE4 -to ssram0_adr_o[9]
+set_location_assignment PIN_AD4 -to ssram0_adr_o[10]
+set_location_assignment PIN_AF3 -to ssram0_adr_o[11]
+set_location_assignment PIN_AE3 -to ssram0_adr_o[12]
+set_location_assignment PIN_AD3 -to ssram0_adr_o[13]
+set_location_assignment PIN_AC9 -to ssram0_adr_o[14]
+set_location_assignment PIN_AD25 -to ssram0_adr_o[15]
+set_location_assignment PIN_AE24 -to ssram0_adr_o[16]
+set_location_assignment PIN_AF21 -to ssram0_adr_o[17]
+set_location_assignment PIN_AF19 -to ssram0_adr_o[18]
+set_location_assignment PIN_AD6 -to ssram0_adr_o[19]
+set_location_assignment PIN_AC6 -to ssram0_adr_o[20]
+
+set_location_assignment PIN_AB17 -to ssram0_bwa_n_o
+set_location_assignment PIN_AA17 -to ssram0_bwb_n_o
+set_location_assignment PIN_AB18 -to ssram0_bwc_n_o
+set_location_assignment PIN_AB19 -to ssram0_bwd_n_o
+set_location_assignment PIN_AA10 -to ssram1_bwa_n_o
+set_location_assignment PIN_AA11 -to ssram1_bwb_n_o
+set_location_assignment PIN_AB12 -to ssram1_bwc_n_o
+set_location_assignment PIN_AA12 -to ssram1_bwd_n_o
+
+set_location_assignment PIN_AB23 -to ssram0_dinout_io[0]
+set_location_assignment PIN_AB24 -to ssram0_dinout_io[1]
+set_location_assignment PIN_AB25 -to ssram0_dinout_io[2]
+set_location_assignment PIN_AA25 -to ssram0_dinout_io[3]
+set_location_assignment PIN_AA26 -to ssram0_dinout_io[4]
+set_location_assignment PIN_Y23 -to ssram0_dinout_io[5]
+set_location_assignment PIN_Y24 -to ssram0_dinout_io[6]
+set_location_assignment PIN_W24 -to ssram0_dinout_io[7]
+set_location_assignment PIN_W25 -to ssram0_dinout_io[8]
+set_location_assignment PIN_W26 -to ssram0_dinout_io[9]
+set_location_assignment PIN_V22 -to ssram0_dinout_io[10]
+set_location_assignment PIN_U22 -to ssram0_dinout_io[11]
+set_location_assignment PIN_U23 -to ssram0_dinout_io[12]
+set_location_assignment PIN_U24 -to ssram0_dinout_io[13]
+set_location_assignment PIN_U26 -to ssram0_dinout_io[14]
+set_location_assignment PIN_T25 -to ssram0_dinout_io[15]
+set_location_assignment PIN_R23 -to ssram0_dinout_io[16]
+set_location_assignment PIN_R24 -to ssram0_dinout_io[17]
+set_location_assignment PIN_T24 -to ssram0_dinout_io[18]
+set_location_assignment PIN_T22 -to ssram0_dinout_io[19]
+set_location_assignment PIN_U25 -to ssram0_dinout_io[20]
+set_location_assignment PIN_V26 -to ssram0_dinout_io[21]
+set_location_assignment PIN_V25 -to ssram0_dinout_io[22]
+set_location_assignment PIN_V24 -to ssram0_dinout_io[23]
+set_location_assignment PIN_V23 -to ssram0_dinout_io[24]
+set_location_assignment PIN_W23 -to ssram0_dinout_io[25]
+set_location_assignment PIN_W22 -to ssram0_dinout_io[26]
+set_location_assignment PIN_Y26 -to ssram0_dinout_io[27]
+set_location_assignment PIN_Y25 -to ssram0_dinout_io[28]
+set_location_assignment PIN_AA24 -to ssram0_dinout_io[29]
+set_location_assignment PIN_AA23 -to ssram0_dinout_io[30]
+set_location_assignment PIN_AA22 -to ssram0_dinout_io[31]
+set_location_assignment PIN_AB26 -to ssram0_dinout_io[32]
+set_location_assignment PIN_AD26 -to ssram0_dinout_io[33]
+set_location_assignment PIN_AC25 -to ssram0_dinout_io[34]
+set_location_assignment PIN_AC24 -to ssram0_dinout_io[35]
+set_location_assignment PIN_AD9 -to ssram0_dinout_io[36]
+set_location_assignment PIN_AE9 -to ssram0_dinout_io[37]
+set_location_assignment PIN_AF9 -to ssram0_dinout_io[38]
+set_location_assignment PIN_AB11 -to ssram0_dinout_io[39]
+set_location_assignment PIN_AD11 -to ssram0_dinout_io[40]
+set_location_assignment PIN_AE11 -to ssram0_dinout_io[41]
+set_location_assignment PIN_AC12 -to ssram0_dinout_io[42]
+set_location_assignment PIN_AB15 -to ssram0_dinout_io[43]
+set_location_assignment PIN_AB16 -to ssram0_dinout_io[44]
+set_location_assignment PIN_AE16 -to ssram0_dinout_io[45]
+set_location_assignment PIN_AC18 -to ssram0_dinout_io[46]
+set_location_assignment PIN_AD18 -to ssram0_dinout_io[47]
+set_location_assignment PIN_AE18 -to ssram0_dinout_io[48]
+set_location_assignment PIN_AF18 -to ssram0_dinout_io[49]
+set_location_assignment PIN_AF20 -to ssram0_dinout_io[50]
+set_location_assignment PIN_AE20 -to ssram0_dinout_io[51]
+set_location_assignment PIN_AD20 -to ssram0_dinout_io[52]
+set_location_assignment PIN_AC20 -to ssram0_dinout_io[53]
+set_location_assignment PIN_AE19 -to ssram0_dinout_io[54]
+set_location_assignment PIN_AD19 -to ssram0_dinout_io[55]
+set_location_assignment PIN_AC19 -to ssram0_dinout_io[56]
+set_location_assignment PIN_AF17 -to ssram0_dinout_io[57]
+set_location_assignment PIN_AE17 -to ssram0_dinout_io[58]
+set_location_assignment PIN_AD17 -to ssram0_dinout_io[59]
+set_location_assignment PIN_AC17 -to ssram0_dinout_io[60]
+set_location_assignment PIN_AD13 -to ssram0_dinout_io[61]
+set_location_assignment PIN_AF12 -to ssram0_dinout_io[62]
+set_location_assignment PIN_AE12 -to ssram0_dinout_io[63]
+set_location_assignment PIN_AD12 -to ssram0_dinout_io[64]
+set_location_assignment PIN_AF10 -to ssram0_dinout_io[65]
+set_location_assignment PIN_AE10 -to ssram0_dinout_io[66]
+set_location_assignment PIN_AD10 -to ssram0_dinout_io[67]
+set_location_assignment PIN_AC10 -to ssram0_dinout_io[68]
+set_location_assignment PIN_AF8 -to ssram0_dinout_io[69]
+set_location_assignment PIN_AE8 -to ssram0_dinout_io[70]
+set_location_assignment PIN_AD8 -to ssram0_dinout_io[71]
+
+set_location_assignment PIN_N25 -to sys_rst_i
+set_location_assignment PIN_N20 -to UMR
+set_location_assignment PIN_C21 -to TLC3548_sck_o
+set_location_assignment PIN_C20 -to TLC3548_fs_o
+set_location_assignment PIN_C19 -to TLC3548_sdo_o
+set_location_assignment PIN_C17 -to TLC3548_sdi_i
+set_location_assignment PIN_C16 -to TLC3548_cs_n_o
+set_location_assignment PIN_C18 -to TLC3548_eco
+set_location_assignment PIN_C22 -to TLC3548_start_n_o
+set_global_assignment -name FMAX_REQUIREMENT "80 MHz" -section_id "dcm_user:dcm_user_1|c0"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_instance_assignment -name CLOCK_SETTINGS "dcm_user:dcm_user_1|c0" -to "dcm_user:dcm_user_1|c0"
+set_global_assignment -name STRATIXII_CONFIGURATION_SCHEME "ACTIVE SERIAL"
+set_global_assignment -name STRATIXII_CONFIGURATION_DEVICE EPCS64
+set_global_assignment -name GENERATE_TTF_FILE ON
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name USE_TIMEQUEST_TIMING_ANALYZER OFF
+set_global_assignment -name USER_LIBRARIES "stp/;src/;output/;ip/tri_bus/;ip/test_fifo/;ip/lvds_i/;ip/fifo64to16/;ip/dcm_user/;ip/dcm_45/;ip/dcm125_i/"
+set_instance_assignment -name CLOCK_SETTINGS "lvds_i:lvds_i_1|rx_inclock" -to rx_inclock_i
+set_global_assignment -name FMAX_REQUIREMENT "75 MHz" -section_id rx_clk_o
+set_instance_assignment -name CLOCK_SETTINGS rx_clk_o -to "had_rec:had_rec_2|lvds_i:lvds_i_1|rx_outclock"
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to FX_CLK_i -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=M4K" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_location_assignment PIN_C8 -to KAD5514P_adc_rst_n_o
+set_location_assignment PIN_B10 -to KAD5514P_gpio3_o
+set_location_assignment PIN_B11 -to KAD5514P_i2c_scl_o
+set_location_assignment PIN_E11 -to KAD5514P_i2c_sda_o
+set_location_assignment PIN_C9 -to KAD5514P_i2c_sdo_o
+set_location_assignment PIN_C10 -to KAD5514P_spi_clk_o
+set_location_assignment PIN_D10 -to KAD5514P_spi_cs_n_o
+set_location_assignment PIN_A10 -to KAD5514P_spi_di_i
+set_location_assignment PIN_E12 -to KAD5514P_tm_o
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to KAD5514P_adc_rst_n_o
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=42" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=42" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to KAD5514P_spi_di_i -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to KAD5514P_spi_di_i -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=17478" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=153" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=8192" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=42020" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=8192" -section_id auto_signaltap_0
+set_global_assignment -name VHDL_FILE ../ip/dcm_1M/dcm_1M.vhd
+set_global_assignment -name VHDL_FILE ../ip/fifo64to16/fifo64to16.vhd
+set_global_assignment -name VHDL_FILE ../ip/dcm_45/dcm45.vhd
+set_global_assignment -name VHDL_FILE ../ip/lvds_i/lvds_i.vhd
+set_global_assignment -name VHDL_FILE ../ip/dcm_user/dcm_user.vhd
+set_global_assignment -name VHDL_FILE ../src/adc_config.vhd
+set_global_assignment -name VHDL_FILE ../src/adc_jtag_ctr.vhd
+set_global_assignment -name VHDL_FILE ../src/dat_buf.vhd
+set_global_assignment -name VHDL_FILE ../src/had_rec.vhd
+set_global_assignment -name VHDL_FILE ../src/lb.vhd
+set_global_assignment -name VHDL_FILE ../src/lb_arbiter.vhd
+set_global_assignment -name VHDL_FILE ../src/lb_target_fifo.vhd
+set_global_assignment -name VHDL_FILE ../src/lb_target_fifo_rome.vhd
+set_global_assignment -name VHDL_FILE ../src/lb_target_reg.vhd
+set_global_assignment -name VHDL_FILE ../src/ltc2656b.vhd
+set_global_assignment -name VHDL_FILE ../src/spi16.vhd
+set_global_assignment -name VHDL_FILE ../src/spi24.vhd
+set_global_assignment -name VHDL_FILE ../src/spi24_v2.vhd
+set_global_assignment -name VHDL_FILE ../src/spi24_v2_tb.vhd
+set_global_assignment -name VHDL_FILE ../src/spi.vhd
+set_global_assignment -name VHDL_FILE ../src/tlc3548.vhd
+set_global_assignment -name VHDL_FILE ../src/top.vhd
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"

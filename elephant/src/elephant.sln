@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "elephant", "elephant\elephant.vcproj", "{92E965CB-7A33-4161-B31A-82B9D14078FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99534401-93EA-439B-B80F-2E84472E89D6} = {99534401-93EA-439B-B80F-2E84472E89D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pagoda", "pagoda\pagoda.vcproj", "{99534401-93EA-439B-B80F-2E84472E89D6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElephantService", "elephant\ElephantService.vcproj", "{EAB8F550-7009-4358-85EB-CF51538138AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99534401-93EA-439B-B80F-2E84472E89D6} = {99534401-93EA-439B-B80F-2E84472E89D6}
+		{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658} = {E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PcieDab2", "PcieDab2\PcieDab2.vcproj", "{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92E965CB-7A33-4161-B31A-82B9D14078FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{92E965CB-7A33-4161-B31A-82B9D14078FC}.Debug|Win32.Build.0 = Debug|Win32
+		{92E965CB-7A33-4161-B31A-82B9D14078FC}.Release|Win32.ActiveCfg = Release|Win32
+		{92E965CB-7A33-4161-B31A-82B9D14078FC}.Release|Win32.Build.0 = Release|Win32
+		{99534401-93EA-439B-B80F-2E84472E89D6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99534401-93EA-439B-B80F-2E84472E89D6}.Debug|Win32.Build.0 = Debug|Win32
+		{99534401-93EA-439B-B80F-2E84472E89D6}.Release|Win32.ActiveCfg = Release|Win32
+		{99534401-93EA-439B-B80F-2E84472E89D6}.Release|Win32.Build.0 = Release|Win32
+		{EAB8F550-7009-4358-85EB-CF51538138AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EAB8F550-7009-4358-85EB-CF51538138AE}.Debug|Win32.Build.0 = Debug|Win32
+		{EAB8F550-7009-4358-85EB-CF51538138AE}.Release|Win32.ActiveCfg = Release|Win32
+		{EAB8F550-7009-4358-85EB-CF51538138AE}.Release|Win32.Build.0 = Release|Win32
+		{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}.Debug|Win32.Build.0 = Debug|Win32
+		{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}.Release|Win32.ActiveCfg = Release|Win32
+		{E5DF4B8A-F0CA-43B6-9D7C-D05A19A79658}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

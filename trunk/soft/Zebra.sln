@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mfcminus", "mfcminus\mfcminus.vcproj", "{98F01574-D58F-49AA-96A4-94A780160920}"
+	ProjectSection(ProjectDependencies) = postProject
+		{514AA141-4C23-445D-97FB-C5F68A2691C4} = {514AA141-4C23-445D-97FB-C5F68A2691C4}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mfcplus", "mfcplus\mfcplus.vcproj", "{514AA141-4C23-445D-97FB-C5F68A2691C4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zebra-scope", "zebra-scope\zebra-scope.vcproj", "{25BE0A30-7350-464C-A525-CBFD7659096E}"
+	GlobalSection(Qt) = preSolution
+		Integration = True
+	EndGlobalSection
+	ProjectSection(ProjectDependencies) = postProject
+		{514AA141-4C23-445D-97FB-C5F68A2691C4} = {514AA141-4C23-445D-97FB-C5F68A2691C4}
+		{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F} = {476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}
+		{716F77FC-1A61-41F0-A15F-E97183402C0A} = {716F77FC-1A61-41F0-A15F-E97183402C0A}
+		{98F01574-D58F-49AA-96A4-94A780160920} = {98F01574-D58F-49AA-96A4-94A780160920}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QPlotLab", "QPlotLab\QPlotLab.vcproj", "{716F77FC-1A61-41F0-A15F-E97183402C0A}"
+	GlobalSection(Qt) = preSolution
+		Integration = True
+	EndGlobalSection
+	ProjectSection(ProjectDependencies) = postProject
+		{98F01574-D58F-49AA-96A4-94A780160920} = {98F01574-D58F-49AA-96A4-94A780160920}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "m2c", "m2cpp\m2c.vcproj", "{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98F01574-D58F-49AA-96A4-94A780160920}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98F01574-D58F-49AA-96A4-94A780160920}.Debug|Win32.Build.0 = Debug|Win32
+		{98F01574-D58F-49AA-96A4-94A780160920}.Release|Win32.ActiveCfg = Release|Win32
+		{98F01574-D58F-49AA-96A4-94A780160920}.Release|Win32.Build.0 = Release|Win32
+		{514AA141-4C23-445D-97FB-C5F68A2691C4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{514AA141-4C23-445D-97FB-C5F68A2691C4}.Debug|Win32.Build.0 = Debug|Win32
+		{514AA141-4C23-445D-97FB-C5F68A2691C4}.Release|Win32.ActiveCfg = Release|Win32
+		{514AA141-4C23-445D-97FB-C5F68A2691C4}.Release|Win32.Build.0 = Release|Win32
+		{25BE0A30-7350-464C-A525-CBFD7659096E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{25BE0A30-7350-464C-A525-CBFD7659096E}.Debug|Win32.Build.0 = Debug|Win32
+		{25BE0A30-7350-464C-A525-CBFD7659096E}.Release|Win32.ActiveCfg = Release|Win32
+		{25BE0A30-7350-464C-A525-CBFD7659096E}.Release|Win32.Build.0 = Release|Win32
+		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Debug|Win32.Build.0 = Debug|Win32
+		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Release|Win32.ActiveCfg = Release|Win32
+		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Release|Win32.Build.0 = Release|Win32
+		{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}.Debug|Win32.Build.0 = Debug|Win32
+		{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}.Release|Win32.ActiveCfg = Release|Win32
+		{476CE8F9-6ED8-40D4-9AEE-83CA5687D10F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

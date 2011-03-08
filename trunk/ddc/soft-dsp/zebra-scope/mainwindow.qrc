@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="MainWindow">
+    <file>res/Arrow Right.png</file>
+  </qresource>
+</RCC>

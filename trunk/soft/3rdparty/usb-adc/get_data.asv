@@ -1,0 +1,27 @@
+[s] = function get_data()
+filename='13@80-6.csv';%input('Type a:\filename:  ');
+if isempty(filename)
+filename = 'listing'; 
+end
+fid=fopen(filename,'r');
+
+numpt = 32768; 
+fclk = 250; 
+numbit = 16; 
+%Discard first 13 lines from the data file, which do not contain data
+for i=1:9,
+fgetl(fid); 
+end 
+[v2,count]=fscanf(fid,'%f,',[1 inf]); 
+fclose(fid); 
+%for i=1:count
+%    v1(i) = v2(i);
+%end
+%v2 =  sin(2*pi*52e-3*[ 1: 32 * 1024]);
+v1=v2'; 
+if numpt> count
+    numpt = count;
+end
+code = v1(1:numpt);
+s = code;
+%code = code / max(code);

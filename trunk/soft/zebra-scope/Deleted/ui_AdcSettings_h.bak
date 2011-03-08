@@ -1,0 +1,219 @@
+/********************************************************************************
+** Form generated from reading ui file 'AdcSettings.ui'
+**
+** Created: Sun Aug 22 21:32:34 2010
+**      by: Qt User Interface Compiler version 4.5.3
+**
+** WARNING! All changes made in this file will be lost when recompiling ui file!
+********************************************************************************/
+
+#ifndef UI_ADCSETTINGS_H
+#define UI_ADCSETTINGS_H
+
+#include <QtCore/QVariant>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
+#include <QtGui/QPushButton>
+#include <QtGui/QSpacerItem>
+#include <QtGui/QSpinBox>
+#include <QtGui/QWidget>
+
+QT_BEGIN_NAMESPACE
+
+class Ui_AdcSettingsClass
+{
+public:
+    QGridLayout *gridLayout_2;
+    QGridLayout *gridLayout;
+    QSpacerItem *horizontalSpacer_5;
+    QPushButton *pushButtonAccessToRegs_2;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *labl_3;
+    QLineEdit *lineEdit;
+    QLabel *labl_4;
+    QDoubleSpinBox *doubleSpinBox;
+    QLabel *labl_10;
+    QLabel *labl_5;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QLabel *labl_11;
+    QLabel *labl_6;
+    QSpinBox *spinBox;
+    QLabel *labl_12;
+    QLabel *labl_7;
+    QLineEdit *lineEdit_2;
+    QLabel *labl_13;
+    QLabel *labl_8;
+    QSpinBox *spinBox_2;
+    QLabel *labl_9;
+    QLineEdit *lineEdit_3;
+
+    void setupUi(QWidget *AdcSettingsClass)
+    {
+        if (AdcSettingsClass->objectName().isEmpty())
+            AdcSettingsClass->setObjectName(QString::fromUtf8("AdcSettingsClass"));
+        AdcSettingsClass->resize(405, 257);
+        gridLayout_2 = new QGridLayout(AdcSettingsClass);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        horizontalSpacer_5 = new QSpacerItem(37, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_5, 0, 0, 1, 1);
+
+        pushButtonAccessToRegs_2 = new QPushButton(AdcSettingsClass);
+        pushButtonAccessToRegs_2->setObjectName(QString::fromUtf8("pushButtonAccessToRegs_2"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Arial"));
+        font.setPointSize(10);
+        pushButtonAccessToRegs_2->setFont(font);
+
+        gridLayout->addWidget(pushButtonAccessToRegs_2, 0, 1, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(37, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_7, 0, 2, 1, 1);
+
+        labl_3 = new QLabel(AdcSettingsClass);
+        labl_3->setObjectName(QString::fromUtf8("labl_3"));
+        labl_3->setFont(font);
+
+        gridLayout->addWidget(labl_3, 1, 0, 1, 1);
+
+        lineEdit = new QLineEdit(AdcSettingsClass);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        gridLayout->addWidget(lineEdit, 1, 1, 1, 1);
+
+        labl_4 = new QLabel(AdcSettingsClass);
+        labl_4->setObjectName(QString::fromUtf8("labl_4"));
+        labl_4->setFont(font);
+
+        gridLayout->addWidget(labl_4, 2, 0, 1, 1);
+
+        doubleSpinBox = new QDoubleSpinBox(AdcSettingsClass);
+        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+
+        gridLayout->addWidget(doubleSpinBox, 2, 1, 1, 1);
+
+        labl_10 = new QLabel(AdcSettingsClass);
+        labl_10->setObjectName(QString::fromUtf8("labl_10"));
+        labl_10->setFont(font);
+
+        gridLayout->addWidget(labl_10, 2, 3, 1, 1);
+
+        labl_5 = new QLabel(AdcSettingsClass);
+        labl_5->setObjectName(QString::fromUtf8("labl_5"));
+        labl_5->setFont(font);
+
+        gridLayout->addWidget(labl_5, 3, 0, 1, 1);
+
+        doubleSpinBox_2 = new QDoubleSpinBox(AdcSettingsClass);
+        doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
+
+        gridLayout->addWidget(doubleSpinBox_2, 3, 1, 1, 1);
+
+        labl_11 = new QLabel(AdcSettingsClass);
+        labl_11->setObjectName(QString::fromUtf8("labl_11"));
+        labl_11->setFont(font);
+
+        gridLayout->addWidget(labl_11, 3, 3, 1, 1);
+
+        labl_6 = new QLabel(AdcSettingsClass);
+        labl_6->setObjectName(QString::fromUtf8("labl_6"));
+        labl_6->setFont(font);
+
+        gridLayout->addWidget(labl_6, 4, 0, 1, 1);
+
+        spinBox = new QSpinBox(AdcSettingsClass);
+        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+
+        gridLayout->addWidget(spinBox, 4, 1, 1, 1);
+
+        labl_12 = new QLabel(AdcSettingsClass);
+        labl_12->setObjectName(QString::fromUtf8("labl_12"));
+        labl_12->setFont(font);
+
+        gridLayout->addWidget(labl_12, 4, 3, 1, 1);
+
+        labl_7 = new QLabel(AdcSettingsClass);
+        labl_7->setObjectName(QString::fromUtf8("labl_7"));
+        labl_7->setFont(font);
+
+        gridLayout->addWidget(labl_7, 5, 0, 1, 1);
+
+        lineEdit_2 = new QLineEdit(AdcSettingsClass);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+
+        gridLayout->addWidget(lineEdit_2, 5, 1, 1, 1);
+
+        labl_13 = new QLabel(AdcSettingsClass);
+        labl_13->setObjectName(QString::fromUtf8("labl_13"));
+        labl_13->setFont(font);
+
+        gridLayout->addWidget(labl_13, 5, 3, 1, 1);
+
+        labl_8 = new QLabel(AdcSettingsClass);
+        labl_8->setObjectName(QString::fromUtf8("labl_8"));
+        labl_8->setFont(font);
+
+        gridLayout->addWidget(labl_8, 6, 0, 1, 1);
+
+        spinBox_2 = new QSpinBox(AdcSettingsClass);
+        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
+
+        gridLayout->addWidget(spinBox_2, 6, 1, 1, 1);
+
+        labl_9 = new QLabel(AdcSettingsClass);
+        labl_9->setObjectName(QString::fromUtf8("labl_9"));
+        labl_9->setFont(font);
+
+        gridLayout->addWidget(labl_9, 7, 0, 1, 1);
+
+        lineEdit_3 = new QLineEdit(AdcSettingsClass);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+
+        gridLayout->addWidget(lineEdit_3, 7, 1, 1, 1);
+
+
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+
+
+        retranslateUi(AdcSettingsClass);
+
+        QMetaObject::connectSlotsByName(AdcSettingsClass);
+    } // setupUi
+
+    void retranslateUi(QWidget *AdcSettingsClass)
+    {
+        AdcSettingsClass->setWindowTitle(QApplication::translate("AdcSettingsClass", "Form", 0, QApplication::UnicodeUTF8));
+        pushButtonAccessToRegs_2->setText(QApplication::translate("AdcSettingsClass", "ADC \350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
+        labl_3->setText(QApplication::translate("AdcSettingsClass", "ADC\345\236\213\345\217\267", 0, QApplication::UnicodeUTF8));
+        labl_4->setText(QApplication::translate("AdcSettingsClass", "VA(\350\256\276\347\275\256)", 0, QApplication::UnicodeUTF8));
+        labl_10->setText(QApplication::translate("AdcSettingsClass", "V", 0, QApplication::UnicodeUTF8));
+        labl_5->setText(QApplication::translate("AdcSettingsClass", "VD(\350\256\276\347\275\256)", 0, QApplication::UnicodeUTF8));
+        labl_11->setText(QApplication::translate("AdcSettingsClass", "V", 0, QApplication::UnicodeUTF8));
+        labl_6->setText(QApplication::translate("AdcSettingsClass", "\344\275\215      \346\225\260", 0, QApplication::UnicodeUTF8));
+        labl_12->setText(QApplication::translate("AdcSettingsClass", "bit", 0, QApplication::UnicodeUTF8));
+        labl_7->setText(QApplication::translate("AdcSettingsClass", "\346\273\241\345\271\205\350\214\203\345\233\264", 0, QApplication::UnicodeUTF8));
+        labl_13->setText(QApplication::translate("AdcSettingsClass", "V", 0, QApplication::UnicodeUTF8));
+        labl_8->setText(QApplication::translate("AdcSettingsClass", "\347\274\226\347\240\201\346\226\271\345\274\217", 0, QApplication::UnicodeUTF8));
+        spinBox_2->setSuffix(QString());
+        labl_9->setText(QApplication::translate("AdcSettingsClass", "\347\233\270\344\275\215\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
+        Q_UNUSED(AdcSettingsClass);
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class AdcSettingsClass: public Ui_AdcSettingsClass {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_ADCSETTINGS_H

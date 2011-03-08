@@ -1,0 +1,859 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AdcTestPlat.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Elephant.ico"
+IDR_ADCTESTYPE          ICON    DISCARDABLE     "res\\AdcTestPlatDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_GREEN               BITMAP  DISCARDABLE     "res\\green24.bmp"
+IDB_RED                 BITMAP  DISCARDABLE     "res\\red24.bmp"
+IDB_BACK                BITMAP  DISCARDABLE     "res\\back24.bmp"
+IDB_CROSS               BITMAP  DISCARDABLE     "res\\cross.bmp"
+IDB_OK                  BITMAP  DISCARDABLE     "res\\ok.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_MY_FILE_OPEN
+    BUTTON      ID_MY_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_ZOOM_OUT
+    BUTTON      ID_TOOLBAR_ZOOM_IN
+    BUTTON      ID_TOOLBAR_RESTORE
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_SINGLE_VIEW
+    BUTTON      ID_TOOLBAR_MULTI_VIEW
+    BUTTON      ID_TOOLBAR_MULTI_VIEW_F
+    BUTTON      ID_TOOLBAR_MULTI_VIEW_S
+    BUTTON      ID_TOOLBAR_MULTI_VIEW_FS1
+    BUTTON      ID_TOOLBAR_MULTI_VIEW_FS2
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_START
+    BUTTON      ID_TOOLBAR_END
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_POWER
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_MY_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",            ID_MY_FILE_SAVE
+        MENUITEM "保存FFT波形及原始数据(&T)\tCtrl+T", ID_FFT_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "测试(&T)"
+    BEGIN
+        MENUITEM "算法测试",                    ID_TEST_ALG
+        MENUITEM "ADC测试",                     ID_TEST_ADC
+        MENUITEM "SIP批量测试",                 ID_TEST_ADC_BATCH
+        MENUITEM "DDC+ADC批量测试",             ID_TEST_DDC_ADC_BATCH
+    END
+    POPUP "查看历史记录(&V)"
+    BEGIN
+        MENUITEM "ADC测试",                     ID_VIEW_ADC_RECORD
+        MENUITEM "DDC测试",                     ID_VIEW_ALG_RECORD
+        MENUITEM "批量测试",                    ID_VIEW_ADC_BATCH_RECORD
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "使用帮助",                    ID_HELP_USE
+        MENUITEM "关于SIP测试系统...",          ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_ZOOM MENU DISCARDABLE 
+BEGIN
+    POPUP "zoom"
+    BEGIN
+        MENUITEM "放大",                        ID_MENU_ZOOM_OUT
+        MENUITEM "缩小",                        ID_MENU_ZOOM_IN
+        MENUITEM "恢复",                        ID_MENU_ZOOM_RESTORE
+        MENUITEM SEPARATOR
+        MENUITEM "无限制",                      ID_MENU_ZOOM_BOTH
+        MENUITEM "水平缩放",                    ID_MENU_ZOOM_H
+        MENUITEM "垂直缩放",                    ID_MENU_ZOOM_V
+    END
+END
+
+IDR_MENU_FFT_ZOOM MENU DISCARDABLE 
+BEGIN
+    POPUP "zoom2"
+    BEGIN
+        MENUITEM "放大",                        ID_MENU_FFT_ZOOM_OUT
+        MENUITEM "缩小",                        ID_MENU_FFT_ZOOM_IN
+        MENUITEM "恢复",                        ID_MENU_FFT_ZOOM_RESTORE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_MY_FILE_OPEN,        VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_MY_FILE_SAVE,        VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_FFT_SAVE,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SIP测试系统ver2.0"
+FONT 8, "Tahoma"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SIP测试系统ver2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2009",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_ADCTESTPLAT_FORM DIALOG DISCARDABLE  0, 0, 485, 228
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CTEXT           "测试模式",IDC_STATIC_MODE,306,2,65,11,SS_CENTERIMAGE
+    CTEXT           "测试电路ID",IDC_STATIC_ID,378,2,44,11,SS_CENTERIMAGE
+    CONTROL         "Spin1",IDC_SPIN_ID,"msctls_updown32",UDS_ARROWKEYS,469,
+                    0,11,15
+    EDITTEXT        IDC_EDIT_ID,423,1,45,13,ES_AUTOHSCROLL | ES_READONLY
+    SCROLLBAR       IDC_SCROLLBAR_PIC,429,41,14,111,SBS_VERT
+    CONTROL         "matlab plot",IDC_CHECK_MATLAB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,0,59,11
+    CONTROL         "I Data",IDC_CHECK_I_DATA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,108,0,59,11
+    CONTROL         "Q Data",IDC_CHECK_Q_DATA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,184,0,59,11
+    CONTROL         "自动保存",IDC_CHECK_ALG_AUTO_SAVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,0,59,11
+END
+
+IDD_TEST_SET DIALOGEX 0, 0, 187, 155
+STYLE WS_CHILD
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    LTEXT           "测试项目选择",IDC_STATIC,63,17,60,10
+    PUSHBUTTON      "开始测试",ID_BTN_TEST,21,131,50,14
+    CTEXT           "测试状态",IDC_STATIC_STATE,89,131,50,14,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_SET_PIC_STATE,"Static",SS_BITMAP,151,131,15,13
+    CONTROL         "底噪声测试",IDC_RADIO_BACK_NOISE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,32,35,112,11
+    CONTROL         "SNR/SFDR/SINAD/ENOB测试",IDC_RADIO_PERF,"Button",
+                    BS_AUTORADIOBUTTON,32,50,112,11
+    CONTROL         "A通道串音测试",IDC_RADIO_CHAN_DISTURB_A,"Button",
+                    BS_AUTORADIOBUTTON,32,65,112,11
+    CONTROL         "B通道串音测试",IDC_RADIO_CHAN_DISTURB_B,"Button",
+                    BS_AUTORADIOBUTTON,32,80,112,11
+    CONTROL         "C通道串音测试",IDC_RADIO_CHAN_DISTURB_C,"Button",
+                    BS_AUTORADIOBUTTON,32,95,112,11
+    CONTROL         "D通道串音测试",IDC_RADIO_CHAN_DISTURB_D,"Button",
+                    BS_AUTORADIOBUTTON,32,110,112,11
+END
+
+IDD_TEST_RESULT DIALOG DISCARDABLE  0, 0, 187, 192
+STYLE WS_CHILD
+FONT 9, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT_TEST_RESULT,16,9,156,73,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_TEST_SET_BATCH DIALOG DISCARDABLE  0, 0, 187, 194
+STYLE WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "开始测试",ID_BTN_TEST,41,165,90,14
+    LTEXT           "批号:",IDC_STATIC,36,17,22,10
+    EDITTEXT        IDC_EDIT_ID,59,16,67,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "1) 寄存器测试",IDC_STATIC_REG_TEST,31,41,66,10
+    LTEXT           "2) ADC测试",IDC_STATIC_ADC_TEST,31,61,66,10
+    LTEXT           "3) 2M带宽测试",IDC_STATIC_2M_TEST,31,81,66,10
+    LTEXT           "4) M0/START测试",IDC_STATIC_M0_TEST,31,101,66,10
+    LTEXT           "5) 5M带宽测试",IDC_STATIC_5M_TEST,31,121,66,10
+    LTEXT           "6) 20M带宽测试",IDC_STATIC_20M_TEST,31,141,66,10
+    LTEXT           "测试结果",IDC_STATIC_REG_TEST2,102,41,66,10
+    LTEXT           "测试结果",IDC_STATIC_ADC_TEST2,102,61,66,10
+    LTEXT           "测试结果",IDC_STATIC_2M_TEST2,102,81,66,10
+    LTEXT           "测试结果",IDC_STATIC_M0_TEST2,102,101,66,10
+    LTEXT           "测试结果",IDC_STATIC_5M_TEST2,102,121,66,10
+    LTEXT           "测试结果",IDC_STATIC_20M_TEST2,102,141,66,10
+END
+
+IDD_TEST_ALG DIALOGEX 0, 0, 187, 94
+STYLE WS_CHILD
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "DDC参数设置",ID_BTN_PARAM,65,23,57,14
+    PUSHBUTTON      "开始测试",ID_BTN_TEST,28,61,50,14
+    CTEXT           "测试状态",IDC_STATIC_STATE,100,61,50,14,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_PIC_STATE,"Static",SS_BITMAP,158,62,15,13
+END
+
+IDD_DDC_PARAM DIALOG DISCARDABLE  0, 0, 445, 310
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DDC参数设置"
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT_A,57,23,73,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_B,57,50,73,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_C,57,77,73,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_D,57,104,73,12,ES_AUTOHSCROLL
+    CONTROL         "0",IDC_RADIO_CHANNEL_CONFIG_CTRL,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP,28,159,18,13
+    CONTROL         "1",IDC_RADIO_CHANNEL_CONFIG_CTRL1,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,47,159,18,13
+    CONTROL         "0",IDC_RADIO_DATAOUT_MODEL_SEL,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP,128,159,18,
+                    13
+    CONTROL         "1",IDC_RADIO_DATAOUT_MODEL_SEL1,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,147,159,18,13
+    CONTROL         "0",IDC_RADIO_PARA_SER_SEL,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,19,193,18,13
+    CONTROL         "1",IDC_RADIO_PARA_SER_SEL1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,37,193,18,13
+    CONTROL         "0",IDC_RADIO_TEST,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,72,193,18,13
+    CONTROL         "1",IDC_RADIO_TEST1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,90,193,18,13
+    CONTROL         "0",IDC_RADIO_LVDS_ACK,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,117,193,18,13
+    CONTROL         "1",IDC_RADIO_LVDS_ACK1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,136,193,18,13
+    CONTROL         "auto",IDC_RADIO_LVDS_ACK2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,155,193,18,13
+    CONTROL         "0",IDC_RADIO_M0,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,19,227,18,13
+    CONTROL         "1",IDC_RADIO_M0_1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,38,227,18,13
+    CONTROL         "auto",IDC_RADIO_M0_2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,56,227,18,13
+    CONTROL         "0",IDC_RADIO_START,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,117,227,18,13
+    CONTROL         "1",IDC_RADIO_START_1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,135,227,18,13
+    CONTROL         "auto",IDC_RADIO_START_2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,155,227,18,13
+    GROUPBOX        "DDC参数导入",IDC_STATIC_INPUT,13,9,166,116
+    DEFPUSHBUTTON   "保存当前配置",ID_BTN_SAVE,13,270,56,14
+    PUSHBUTTON      "发送当前配置",ID_BTN_SEND,78,270,56,14
+    PUSHBUTTON      "回读",ID_BTN_REPLY,143,270,50,14
+    PUSHBUTTON      "复位",ID_BTN_RESET,202,270,50,14
+    LTEXT           "当前操作",IDC_STATIC,267,266,33,10
+    CTEXT           "读取寄存器",IDC_STATIC_STATE,260,278,50,10,
+                    SS_CENTERIMAGE | WS_BORDER
+    LTEXT           "A通道参数",IDC_STATIC,17,24,38,9
+    PUSHBUTTON      "读取文件",ID_BTN_Read1,132,22,42,14
+    LTEXT           "B通道参数",IDC_STATIC,17,52,38,9
+    PUSHBUTTON      "读取文件",ID_BTN_Read2,132,49,42,14
+    LTEXT           "C通道参数",IDC_STATIC,17,80,38,9
+    PUSHBUTTON      "读取文件",ID_BTN_Read3,132,76,42,14
+    LTEXT           "D通道参数",IDC_STATIC,17,108,38,9
+    PUSHBUTTON      "读取文件",ID_BTN_Read4,132,103,42,14
+    LTEXT           "channel_config_cntrl",IDC_STATIC,17,148,70,9
+    LTEXT           "dataout_model_sel",IDC_STATIC,112,148,62,9
+    LTEXT           "para_ser_sel",IDC_STATIC,17,182,45,9
+    LTEXT           "lvds_ack",IDC_STATIC,132,182,31,9
+    LTEXT           "test",IDC_STATIC,83,182,15,9
+    GROUPBOX        "DDC控制",IDC_STATIC_CONTROL,13,133,166,109
+    CONTROL         "A",IDC_RADIO_CHAN_SEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,210,32,19,11
+    CONTROL         "B",IDC_RADIO_CHAN_SEL2,"Button",BS_AUTORADIOBUTTON,266,
+                    32,19,11
+    CONTROL         "C",IDC_RADIO_CHAN_SEL3,"Button",BS_AUTORADIOBUTTON,325,
+                    32,19,11
+    CONTROL         "D",IDC_RADIO_CHAN_SEL4,"Button",BS_AUTORADIOBUTTON,388,
+                    32,19,11
+    RTEXT           "REG_00",IDC_STATIC_ADDR0,191,52,25,9
+    EDITTEXT        IDC_EDIT_A_REG0,218,51,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_01",IDC_STATIC_ADDR1,191,66,25,9
+    EDITTEXT        IDC_EDIT_A_REG1,218,65,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_02",IDC_STATIC_ADDR2,191,80,25,9
+    EDITTEXT        IDC_EDIT_A_REG2,218,79,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_03",IDC_STATIC_ADDR3,191,94,25,9
+    EDITTEXT        IDC_EDIT_A_REG3,218,93,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_04",IDC_STATIC_ADDR4,191,108,25,9
+    EDITTEXT        IDC_EDIT_A_REG4,218,107,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_05",IDC_STATIC_ADDR5,191,122,25,9
+    EDITTEXT        IDC_EDIT_A_REG5,218,121,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_06",IDC_STATIC_ADDR6,191,136,25,9
+    EDITTEXT        IDC_EDIT_A_REG6,218,135,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_07",IDC_STATIC_ADDR7,191,150,25,9
+    EDITTEXT        IDC_EDIT_A_REG7,218,149,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_08",IDC_STATIC_ADDR8,191,164,25,9
+    EDITTEXT        IDC_EDIT_A_REG8,218,163,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_09",IDC_STATIC_ADDR9,191,178,25,9
+    EDITTEXT        IDC_EDIT_A_REG9,218,177,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_0A",IDC_STATIC_ADDR10,191,192,25,9
+    EDITTEXT        IDC_EDIT_A_REG10,218,191,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_0B",IDC_STATIC_ADDR11,191,206,25,9
+    EDITTEXT        IDC_EDIT_A_REG11,218,205,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_0C",IDC_STATIC_ADDR12,250,52,25,9
+    EDITTEXT        IDC_EDIT_A_REG12,277,51,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_0D",IDC_STATIC_ADDR13,250,66,25,9
+    EDITTEXT        IDC_EDIT_A_REG13,277,65,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_0E",IDC_STATIC_ADDR14,250,80,25,9
+    EDITTEXT        IDC_EDIT_A_REG14,277,79,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_0F",IDC_STATIC_ADDR15,250,94,25,9
+    EDITTEXT        IDC_EDIT_A_REG15,277,93,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_10",IDC_STATIC_ADDR16,250,108,25,9
+    EDITTEXT        IDC_EDIT_A_REG16,277,107,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_11",IDC_STATIC_ADDR17,250,122,25,9
+    EDITTEXT        IDC_EDIT_A_REG17,277,121,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_12",IDC_STATIC_ADDR18,250,136,25,9
+    EDITTEXT        IDC_EDIT_A_REG18,277,135,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_13",IDC_STATIC_ADDR19,250,150,25,9
+    EDITTEXT        IDC_EDIT_A_REG19,277,149,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_14",IDC_STATIC_ADDR20,250,164,25,9
+    EDITTEXT        IDC_EDIT_A_REG20,277,163,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_15",IDC_STATIC_ADDR21,250,178,25,9
+    EDITTEXT        IDC_EDIT_A_REG21,277,177,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_16",IDC_STATIC_ADDR22,250,192,25,9
+    EDITTEXT        IDC_EDIT_A_REG22,277,191,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_17",IDC_STATIC_ADDR23,250,206,25,9
+    EDITTEXT        IDC_EDIT_A_REG23,277,205,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_18",IDC_STATIC_ADDR24,309,52,25,9
+    EDITTEXT        IDC_EDIT_A_REG24,337,51,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_19",IDC_STATIC_ADDR25,309,66,25,9
+    EDITTEXT        IDC_EDIT_A_REG25,337,65,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_1A",IDC_STATIC_ADDR26,309,80,25,9
+    EDITTEXT        IDC_EDIT_A_REG26,337,79,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_1B",IDC_STATIC_ADDR27,309,94,25,9
+    EDITTEXT        IDC_EDIT_A_REG27,337,93,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_1C",IDC_STATIC_ADDR28,309,108,25,9
+    EDITTEXT        IDC_EDIT_A_REG28,337,107,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_1D",IDC_STATIC_ADDR29,309,122,25,9
+    EDITTEXT        IDC_EDIT_A_REG29,337,121,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_1E",IDC_STATIC_ADDR30,309,136,25,9
+    EDITTEXT        IDC_EDIT_A_REG30,337,135,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_1F",IDC_STATIC_ADDR31,309,150,25,9
+    EDITTEXT        IDC_EDIT_A_REG31,337,149,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_20",IDC_STATIC_ADDR32,309,164,25,9
+    EDITTEXT        IDC_EDIT_A_REG32,337,163,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_21",IDC_STATIC_ADDR33,309,178,25,9
+    EDITTEXT        IDC_EDIT_A_REG33,337,177,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_22",IDC_STATIC_ADDR34,309,192,25,9
+    EDITTEXT        IDC_EDIT_A_REG34,337,191,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_23",IDC_STATIC_ADDR35,309,206,25,9
+    EDITTEXT        IDC_EDIT_A_REG35,337,205,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_24",IDC_STATIC_ADDR36,368,52,25,9
+    EDITTEXT        IDC_EDIT_A_REG36,394,51,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_25",IDC_STATIC_ADDR37,368,66,25,9
+    EDITTEXT        IDC_EDIT_A_REG37,394,65,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_26",IDC_STATIC_ADDR38,368,80,25,9
+    EDITTEXT        IDC_EDIT_A_REG38,394,79,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_27",IDC_STATIC_ADDR39,368,94,25,9
+    EDITTEXT        IDC_EDIT_A_REG39,394,93,25,12,ES_CENTER | ES_AUTOHSCROLL
+    RTEXT           "REG_28",IDC_STATIC_ADDR40,368,108,25,9
+    EDITTEXT        IDC_EDIT_A_REG40,394,107,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_29",IDC_STATIC_ADDR41,368,122,25,9
+    EDITTEXT        IDC_EDIT_A_REG41,394,121,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2A",IDC_STATIC_ADDR42,368,136,25,9
+    EDITTEXT        IDC_EDIT_A_REG42,394,135,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2B",IDC_STATIC_ADDR43,368,150,25,9
+    EDITTEXT        IDC_EDIT_A_REG43,394,149,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2C",IDC_STATIC_ADDR44,368,164,25,9
+    EDITTEXT        IDC_EDIT_A_REG44,394,163,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2D",IDC_STATIC_ADDR45,368,178,25,9
+    EDITTEXT        IDC_EDIT_A_REG45,394,177,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2E",IDC_STATIC_ADDR46,368,192,25,9
+    EDITTEXT        IDC_EDIT_A_REG46,394,191,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    RTEXT           "REG_2F",IDC_STATIC_ADDR47,368,206,25,9
+    EDITTEXT        IDC_EDIT_A_REG47,394,205,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "DDC寄存器组",IDC_STATIC_REG,186,9,240,232
+    LTEXT           "IQ分相深度",IDC_STATIC,334,262,43,10
+    EDITTEXT        IDC_EDIT_DEPTH,378,260,38,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "KB",IDC_STATIC,417,262,11,10
+    LTEXT           "M0",IDC_STATIC,41,217,28,9
+    LTEXT           "start",IDC_STATIC,137,216,28,9
+    LTEXT           "采样频率",IDC_STATIC,334,278,43,10
+    EDITTEXT        IDC_EDIT_SAMP_FREQ,378,275,38,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "MHz",IDC_STATIC,418,278,20,10
+    LTEXT           "带宽(r)=",IDC_STATIC,253,227,31,10
+    EDITTEXT        IDC_EDIT_R,299,225,38,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_PROMPT DIALOG DISCARDABLE  0, 0, 235, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "提示"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "测试下一项",ID_BTN_NEXT,7,73,50,14
+    PUSHBUTTON      "重测当前项",ID_BTN_RETRY,65,73,50,14
+    PUSHBUTTON      "放弃测试",ID_BTN_ABORT,178,73,50,14
+    CTEXT           "Static",IDC_STATIC_MSG,29,20,166,43
+    PUSHBUTTON      "重测全部",ID_BTN_RETRY2,122,73,50,14
+END
+
+IDD_JUDGE DIALOG DISCARDABLE  0, 0, 238, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "判断测试结果"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "确定",ID_BTN_RIGHT,94,81,50,14
+    LTEXT           "全选          CH A          CH B          CH C          CH D",
+                    IDC_STATIC,53,16,171,8
+    GROUPBOX        "",IDC_STATIC,51,31,22,37
+    CONTROL         "",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,58,40,10,8
+    CONTROL         "",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    58,54,10,8
+    GROUPBOX        "",IDC_STATIC,85,31,22,37
+    CONTROL         "",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,92,40,12,8
+    CONTROL         "",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    92,54,11,8
+    GROUPBOX        "",IDC_STATIC,121,31,22,37
+    CONTROL         "",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,128,40,11,8
+    CONTROL         "",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    128,54,10,8
+    GROUPBOX        "",IDC_STATIC,157,31,22,37
+    CONTROL         "",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,164,40,8,8
+    CONTROL         "",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    164,54,8,8
+    GROUPBOX        "",IDC_STATIC,194,31,22,37
+    CONTROL         "",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,201,40,8,8
+    CONTROL         "",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    201,54,8,8
+    LTEXT           "正确",IDC_STATIC,21,39,17,8
+    LTEXT           "错误",IDC_STATIC,21,55,17,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SIP测试系统\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "AdcTestPlat\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "AdcTestPlat.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SIP测试系统\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ADCTESTPLAT_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_TEST_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_TEST_RESULT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_TEST_SET_BATCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_TEST_ALG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DDC_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 438
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 303
+    END
+
+    IDD_PROMPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_JUDGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_OUT          CURSOR  DISCARDABLE     "res\\cursor1.cur"
+IDC_CURSOR_IN           CURSOR  DISCARDABLE     "res\\cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SIP测试系统ver2.0\n\nAdcTes\n\n\nAdcTestPlat.Document\nAdcTes Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "AdcTestPlat"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MY_FILE_OPEN         "打开文档\n打开"
+    ID_MY_FILE_SAVE         "保存活动文档\n保存"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOOLBAR_ZOOM_OUT     "放大"
+    ID_TOOLBAR_ZOOM_IN      "缩小"
+    ID_TOOLBAR_RESTORE      "恢复"
+    ID_TOOLBAR_MULTI_VIEW   "四个通道同时显示"
+    ID_TOOLBAR_START        "运行"
+    ID_TOOLBAR_END          "停止"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOOLBAR_MULTI_VIEW_F "4个通道的频谱"
+    ID_TOOLBAR_MULTI_VIEW_S "4个通道的波形"
+    ID_TOOLBAR_MULTI_VIEW_FS1 "通道1/2的频谱和波形"
+    ID_TOOLBAR_MULTI_VIEW_FS2 "通道3/4的频谱和波形"
+    ID_TOOLBAR_SINGLE_VIEW  "单通道显示"
+    ID_TOOLBAR_POWER        "上电/断电"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\AdcTestPlat.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

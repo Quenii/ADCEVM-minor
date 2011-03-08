@@ -1,0 +1,53 @@
+                //复位整版
+		writeReg(0xFFFF, 0xFFFF);  //reset
+		writeReg(0xFFFF, 0x0000);  //dereset
+
+		//配置2656，控制板卡电压
+		writeReg(5, 0xd000);  //控制VIO电压到1.8V
+		writeReg(6, 0x0004);  //执行 通道E
+
+		writeReg(5, 0x8000);  //控制VD电压到1.8V
+		writeReg(6, 0x0000);  //执行 通道A
+
+		writeReg(5, 0x8000);  //控制VA电压到1.8V
+		writeReg(6, 0x0002);  //执行 通道C
+
+		//控制5514
+		writeReg(0x1000, 0x0001);  //release adc rst
+		//Sleep(1000);//延时有必要，因为SPI速度比较慢
+		writeReg(0x1000, 0x0003);  //release tri rst
+		Sleep(1000);
+		writeReg(0x1000, 0x0007);  //release jtag module rst
+		Sleep(1000);
+		writeReg(0x1001, 0x0000);  //start a open jtag op
+		Sleep(1000);
+		writeReg(0x1000, 0x000B);  //release SPI module rst
+		Sleep(200);
+		writeReg(0x1002, 0x0601);
+		writeReg(0x1003, 0x0001);  //写0x01到0x0106寄存
+		Sleep(200);
+		writeReg(0x1002, 0x0601);
+		writeReg(0x1003, 0x0001);  //写0x01到0x0106寄存，此时AMUX电压变为1.8V
+		Sleep(200);
+		writeReg(0x1002, 0x0607);
+		writeReg(0x1003, 0x0001);  //写0x07到0x0106寄存，此时AMUX电压变为0.9V
+		//读自定义配置寄存器
+		for (i=0x0;i<256;i++)
+		{
+			writeReg(0x1002, i * 256); //选择寄存器0-255
+			Sleep(100);
+			writeReg(0x1003, 0x0080);  //命令刷新读寄存器
+			Sleep(300);
+			bool oke = read(0x1002, &buff, 1024);//1024是为了避免上位机读到乱数的问题
+		}
+
+		//3548
+		writeReg(9, 0xFFFF);  //select 3548, work at default mode
+		writeReg(9, 0xFFFF);  //select 3548, work at default mode
+		writeReg(9, 0x3FFF);  //select 3548, select 7th channel
+		writeReg(9, 0x3FFF);  //select 3548, select 7th channel
+		writeReg(9, 0x3FFF);  //select 3548, select 7th channel
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+		read((0x0009, &buff, 1024);)

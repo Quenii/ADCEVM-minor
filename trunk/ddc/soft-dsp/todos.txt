@@ -1,0 +1,11 @@
+1, corrected the x-axis;
+2, hide logic-view by default;
+
+todos:
+1, Update power status with real data;
+ a. read adc result from 3548, AdcBoard::powerStatus();
+ b. calculate and assign to powerStatus;
+2, Feed real data to logic-view scope;
+ done.
+3, correct Signal setting dialog's behavior;
+ half done. save data/setting feature should be enabled.

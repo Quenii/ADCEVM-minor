@@ -1,0 +1,243 @@
+<session jtag_chain="" jtag_device="" sof_file="../output/top.sof" top_level_entity="top">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="5"/>
+      <single attribute="zoom level denominator" value="4"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="507904"/>
+      <multi attribute="timebars" size="1" value="2273"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2010/09/04 23:01:09  #0">
+      <clock name="FX_CLK_i" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_trigger_nodes="0" sample_depth="8192" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="KAD5514P_spi_di_i" tap_mode="classic" type="bidir pin"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="KAD5514P_spi_di_i" tap_mode="classic" type="bidir pin"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int" tap_mode="classic" type="register"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o" tap_mode="classic" type="combinatorial"/>
+          <wire name="had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i"/>
+          <bus is_signal_inverted="no" link="all" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o" order="lsb_to_msb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]"/>
+          </bus>
+          <net is_signal_inverted="no" name="KAD5514P_spi_di_i"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_di_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_do_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi_out_en_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|cs_n_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|rst_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_int"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sck_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdi_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|sdo_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_en_o"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|spi_wren_i"/>
+          <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i"/>
+          <bus is_signal_inverted="no" link="all" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o" order="lsb_to_msb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[0]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[1]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[2]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[3]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[4]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[5]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[6]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[7]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[8]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[9]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[10]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[11]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[12]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[13]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[14]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[15]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[16]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[17]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[18]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[19]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[20]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[21]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[22]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|data_o[23]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[0]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[1]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[2]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[3]"/>
+            <net is_signal_inverted="no" name="had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|bit_cnt[4]"/>
+          </bus>
+          <net is_signal_inverted="no" name="KAD5514P_spi_di_i"/>
+        </setup_view>
+      </presentation>
+      <trigger attribute_mem_mode="false" global_temp="1" name="trigger: 2010/09/04 23:01:09  #1" position="pre" power_up_trigger_mode="false" segment_size="2048" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'had_rec:had_rec_2|adc_config:adc_config_1|spi24_v2:spi24_v2_1|task_start_i' == rising edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics>
+    <table name="cs_table (5)" width="3">
+      <symbol name="idle" value="001"/>
+      <symbol name="transfer" value="010"/>
+      <symbol name="updata" value="100"/>
+    </table>
+    <table name="cs_table (6)" width="4">
+      <symbol name="idle" value="0001"/>
+      <symbol name="set_cs" value="0010"/>
+      <symbol name="transfer" value="0100"/>
+      <symbol name="updata" value="1000"/>
+    </table>
+  </mnemonics>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="column width" size="18" value="34,34,85,74,68,70,88,100,101,101,101,101,101,101,101,101,107,78"/>
+    <multi attribute="window position" size="9" value="1272,703,398,124,356,50,3,0,0"/>
+  </global_info>
+</session>

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/">
+    <file>elephant.ico</file>
+    <file>Resources/gkhy_gray_banner.png</file>
+    <file>Resources/sar_timing.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+两个14位版本的区别：
+为了消除输入信号的不同，引起的原始数据显示刻度错误的问题，改动了几个地方
+DataDisp.h 	增加int m_nDotPerPeriod;
+DataDisp.cpp    原来的常量DOT_NUM_OF_PERIOD修改为变量m_nDotPerPeriod
+AdcTestPlatView.cpp 在DrawSpectrum函数里面增加根据当前的数据计算一个周期的点数m_nDotPerPeriod
+AdcTestPlat.rc  把版本信息修改，去除mfc痕迹

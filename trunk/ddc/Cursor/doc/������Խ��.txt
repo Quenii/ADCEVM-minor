@@ -1,0 +1,18 @@
+
+
+
+函数 void CParamDialog::OnBtnReply() 里
+修改了：
+		DmaRead( ((CAdcTestPlatApp*)AfxGetApp())->m_hDevice,
+			(BYTE*)m_dwaAllAddrParam, LOCAL_ADDR_DMA, DMA_SIZE*4*4 );
+
+其他地方基本没有改动。
+
+下述为寄存器回读的结果，处理的时候需要按照16b拆分，即转化为：0000 0000 0000 3333 5b33；注意大小端
+
+0012F3CC  00 00 00 00 00 00 33 33 33 5B 00 00 65 3C 16 27  ......333[..e<.'
+0012F3DC  BE F6 A2 02 87 FF 00 00 00 00 FB FF 00 00 0A 00  决..............
+0012F3EC  F8 FF F1 FF 1A 00 0B 00 CC FF 0C 00 4E 00 BE FF  ............N...
+0012F3FC  AD FF 94 00 27 00 10 FF 4D 00 2E 01 EA FE F0 FE  ....'...M...掰瘙
+0012F40C  1C 02 51 00 DD FC 4A 01 BE 03 03 FC B9 FC 24 08  ..Q.蔹J.....$.
+0012F41C  72 00 58 F0 47 0B F1 3F 00 00 42 00 04 00 00 00  r.X餑..?..B.....
