@@ -1,6 +1,4 @@
 #include "mainwindow.h"
-#include "statictestwindow.h"
-#include "dynamictestwindow.h"
 #include "qmdisubwindowex.h"
 #include "qdactypedialog.h"
 #include "qclockfreqdialog.h"

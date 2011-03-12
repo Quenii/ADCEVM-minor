@@ -55,6 +55,9 @@ public:
 public:
 	DacTypeSettings settings() { return m_settings; }
 
+protected:
+	void accept();
+
 private:
 	void setSettings(const DacTypeSettings& val);
 

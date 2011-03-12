@@ -15,6 +15,9 @@ public:
 public:
 	float clockFreq() { return m_clockFreq; }
 
+protected:
+	void accepted();
+
 private:
 	void setClockFreq(const float& val);
 

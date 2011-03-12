@@ -1,12 +1,12 @@
 #ifndef QSTATICTESTPLOT_H
 #define QSTATICTESTPLOT_H
 
-#include <QwtPlot>
+#include <Qwt_Plot.h>
 #include "ui_qstatictestplot.h"
 
 class QStaticTestPlot : public QwtPlot
 {
-	Q_OBJECT
+	 Q_OBJECT
 
 public:
 	QStaticTestPlot(QWidget *parent = 0);

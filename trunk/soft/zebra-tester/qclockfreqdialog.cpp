@@ -17,5 +17,13 @@ QClockFreqDialog::~QClockFreqDialog()
 
 void QClockFreqDialog::setClockFreq(const float& val)
 {
+	ui.lineEditClockFreq->setText(QString::number(val));
+}
 
+void QClockFreqDialog::accepted()
+{
+	m_clockFreq = ui.lineEditClockFreq->text().toFloat();
+
+	DacAnalyzerSettings s;
+	s.setClockFreq(m_clockFreq);
 }

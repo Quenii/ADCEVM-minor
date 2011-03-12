@@ -1,12 +1,12 @@
 #ifndef QDYNAMICTESTPLOT_H
 #define QDYNAMICTESTPLOT_H
 
-#include <QwtPlot>
+#include <Qwt_Plot.h>
 #include "ui_qdynamictestplot.h"
 
 class QDynamicTestPlot : public QwtPlot
 {
-	Q_OBJECT
+	// Q_OBJECT
 
 public:
 	QDynamicTestPlot(QWidget *parent = 0);
