@@ -9,4 +9,4 @@ DynamicTestWindow::DynamicTestWindow(QWidget *parent)
 DynamicTestWindow::~DynamicTestWindow()
 {
 
-}
+} 
