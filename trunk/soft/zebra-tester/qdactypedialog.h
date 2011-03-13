@@ -15,9 +15,6 @@ public:
 	QDacTypeDialog(QWidget *parent = 0);
 	~QDacTypeDialog();
 
-public:
-	DacTypeSettings settings() { return m_settings; }
-
 protected:
 	void accept();
 
@@ -26,8 +23,6 @@ private:
 
 private:
 	Ui::QDacTypeDialogClass ui;
-
-	DacTypeSettings m_settings;
 };
 
 #endif // QDACTYPEDIALOG_H

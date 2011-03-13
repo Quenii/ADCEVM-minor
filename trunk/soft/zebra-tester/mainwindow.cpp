@@ -38,6 +38,7 @@ void MainWindow::loadSettings()
 void MainWindow::saveSettings()
 {
 	DacAnalyzerSettings s;
+
 	s.setPowerMonitorWidgetPos(ui.dockWidgetPowerMonitor->pos());
 }
 
@@ -46,8 +47,7 @@ void MainWindow::on_actionDacType_triggered(bool checked)
 	QDacTypeDialog dlg;
 	if (QDialog::Accepted == dlg.exec())
 	{
-		DacTypeSettings dacTypeSettings = dlg.settings();
-		ui.dacTypeWidget->setDacTypeSettings(dacTypeSettings);
+		ui.dacTypeWidget->setDacTypeSettings(DacAnalyzerSettings().dacTypeSettings());
 	}
 }
 
@@ -56,8 +56,7 @@ void MainWindow::on_actionClockFrequency_triggered(bool checked)
 	QClockFreqDialog dlg;
 	if (QDialog::Accepted == dlg.exec())
 	{
-		float clockFreq = dlg.clockFreq();
-		ui.clockFreqWidget->setClockFreq(clockFreq);
+		ui.clockFreqWidget->setClockFreq(DacAnalyzerSettings().clockFreq());
 	}
 }
 

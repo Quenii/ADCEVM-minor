@@ -1,9 +1,13 @@
 #include "qdactypewidget.h"
+#include "dacanalyzersettings.h"
 
 QDacTypeWidget::QDacTypeWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+
+	setDacTypeSettings(DacAnalyzerSettings().dacTypeSettings());
+
 }
 
 QDacTypeWidget::~QDacTypeWidget()
@@ -13,7 +17,7 @@ QDacTypeWidget::~QDacTypeWidget()
 
 void QDacTypeWidget::setDacTypeSettings(const DacTypeSettings& val)
 {
-	m_dacTypeSettings = val;
+	// m_dacTypeSettings = val;
 
 	ui.lineEditDacType->setText(val.type);
 	ui.lineEditVa->setText(QString("%L1").arg(val.va));

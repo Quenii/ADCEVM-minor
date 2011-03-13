@@ -29,8 +29,9 @@ void QDacTypeDialog::setSettings(const DacTypeSettings& val)
 
 void QDacTypeDialog::accept()
 {
+	DacTypeSettings val;
 
 	DacAnalyzerSettings s;
-	s.setDacTypeSettings(m_settings);
+	s.setDacTypeSettings(val);
 
 }

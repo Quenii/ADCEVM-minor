@@ -6,8 +6,7 @@ QClockFreqDialog::QClockFreqDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	DacAnalyzerSettings s;
-	setClockFreq(s.clockFreq());
+	setClockFreq(DacAnalyzerSettings().clockFreq());
 }
 
 QClockFreqDialog::~QClockFreqDialog()
@@ -22,8 +21,8 @@ void QClockFreqDialog::setClockFreq(const float& val)
 
 void QClockFreqDialog::accepted()
 {
-	m_clockFreq = ui.lineEditClockFreq->text().toFloat();
+	float f = ui.lineEditClockFreq->text().toFloat();
 
 	DacAnalyzerSettings s;
-	s.setClockFreq(m_clockFreq);
+	s.setClockFreq(f);
 }

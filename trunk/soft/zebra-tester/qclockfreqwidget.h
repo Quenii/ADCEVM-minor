@@ -5,7 +5,6 @@
 
 #include "ui_qclockfreqwidget.h"
 
-
 class QClockFreqWidget : public QWidget
 {
 	Q_OBJECT
@@ -16,11 +15,11 @@ public:
 
 public:
 	void setClockFreq(float val);
-	float clockFreq() const { return m_fClockFreq; }
+	// float clockFreq() const { return m_fClockFreq; }
 
 private:
 	Ui::QClockFreqWidgetClass ui;
-	float m_fClockFreq;
+	// float m_fClockFreq;
 };
 
 #endif // QCLOCKFREQWIDGET_H

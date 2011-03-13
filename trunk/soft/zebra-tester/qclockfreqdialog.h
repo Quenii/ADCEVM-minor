@@ -12,9 +12,6 @@ public:
 	QClockFreqDialog(QWidget *parent = 0);
 	~QClockFreqDialog();
 
-public:
-	float clockFreq() { return m_clockFreq; }
-
 protected:
 	void accepted();
 
@@ -23,7 +20,6 @@ private:
 
 private:
 	Ui::QClockFreqDialogClass ui;
-	float m_clockFreq;
 };
 
 #endif // QCLOCKFREQDIALOG_H

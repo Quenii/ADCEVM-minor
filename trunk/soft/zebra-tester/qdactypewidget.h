@@ -15,11 +15,11 @@ public:
 
 public:
 	void setDacTypeSettings(const DacTypeSettings& val);
-	DacTypeSettings dacTypeSettings() const { return m_dacTypeSettings; }
+	// DacTypeSettings dacTypeSettings() const { return m_dacTypeSettings; }
 
 private:
 	Ui::QDacTypeWidgetClass ui;
-	DacTypeSettings m_dacTypeSettings;
+	// DacTypeSettings m_dacTypeSettings;
 };
 
 #endif // QDACTYPEWIDGET_H
