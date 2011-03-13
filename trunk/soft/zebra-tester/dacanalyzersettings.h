@@ -17,6 +17,9 @@ public:
 	void setClockFreq(const float& val);
 	float clockFreq() const;
 
+	QPoint powerMonitorWidgetPos();
+	void setPowerMonitorWidgetPos(const QPoint& val);
+
 private:
 	QSettings m_s;
 };

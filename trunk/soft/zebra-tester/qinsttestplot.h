@@ -1,7 +1,7 @@
 #ifndef QINSTTESTPLOT_H
 #define QINSTTESTPLOT_H
 
-#include <QwtPlot>
+#include <QwtPlot.h>
 #include "ui_qinsttestplot.h"
 
 class QInstTestPlot : public QwtPlot

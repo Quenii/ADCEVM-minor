@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
+	QApplication::setOrganizationName("quenii");
+	QApplication::setOrganizationDomain("quenii.com");
+	QApplication::setApplicationName("dac-analyzer");
+
 	REGISTER_METATYPE_HELPER(DacTypeSettings);
 
 	MainWindow w;

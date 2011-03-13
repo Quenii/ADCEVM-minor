@@ -7,6 +7,7 @@
 class QPushButton;
 class QWidget;
 class QMdiSubWindowEx;
+class QCloseEvent;
 
 class MainWindow : public QMainWindow
 {
@@ -17,12 +18,16 @@ public:
 	~MainWindow();
 
 public:
-	//QMdiSubWindowEx* addMdiWindow(QWidget* widget, QPushButton* btn);
+	void loadSettings();
+	void saveSettings();
 
 public slots:
 	void on_actionDacType_triggered(bool checked);
 	void on_actionClockFrequency_triggered(bool checked);
 	void on_actionAboutCETC58DACAnalyzer_triggered(bool checked);
+
+protected:
+	void closeEvent(QCloseEvent *event);
 
 private:
 	Ui::MainWindowClass ui;
