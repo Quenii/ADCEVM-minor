@@ -47,7 +47,7 @@ void MainWindow::on_actionDacType_triggered(bool checked)
 	QDacTypeDialog dlg;
 	if (QDialog::Accepted == dlg.exec())
 	{
-		ui.dacTypeWidget->setDacTypeSettings(DacAnalyzerSettings().dacTypeSettings());
+		ui.dacTypeWidget->reloadSettings();
 	}
 }
 
@@ -56,7 +56,7 @@ void MainWindow::on_actionClockFrequency_triggered(bool checked)
 	QClockFreqDialog dlg;
 	if (QDialog::Accepted == dlg.exec())
 	{
-		ui.clockFreqWidget->setClockFreq(DacAnalyzerSettings().clockFreq());
+		ui.clockFreqWidget->reloadSettings();
 	}
 }
 

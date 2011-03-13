@@ -7,7 +7,7 @@ QClockFreqWidget::QClockFreqWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	setClockFreq(DacAnalyzerSettings().clockFreq());
+	
 }
 
 QClockFreqWidget::~QClockFreqWidget()
@@ -15,9 +15,10 @@ QClockFreqWidget::~QClockFreqWidget()
 
 }
 
-
-void QClockFreqWidget::setClockFreq(float val)
+void QClockFreqWidget::reloadSettings()
 {
+	float val = DacAnalyzerSettings().clockFreq();
 	ui.lineEditClockFreq->setText(QString("%L1").arg(val));
-	// m_fClockFreq = val;
 }
+
+

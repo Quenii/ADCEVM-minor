@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include "ui_qdactypewidget.h"
-#include "qdactypedialog.h"
 
 class QDacTypeWidget : public QWidget
 {
@@ -14,12 +13,11 @@ public:
 	~QDacTypeWidget();
 
 public:
-	void setDacTypeSettings(const DacTypeSettings& val);
-	// DacTypeSettings dacTypeSettings() const { return m_dacTypeSettings; }
+	void reloadSettings();
+
 
 private:
 	Ui::QDacTypeWidgetClass ui;
-	// DacTypeSettings m_dacTypeSettings;
 };
 
 #endif // QDACTYPEWIDGET_H

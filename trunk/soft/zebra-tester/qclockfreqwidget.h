@@ -14,8 +14,7 @@ public:
 	~QClockFreqWidget();
 
 public:
-	void setClockFreq(float val);
-	// float clockFreq() const { return m_fClockFreq; }
+	void reloadSettings();
 
 private:
 	Ui::QClockFreqWidgetClass ui;

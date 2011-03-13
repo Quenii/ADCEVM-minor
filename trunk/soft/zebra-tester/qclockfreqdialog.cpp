@@ -25,4 +25,6 @@ void QClockFreqDialog::accepted()
 
 	DacAnalyzerSettings s;
 	s.setClockFreq(f);
+
+	QDialog::accept();
 }

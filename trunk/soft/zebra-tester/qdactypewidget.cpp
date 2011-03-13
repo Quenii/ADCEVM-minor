@@ -6,7 +6,7 @@ QDacTypeWidget::QDacTypeWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	setDacTypeSettings(DacAnalyzerSettings().dacTypeSettings());
+	reloadSettings();
 
 }
 
@@ -15,9 +15,9 @@ QDacTypeWidget::~QDacTypeWidget()
 
 }
 
-void QDacTypeWidget::setDacTypeSettings(const DacTypeSettings& val)
+void QDacTypeWidget::reloadSettings()
 {
-	// m_dacTypeSettings = val;
+	const DacTypeSettings& val = DacAnalyzerSettings().dacTypeSettings();
 
 	ui.lineEditDacType->setText(val.type);
 	ui.lineEditVa->setText(QString("%L1").arg(val.va));

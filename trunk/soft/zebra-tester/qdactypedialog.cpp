@@ -34,4 +34,6 @@ void QDacTypeDialog::accept()
 	DacAnalyzerSettings s;
 	s.setDacTypeSettings(val);
 
+	QDialog::accept();
+
 }
