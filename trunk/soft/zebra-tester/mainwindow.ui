@@ -23,7 +23,21 @@
     </property>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="page"/>
+      <widget class="QWidget" name="page">
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>16</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="page_2"/>
      </widget>
     </item>
@@ -42,8 +56,8 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="actionFile"/>
-    <addaction name="action_Save"/>
+    <addaction name="actionFileImport"/>
+    <addaction name="actionFileSave"/>
     <addaction name="actionE_xit"/>
    </widget>
    <widget class="QMenu" name="menu_View">
@@ -200,12 +214,33 @@
     </layout>
    </widget>
   </widget>
-  <action name="actionFile">
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionFileImport"/>
+   <addaction name="actionFileSave"/>
+  </widget>
+  <action name="actionFileImport">
+   <property name="icon">
+    <iconset resource="zebra-tester.qrc">
+     <normaloff>:/images/images/open.png</normaloff>:/images/images/open.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Import</string>
    </property>
   </action>
-  <action name="action_Save">
+  <action name="actionFileSave">
+   <property name="icon">
+    <iconset resource="zebra-tester.qrc">
+     <normaloff>:/images/images/save.png</normaloff>:/images/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Save</string>
    </property>
@@ -283,6 +318,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="zebra-tester.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,4 +1,7 @@
 <RCC>
-    <qresource prefix="MyClass">
-    </qresource>
+  <qresource prefix="MyClass"/>
+  <qresource prefix="images">
+    <file>images/open.png</file>
+    <file>images/save.png</file>
+  </qresource>
 </RCC>
