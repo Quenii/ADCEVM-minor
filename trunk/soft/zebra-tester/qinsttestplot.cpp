@@ -8,15 +8,7 @@ QInstTestPlot::QInstTestPlot(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	setCanvasBackground(Qt::black);
 
-	QwtPlotGrid* grid = new QwtPlotGrid();
-	grid->setPen(QPen(Qt::darkGreen, 0, Qt::SolidLine));
-	grid->enableX(true);
-	grid->enableXMin(true);
-	grid->enableY(true);
-	grid->enableYMin(true);
-	grid->attach(this);
 }
 
 QInstTestPlot::~QInstTestPlot()

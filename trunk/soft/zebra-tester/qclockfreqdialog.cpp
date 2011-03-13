@@ -19,7 +19,7 @@ void QClockFreqDialog::setClockFreq(const float& val)
 	ui.lineEditClockFreq->setText(QString::number(val));
 }
 
-void QClockFreqDialog::accepted()
+void QClockFreqDialog::accept()
 {
 	float f = ui.lineEditClockFreq->text().toFloat();
 

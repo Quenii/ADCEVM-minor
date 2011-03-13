@@ -13,7 +13,7 @@ public:
 	~QClockFreqDialog();
 
 protected:
-	void accepted();
+	void accept();
 
 private:
 	void setClockFreq(const float& val);

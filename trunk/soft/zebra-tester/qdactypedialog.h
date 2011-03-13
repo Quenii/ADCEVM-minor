@@ -19,7 +19,7 @@ protected:
 	void accept();
 
 private:
-	void setSettings(const DacTypeSettings& val);
+	void loadSettings();
 
 private:
 	Ui::QDacTypeDialogClass ui;

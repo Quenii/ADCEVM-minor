@@ -6,8 +6,7 @@ QDacTypeDialog::QDacTypeDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	DacAnalyzerSettings settings;
-	setSettings(settings.dacTypeSettings());
+	loadSettings();
 }
 
 QDacTypeDialog::~QDacTypeDialog()
@@ -15,8 +14,10 @@ QDacTypeDialog::~QDacTypeDialog()
 
 }
 
-void QDacTypeDialog::setSettings(const DacTypeSettings& val)
+void QDacTypeDialog::loadSettings()
 {
+	const DacTypeSettings& val = DacAnalyzerSettings().dacTypeSettings();
+
 	/* ui.comboBoxDacType->setText(val.type);
 	ui.spinBoxVa->set
 	float va;
