@@ -221,6 +221,10 @@
 				RelativePath=".\qtestwidget.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\types.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -516,6 +520,10 @@
 						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\types.h"
+				>
 			</File>
 		</Filter>
 		<Filter
