@@ -17,9 +17,13 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	grid->enableY(true);
 	grid->enableYMin(true);
 	grid->attach(this);
+
+
+
 }
 
 QStaticTestPlot::~QStaticTestPlot()
 {
 
 }
+
