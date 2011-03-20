@@ -12,6 +12,7 @@ public:
 	QStaticTestPlot(QWidget *parent = 0);
 	~QStaticTestPlot();
 
+
 private:
 	Ui::QStaticTestPlotClass ui;
 };

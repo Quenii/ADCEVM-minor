@@ -1,6 +1,8 @@
 #include "qstatictestplot.h"
 #include "qwt_plot_grid.h"
 #include "qwt_plot_curve.h"
+#include "qwt_plot_canvas.h"
+#include "qwt_scale_widget.h"
 
 #include <QPen>
 #include <cmath>
@@ -10,10 +12,11 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	setCanvasBackground(Qt::black);
-	setIntervalLength(10.0);
-	/*setIntervalLength(10.0);
+	setTitle(QString::fromLocal8Bit("¾²Ì¬²âÊÔÇúÏß"));
 
+	setCanvasBackground(Qt::black);
+
+	
 	QwtPlotGrid* grid = new QwtPlotGrid();
 	grid->setPen(QPen(Qt::darkGreen, 0, Qt::SolidLine));
 
@@ -23,22 +26,20 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	grid->enableY(true);
 	grid->enableYMin(true);
 	grid->attach(this);
-*/
-	/*QwtPlotCurve sine("Sine");
-	std::vector<float> xs;
-	std::vector<float> ys;
-	for (double x = 0; x < 2.0 * M_PI; x+=(M_PI / 10.0))
+
+	QwtPlotCurve& sine = * new QwtPlotCurve("Sine");
+	sine.setPen(QPen(Qt::red, 0, Qt::SolidLine));
+	std::vector<double> xs;
+	std::vector<double> ys;
+	for (double x = 0; x < 2.0 * M_PI; x+=(M_PI / 100.0))
 	{
 		xs.push_back(x);
 		ys.push_back(std::sin(x));
 	}
 	sine.setData(&xs[0],&ys[0],xs.size());
-	sine.attach(&plot);
+	sine.attach(this);
 
-	plot.show();
-	return a.exec();
 
-	*/
 }
 
 QStaticTestPlot::~QStaticTestPlot()
