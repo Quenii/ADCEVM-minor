@@ -29,16 +29,15 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 
 	QwtPlotCurve& sine = * new QwtPlotCurve("Sine");
 	sine.setPen(QPen(Qt::red, 0, Qt::SolidLine));
-	std::vector<double> xs;
-	std::vector<double> ys;
+	static std::vector<double> xs;
+	static std::vector<double> ys;
 	for (double x = 0; x < 2.0 * M_PI; x+=(M_PI / 100.0))
 	{
 		xs.push_back(x);
 		ys.push_back(std::sin(x));
 	}
-	sine.setData(&xs[0],&ys[0],xs.size());
+	sine.setRawSamples(&xs[0],&ys[0],xs.size());
 	sine.attach(this);
-
 
 }
 

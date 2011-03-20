@@ -129,7 +129,7 @@
 				Name="VCLinkerTool"
 				IgnoreImportLibrary="false"
 				UseLibraryDependencyInputs="false"
-				AdditionalDependencies="qtmaind.lib qwtd5.lib QtSvgd4.lib QtGuid4.lib QtCored4.lib"
+				AdditionalDependencies="qtmaind.lib qwtd.lib QtSvgd4.lib QtGuid4.lib QtCored4.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				AdditionalLibraryDirectories="$(QTDIR)\lib"
 				GenerateDebugInformation="true"
