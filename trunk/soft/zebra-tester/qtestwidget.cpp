@@ -1,9 +1,13 @@
 #include "qtestwidget.h"
 
+#include <QTimer>
+
 QTestWidget::QTestWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+
+	QTimer::singleShot(0, this, SLOT(on_tabWidget_currentChanged()));		
 }
 
 QTestWidget::~QTestWidget()
@@ -11,7 +15,7 @@ QTestWidget::~QTestWidget()
 
 }
 
-void QTestWidget::on_tabWidget_currentChanged(int index)
+void QTestWidget::on_tabWidget_currentChanged(/*int index*/)
 {
 	Mode mode;
 	QWidget* current = tabWidget->currentWidget();
@@ -25,4 +29,6 @@ void QTestWidget::on_tabWidget_currentChanged(int index)
 		mode = Calibration;
 	else
 		Q_ASSERT(!"Invalid contidion!");  
+
+	emit modeActivated(mode);
 }

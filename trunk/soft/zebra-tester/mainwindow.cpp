@@ -3,6 +3,8 @@
 #include "qdactypedialog.h"
 #include "qclockfreqdialog.h"
 #include "DacAnalyzerSettings.h"
+#include "qtestwidget.h"
+#include "qcentralwidget.h"
 
 #include <QPushButton>
 #include <QList>
@@ -11,8 +13,14 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
-{
+{	
 	ui.setupUi(this);
+	QCentralWidget* centralWidget = new QCentralWidget(this);
+	setCentralWidget(centralWidget);
+
+	bool ok = connect(ui.testWidget, SIGNAL(modeActivated(Mode)), centralWidget, SLOT(activateMode(Mode)));
+	Q_ASSERT(ok);
+
 	ui.menuWindow->addAction(ui.dockWidgetConsole->toggleViewAction());
 	ui.menuWindow->addAction(ui.dockWidgetPowerMonitor->toggleViewAction());
 

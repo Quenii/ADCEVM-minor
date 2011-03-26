@@ -4,16 +4,17 @@
 #include <QWidget>
 #include "ui_qtestwidget.h"
 
+enum Mode 
+{
+	StaticTest,
+	DynamicTest,
+	InstantTest,
+	Calibration,	
+};
+
+
 class QTestWidget : public QWidget, private Ui::QTestWidgetClass
 {
-	enum Mode 
-	{
-		StaticTest,
-		DynamicTest,
-		InstantTest,
-		Calibration,	
-	};
-
 	Q_OBJECT
 
 public:
@@ -21,10 +22,10 @@ public:
 	~QTestWidget();
 
 signals:
-	void activated(Mode mode);
+	void modeActivated(Mode mode);
 
 private slots:
-	void on_tabWidget_currentChanged(int index);
+	void on_tabWidget_currentChanged(/*int index*/);
 
 };
 
