@@ -22,7 +22,7 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tabStaticTest">
       <attribute name="title">
        <string>静态</string>
       </attribute>
@@ -147,7 +147,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tabDynamicTest">
       <attribute name="title">
        <string>动态</string>
       </attribute>
@@ -247,7 +247,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_3">
+     <widget class="QWidget" name="tabInstTest">
       <attribute name="title">
        <string>瞬态</string>
       </attribute>
@@ -294,7 +294,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <widget class="QWidget" name="tabCalibration">
       <attribute name="title">
        <string>校准</string>
       </attribute>

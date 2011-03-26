@@ -21,18 +21,6 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="0" column="0">
-     <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout_6">
-        <item row="0" column="0">
-         <widget class="QStaticTestPlot" name="widget_2" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page_2"/>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -307,12 +295,6 @@
    <class>QPowerMonitor</class>
    <extends>QWidget</extends>
    <header>qpowermonitor.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QStaticTestPlot</class>
-   <extends>QWidget</extends>
-   <header>qstatictestplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
