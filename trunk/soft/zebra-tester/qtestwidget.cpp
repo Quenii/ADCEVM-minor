@@ -32,3 +32,13 @@ void QTestWidget::on_tabWidget_currentChanged(/*int index*/)
 
 	emit modeActivated(mode);
 }
+
+void QTestWidget::on_pushButtonSetStaticTest_clicked()
+{
+
+}
+
+void QTestWidget::on_pushButtonStartStaticTest_clicked()
+{
+
+}

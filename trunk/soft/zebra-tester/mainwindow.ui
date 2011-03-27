@@ -25,7 +25,7 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>&amp;File</string>
+     <string>文件（&amp;F）</string>
     </property>
     <addaction name="actionFileImport"/>
     <addaction name="actionFileSave"/>
@@ -33,13 +33,13 @@
    </widget>
    <widget class="QMenu" name="menu_View">
     <property name="title">
-     <string>&amp;View</string>
+     <string>查看（&amp;V）</string>
     </property>
     <addaction name="action_Power_Monitoring"/>
    </widget>
    <widget class="QMenu" name="menu_Settings">
     <property name="title">
-     <string>&amp;Settings</string>
+     <string>设置（&amp;S）</string>
     </property>
     <addaction name="action_Clock"/>
     <addaction name="actionDacType"/>
@@ -48,13 +48,13 @@
    </widget>
    <widget class="QMenu" name="menuInterface_Control">
     <property name="title">
-     <string>Interface &amp;Control</string>
+     <string>端口控制（&amp;C）</string>
     </property>
     <addaction name="action_Reset_GPIO_SPI"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
-     <string>&amp;Help</string>
+     <string>帮助（&amp;H）</string>
     </property>
     <addaction name="action_Help_Topics"/>
     <addaction name="actionAboutCETC58DACAnalyzer"/>
@@ -204,7 +204,7 @@
      <normaloff>:/images/images/open.png</normaloff>:/images/images/open.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Import</string>
+    <string>导入（&amp;I）</string>
    </property>
   </action>
   <action name="actionFileSave">
@@ -213,52 +213,52 @@
      <normaloff>:/images/images/save.png</normaloff>:/images/images/save.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Save</string>
+    <string>保存(&amp;S)</string>
    </property>
   </action>
   <action name="actionE_xit">
    <property name="text">
-    <string>E&amp;xit</string>
+    <string>推出(&amp;X)</string>
    </property>
   </action>
   <action name="action_Power_Monitoring">
    <property name="text">
-    <string>&amp;Power Monitoring</string>
+    <string>电源监控(&amp;P)</string>
    </property>
   </action>
   <action name="action_Clock">
    <property name="text">
-    <string>&amp;Clock Port</string>
+    <string>时钟端口(&amp;C)</string>
    </property>
   </action>
   <action name="actionDacType">
    <property name="text">
-    <string>&amp;DAC Type</string>
+    <string>DAC类型（&amp;T）</string>
    </property>
   </action>
   <action name="actionClockFrequency">
    <property name="text">
-    <string>Clock &amp;Frequency</string>
+    <string>时钟频率（&amp;P）</string>
    </property>
   </action>
   <action name="action_GPIB">
    <property name="text">
-    <string>&amp;GPIB</string>
+    <string>GPIB(&amp;P)</string>
    </property>
   </action>
   <action name="action_Reset_GPIO_SPI">
    <property name="text">
-    <string>&amp;Reset/GPIO/SPI</string>
+    <string>Reset/GPIO/SPI（&amp;R）</string>
    </property>
   </action>
   <action name="action_Help_Topics">
    <property name="text">
-    <string>&amp;Help Topics</string>
+    <string>帮助主题（&amp;H）</string>
    </property>
   </action>
   <action name="actionAboutCETC58DACAnalyzer">
    <property name="text">
-    <string>&amp;About CETC58 DAC Analyzer</string>
+    <string>关于 CETC58 DAC Analyze （&amp;A）</string>
    </property>
   </action>
  </widget>

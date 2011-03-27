@@ -27,6 +27,9 @@ signals:
 private slots:
 	void on_tabWidget_currentChanged(/*int index*/);
 
+	void on_pushButtonSetStaticTest_clicked();
+	void on_pushButtonStartStaticTest_clicked();	
+
 };
 
 #endif // QTESTWIDGET_H

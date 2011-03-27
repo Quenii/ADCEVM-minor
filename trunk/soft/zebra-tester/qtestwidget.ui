@@ -117,14 +117,14 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="pushButtonSetStaticTest">
            <property name="text">
             <string>设置</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="pushButtonStartStaticTest">
            <property name="text">
             <string>开始</string>
            </property>
