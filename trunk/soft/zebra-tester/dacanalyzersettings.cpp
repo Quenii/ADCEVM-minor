@@ -1,6 +1,10 @@
 #include "DacAnalyzerSettings.h"
 
+#include <QPoint>
+
 static const char* dacTypeSettingsKey = "DacTypeSettings";
+static const char* staticTestSettingsKey = "StaticTestSettings";
+
 static const char* clockFreqKey = "ClockFreq";
 static const char* powerMonitorPoskey = "PowerMonitorPos";
 
@@ -12,7 +16,7 @@ DacAnalyzerSettings::~DacAnalyzerSettings(void)
 {
 }
 
-QPoint DacAnalyzerSettings::powerMonitorWidgetPos()
+QPoint DacAnalyzerSettings::powerMonitorWidgetPos() const
 {
 	return m_s.value(powerMonitorPoskey).toPoint();
 }
@@ -30,6 +34,16 @@ void DacAnalyzerSettings::setDacTypeSettings(const DacTypeSettings& val)
 DacTypeSettings DacAnalyzerSettings::dacTypeSettings() const
 {
 	return m_s.value(dacTypeSettingsKey).value<DacTypeSettings>();
+}
+
+void DacAnalyzerSettings::setStaticTestSettings(const StaticTestSettings& val)
+{
+	m_s.setValue(staticTestSettingsKey, val);
+}
+
+StaticTestSettings DacAnalyzerSettings::staticTestSettings() const
+{
+	return m_s.value(staticTestSettingsKey).value<StaticTestSettings>();
 }
 
 void DacAnalyzerSettings::setClockFreq(const float& val)

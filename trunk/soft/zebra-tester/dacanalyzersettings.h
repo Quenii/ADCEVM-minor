@@ -1,6 +1,6 @@
 #pragma once
 
-#include "qdactypedialog.h"
+#include "types.h"
 
 #include <QSettings>
 
@@ -11,14 +11,18 @@ public:
 	virtual ~DacAnalyzerSettings(void);
 
 public:
-	void setDacTypeSettings(const DacTypeSettings& val);
 	DacTypeSettings dacTypeSettings() const;
-
-	void setClockFreq(const float& val);
+	void setDacTypeSettings(const DacTypeSettings& val);
+	
+	StaticTestSettings staticTestSettings() const;
+	void setStaticTestSettings(const StaticTestSettings& val);
+	
 	float clockFreq() const;
-
-	QPoint powerMonitorWidgetPos();
+	void setClockFreq(const float& val);
+	
+	QPoint powerMonitorWidgetPos() const;
 	void setPowerMonitorWidgetPos(const QPoint& val);
+
 
 private:
 	QSettings m_s;

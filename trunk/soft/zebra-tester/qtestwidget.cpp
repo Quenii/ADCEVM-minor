@@ -1,4 +1,5 @@
 #include "qtestwidget.h"
+#include "qstatictestsettingsdialog.h"
 
 #include <QTimer>
 #include <QMessageBox>
@@ -55,7 +56,11 @@ void QTestWidget::on_tabWidget_currentChanged(/*int index*/)
 
 void QTestWidget::on_pushButtonSetStaticTest_clicked()
 {
-
+	QStaticTestSettingsDialog dlg;
+	if (QDialog::Accepted == dlg.exec())
+	{
+		
+	}
 }
 
 void QTestWidget::on_pushButtonStartStaticTest_clicked()

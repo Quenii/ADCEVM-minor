@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	QApplication::setApplicationName("dac-analyzer");
 
 	REGISTER_METATYPE_HELPER(DacTypeSettings);
+	REGISTER_METATYPE_HELPER(StaticTestSettings);
 
 	MainWindow w;
 	w.showMaximized();
