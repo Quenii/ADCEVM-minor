@@ -13,6 +13,7 @@ public:
 	~QStaticTestPlot();
 
 public slots:
+	void reset();
 	void setData();
 
 private:

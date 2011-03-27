@@ -19,6 +19,7 @@ private:
 	Q_DISABLE_COPY(QStaticTester)
 
 signals:
+	void started();
 	void newData();
 
 public slots:

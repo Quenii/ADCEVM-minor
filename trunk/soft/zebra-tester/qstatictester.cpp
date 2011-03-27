@@ -21,9 +21,10 @@ QStaticTester& QStaticTester::instance()
 void QStaticTester::start()
 {
 	if (m_bStarted) return;
-	
+
 	
 	m_bStarted = true;
+	emit started();
 }
 
  

@@ -16,12 +16,9 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	setTitle(QString::fromLocal8Bit("¾²Ì¬²âÊÔÇúÏß"));
 
 	setCanvasBackground(Qt::black);
-
 	
 	QwtPlotGrid* grid = new QwtPlotGrid();
 	grid->setPen(QPen(Qt::darkGreen, 0, Qt::SolidLine));
-
-
 	grid->enableX(true);
 	grid->enableXMin(true);
 	grid->enableY(true);
@@ -43,9 +40,18 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	QStaticTester* staticTester = &(QStaticTester::instance());
 	bool ok = connect(staticTester, SIGNAL(newData()), this, SLOT(setData()));
 	Q_ASSERT(ok);
+
+	bool ok = connect(staticTester, SIGNAL(started()), this, SLOT(reset()));
+	Q_ASSERT(ok);
+
 }
 
 QStaticTestPlot::~QStaticTestPlot()
+{
+
+}
+
+void QStaticTestPlot::reset()
 {
 
 }
