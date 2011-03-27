@@ -12,6 +12,8 @@ public:
 	QStaticTestPlot(QWidget *parent = 0);
 	~QStaticTestPlot();
 
+public slots:
+	void setData();
 
 private:
 	Ui::QStaticTestPlotClass ui;

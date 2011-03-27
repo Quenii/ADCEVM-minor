@@ -3,6 +3,7 @@
 #include "qwt_plot_curve.h"
 #include "qwt_plot_canvas.h"
 #include "qwt_scale_widget.h"
+#include "qstatictester.h"
 
 #include <QPen>
 #include <cmath>
@@ -39,6 +40,9 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	sine.setRawSamples(&xs[0],&ys[0],xs.size());
 	sine.attach(this);
 
+	QStaticTester* staticTester = &(QStaticTester::instance());
+	bool ok = connect(staticTester, SIGNAL(newData()), this, SLOT(setData));
+	Q_ASSERT(ok);
 }
 
 QStaticTestPlot::~QStaticTestPlot()
@@ -46,3 +50,7 @@ QStaticTestPlot::~QStaticTestPlot()
 
 }
 
+void QStaticTestPlot::setData()
+{
+
+}

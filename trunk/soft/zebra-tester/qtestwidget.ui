@@ -20,7 +20,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabStaticTest">
       <attribute name="title">
@@ -224,7 +224,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_5">
+          <widget class="QPushButton" name="pushButtonStartDynamicTest">
            <property name="text">
             <string>开始</string>
            </property>
@@ -273,7 +273,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="pushButtonStartInstTest">
          <property name="text">
           <string>开始</string>
          </property>
@@ -396,9 +396,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_9">
+          <widget class="QPushButton" name="pushButtonStartCalibration">
            <property name="text">
-            <string>PushButton</string>
+            <string>开始</string>
            </property>
           </widget>
          </item>
