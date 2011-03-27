@@ -1,5 +1,6 @@
 #include "qtestwidget.h"
 #include "qstatictestsettingsdialog.h"
+#include "QStaticTester.h"
 
 #include <QTimer>
 #include <QMessageBox>
@@ -71,13 +72,15 @@ void QTestWidget::on_pushButtonStartStaticTest_clicked()
 		return ;
 	}
 
+	QStaticTester* tester = &(QStaticTester::instance());
+
 	if (!m_state.staticTestStarted)
 	{
-		
+		tester->start();		
 	}
 	else
 	{
-
+		tester->stop();
 	}
 
 	m_state.staticTestStarted = ~m_state.staticTestStarted;

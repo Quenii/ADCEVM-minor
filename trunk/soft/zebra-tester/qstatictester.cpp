@@ -22,6 +22,7 @@ void QStaticTester::start()
 {
 	if (m_bStarted) return;
 
+	m_timerId = startTimer(100);
 	
 	m_bStarted = true;
 	emit started();
@@ -32,6 +33,7 @@ void QStaticTester::stop()
 {
 	if (!m_bStarted) return ;
 		
+	killTimer(m_timerId);
 	m_bStarted = false;
 
 }

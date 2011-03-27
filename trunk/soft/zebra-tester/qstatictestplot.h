@@ -1,8 +1,11 @@
 #ifndef QSTATICTESTPLOT_H
 #define QSTATICTESTPLOT_H
 
-#include <Qwt_Plot.h>
 #include "ui_qstatictestplot.h"
+
+#include <Qwt_Plot.h>
+
+class QwtPlotCurve;
 
 class QStaticTestPlot : public QwtPlot
 {
@@ -18,6 +21,10 @@ public slots:
 
 private:
 	Ui::QStaticTestPlotClass ui;
+
+	QwtPlotCurve* ideaCurve;
+	QwtPlotCurve* realCurve;
+
 };
 
 #endif // QSTATICTESTPLOT_H

@@ -31,6 +31,7 @@ protected:
 
 private:	
 	bool m_bStarted;
+	int m_timerId;
 };
 
 #endif // QSTATICTESTER_H
