@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>QStaticTestSettingsDialog</string>
+   <string>静态测试参数设置</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -84,5 +84,38 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>QStaticTestSettingsDialogClass</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>79</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>QStaticTestSettingsDialogClass</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

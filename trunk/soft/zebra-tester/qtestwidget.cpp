@@ -82,6 +82,7 @@ void QTestWidget::on_pushButtonStartStaticTest_clicked()
 
 	m_state.staticTestStarted = ~m_state.staticTestStarted;
 	updateStartStopButtonText(pushButtonStartStaticTest, m_state.staticTestStarted);
+	pushButtonSetStaticTest->setEnabled(!m_state.staticTestStarted);
 }
 
 

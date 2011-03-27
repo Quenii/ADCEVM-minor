@@ -19,6 +19,9 @@ protected:
 	void accept();
 
 private:
+	bool validate(QLineEdit* lineEdit);
+
+private:
 	Ui::QStaticTestSettingsDialogClass ui;
 };
 

@@ -1,5 +1,8 @@
 #include "qstatictestsettingsdialog.h"
 #include "dacanalyzersettings.h"
+#include "global.h"
+
+#include <QMessageBox>
 
 QStaticTestSettingsDialog::QStaticTestSettingsDialog(QWidget *parent)
 	: QDialog(parent)
@@ -19,12 +22,19 @@ QStaticTestSettingsDialog::~QStaticTestSettingsDialog()
 
 }
 
+bool QStaticTestSettingsDialog::validate(QLineEdit* inputFreqlineEdit)
+{
+	return checkInputValidity(inputFreqlineEdit);
+}
 
 void QStaticTestSettingsDialog::accept()
 {
 	StaticTestSettings val;
 
+	if (! validate(ui.lineEditAverageLevel)) return ;
 	val.averageLevel = ui.lineEditAverageLevel->text().toInt();
+
+	if (! validate(ui.lineEditStep2n)) return ;
 	val.step2n = ui.lineEditStep2n->text().toInt();
 
 	DacAnalyzerSettings().setStaticTestSettings(val);

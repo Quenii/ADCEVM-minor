@@ -41,7 +41,7 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 	sine.attach(this);
 
 	QStaticTester* staticTester = &(QStaticTester::instance());
-	bool ok = connect(staticTester, SIGNAL(newData()), this, SLOT(setData));
+	bool ok = connect(staticTester, SIGNAL(newData()), this, SLOT(setData()));
 	Q_ASSERT(ok);
 }
 
