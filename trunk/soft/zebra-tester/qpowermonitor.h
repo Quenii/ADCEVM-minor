@@ -1,8 +1,10 @@
 #ifndef QPOWERMONITOR_H
 #define QPOWERMONITOR_H
 
-#include <QWidget>
+#include "types.h"
 #include "ui_qpowermonitor.h"
+
+#include <QWidget>
 
 class QPowerMonitor : public QWidget
 {
@@ -11,6 +13,9 @@ class QPowerMonitor : public QWidget
 public:
 	QPowerMonitor(QWidget *parent = 0);
 	~QPowerMonitor();
+
+public slots:
+	void set(const PowerMonitorData& data);
 
 private:
 	Ui::QPowerMonitorClass ui;

@@ -69,3 +69,12 @@ inline QDataStream& operator>>(QDataStream& in, StaticTestSettings& val)
 
 	return in;
 }
+
+struct PowerMonitorData
+{
+	float va;
+	float vd;
+	float ia;
+	float id;
+	float p;
+};

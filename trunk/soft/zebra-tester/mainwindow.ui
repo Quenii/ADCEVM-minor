@@ -151,40 +151,6 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="dockWidgetPowerMonitor">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="floating">
-    <bool>true</bool>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::NoDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>电源监控</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>2</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QGridLayout" name="gridLayout_5">
-     <item row="0" column="0">
-      <widget class="QPowerMonitor" name="widget" native="true">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -197,6 +163,27 @@
    </attribute>
    <addaction name="actionFileImport"/>
    <addaction name="actionFileSave"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetPowerMonitor">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::NoDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>电源监控</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="0" column="0">
+      <widget class="QPowerMonitor" name="widget" native="true"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <action name="actionFileImport">
    <property name="icon">
