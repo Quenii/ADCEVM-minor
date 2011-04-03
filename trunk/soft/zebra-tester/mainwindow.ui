@@ -89,7 +89,7 @@
     <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
    <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+    <set>Qt::LeftDockWidgetArea</set>
    </property>
    <property name="windowTitle">
     <string>控制台</string>
@@ -163,27 +163,6 @@
    </attribute>
    <addaction name="actionFileImport"/>
    <addaction name="actionFileSave"/>
-  </widget>
-  <widget class="QDockWidget" name="dockWidgetPowerMonitor">
-   <property name="floating">
-    <bool>true</bool>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::NoDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>电源监控</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QGridLayout" name="gridLayout_5">
-     <item row="0" column="0">
-      <widget class="QPowerMonitor" name="widget" native="true"/>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <action name="actionFileImport">
    <property name="icon">
@@ -267,12 +246,6 @@
    <class>QTestWidget</class>
    <extends>QWidget</extends>
    <header>qtestwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QPowerMonitor</class>
-   <extends>QWidget</extends>
-   <header>qpowermonitor.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -23,6 +23,10 @@ public:
 	QPoint powerMonitorWidgetPos() const;
 	void setPowerMonitorWidgetPos(const QPoint& val);
 
+	bool powerMonitorWidgetVisible() const;
+	void setPowerMonitorWidgetVisible(const bool& val);
+
+
 
 private:
 	QSettings m_s;

@@ -8,6 +8,7 @@ class QPushButton;
 class QWidget;
 class QMdiSubWindowEx;
 class QCloseEvent;
+class QPowerMonitor;
 
 class MainWindow : public QMainWindow
 {
@@ -31,6 +32,7 @@ protected:
 
 private:
 	Ui::MainWindowClass ui;
+	QPowerMonitor* m_powerMonitorWidget;
 };
 
 #endif // MAINWINDOW_H

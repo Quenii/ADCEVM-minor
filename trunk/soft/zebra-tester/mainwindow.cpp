@@ -5,6 +5,7 @@
 #include "DacAnalyzerSettings.h"
 #include "qtestwidget.h"
 #include "qcentralwidget.h"
+#include "qpowermonitor.h"
 
 #include <QPushButton>
 #include <QList>
@@ -22,14 +23,14 @@ MainWindow::MainWindow(QWidget *parent)
 	Q_ASSERT(ok);
 
 	ui.menuWindow->addAction(ui.dockWidgetConsole->toggleViewAction());
-	ui.menuWindow->addAction(ui.dockWidgetPowerMonitor->toggleViewAction());
+	m_powerMonitorWidget = new QPowerMonitor(this);
+	ui.menuWindow->addAction(m_powerMonitorWidget->toggleViewAction());
 
 	loadSettings();
 }
 
 MainWindow::~MainWindow()
 {
-	
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -40,14 +41,16 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::loadSettings()
 {
 	DacAnalyzerSettings s;	
-	ui.dockWidgetPowerMonitor->move(s.powerMonitorWidgetPos());
+	m_powerMonitorWidget->move(s.powerMonitorWidgetPos());
+	m_powerMonitorWidget->setVisible(s.powerMonitorWidgetVisible());
 }
 
 void MainWindow::saveSettings()
 {
 	DacAnalyzerSettings s;
 
-	s.setPowerMonitorWidgetPos(ui.dockWidgetPowerMonitor->pos());
+	s.setPowerMonitorWidgetPos(m_powerMonitorWidget->pos());
+	s.setPowerMonitorWidgetVisible(m_powerMonitorWidget->isVisible());
 }
 
 void MainWindow::on_actionDacType_triggered(bool checked)

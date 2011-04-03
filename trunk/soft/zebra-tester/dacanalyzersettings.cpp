@@ -7,6 +7,7 @@ static const char* staticTestSettingsKey = "StaticTestSettings";
 
 static const char* clockFreqKey = "ClockFreq";
 static const char* powerMonitorPoskey = "PowerMonitorPos";
+static const char* powerMonitorVisibleKey = "PowerMonitorVisible";
 
 DacAnalyzerSettings::DacAnalyzerSettings(void)
 {
@@ -15,6 +16,18 @@ DacAnalyzerSettings::DacAnalyzerSettings(void)
 DacAnalyzerSettings::~DacAnalyzerSettings(void)
 {
 }
+
+bool DacAnalyzerSettings::powerMonitorWidgetVisible() const
+{
+	return m_s.value(powerMonitorVisibleKey).toBool();
+}
+
+void DacAnalyzerSettings::setPowerMonitorWidgetVisible(const bool& val)
+{
+	m_s.setValue(powerMonitorVisibleKey, val);
+
+}
+
 
 QPoint DacAnalyzerSettings::powerMonitorWidgetPos() const
 {

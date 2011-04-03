@@ -2,11 +2,12 @@
 #define QPOWERMONITOR_H
 
 #include "types.h"
+#include "qtoggleviewdialog.h"
 #include "ui_qpowermonitor.h"
 
 #include <QWidget>
 
-class QPowerMonitor : public QWidget
+class QPowerMonitor : public QToggleViewDialog
 {
 	Q_OBJECT
 

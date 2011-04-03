@@ -1,7 +1,7 @@
 #include "qpowermonitor.h"
 
 QPowerMonitor::QPowerMonitor(QWidget *parent)
-	: QWidget(parent)
+	: QToggleViewDialog(parent)
 {
 	ui.setupUi(this);
 }
