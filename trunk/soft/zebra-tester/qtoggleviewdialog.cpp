@@ -4,7 +4,7 @@
 #include <Qevent>
 
 QToggleViewDialog::QToggleViewDialog(QWidget *parent/* = 0*/, Qt::WindowFlags flags /*= 0*/)
-: QWidget(parent, flags)
+: QDialog(parent, flags)
 {
 	m_toggleViewAction = new QAction(this);
 	m_toggleViewAction->setCheckable(true);

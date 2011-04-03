@@ -1,11 +1,11 @@
 #ifndef QTOGGLEVIEWWIDGET_H
 #define QTOGGLEVIEWWIDGET_H
 
-#include <QWidget>
+#include <QDialog>
 
 class QAction;
 
-class QToggleViewDialog : public QWidget
+class QToggleViewDialog : public QDialog
 {
 	Q_OBJECT
 

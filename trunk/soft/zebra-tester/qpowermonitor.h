@@ -5,7 +5,7 @@
 #include "qtoggleviewdialog.h"
 #include "ui_qpowermonitor.h"
 
-#include <QWidget>
+#include <QDialog>
 
 class QPowerMonitor : public QToggleViewDialog
 {
