@@ -18,7 +18,7 @@ QClockFreqWidget::~QClockFreqWidget()
 void QClockFreqWidget::reloadSettings()
 {
 	float val = DacAnalyzerSettings().clockFreq();
-	ui.lineEditClockFreq->setText(QString("%L1").arg(val));
+	ui.clockFreq->setText(QString("%L1").arg(val));
 }
 
 
