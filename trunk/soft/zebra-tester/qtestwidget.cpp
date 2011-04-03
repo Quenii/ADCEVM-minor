@@ -5,7 +5,20 @@
 #include <QTimer>
 #include <QMessageBox>
 
-static void updateStartStopButtonText(QPushButton* button, unsigned int state)
+QTestWidget::QTestWidget(QWidget *parent)
+: QWidget(parent)
+{
+	//m_state.testStarted = 0;
+	setupUi(this);
+}
+
+QTestWidget::~QTestWidget()
+{
+
+}
+
+/*
+ static void updateStartStopButtonText(QPushButton* button, unsigned int state)
 {
 	button->setText(state ? 
 		QString::fromLocal8Bit("Í£Ö¹") : QString::fromLocal8Bit("¿ªÊ¼"));
@@ -24,6 +37,7 @@ QTestWidget::QTestWidget(QWidget *parent)
 	updateStartStopButtonText(pushButtonStartDynamicTest, m_state.dynamicTestStarted);
 	updateStartStopButtonText(pushButtonStartInstTest, m_state.instTestStarted);
 	updateStartStopButtonText(pushButtonStartCalibration, m_state.calibrationStarted);
+	
 }
 
 QTestWidget::~QTestWidget()
@@ -37,7 +51,7 @@ void QTestWidget::anotherTestIsRunningWarning()
 		tr("Another test is already running. To start this one, stop it first."));
 }
 
-void QTestWidget::on_tabWidget_currentChanged(/*int index*/)
+void QTestWidget::on_tabWidget_currentChanged(int index)
 {
 	Mode mode;
 	QWidget* current = tabWidget->currentWidget();
@@ -154,3 +168,4 @@ void QTestWidget::on_pushButtonStartCalibration_clicked()
 	updateStartStopButtonText(pushButtonStartCalibration, m_state.calibrationStarted);
 
 }
+*/
