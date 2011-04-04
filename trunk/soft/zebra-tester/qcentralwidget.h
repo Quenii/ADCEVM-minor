@@ -1,9 +1,11 @@
 #ifndef QCENTRALWIDGET_H
 #define QCENTRALWIDGET_H
 
-#include <QStackedWidget>
+#include "types.h"
+
 #include "ui_qcentralwidget.h"
-#include "qtestwidget.h"
+
+#include <QStackedWidget>
 
 class QStaticTestPlot;
 class QDynamicTestPlot;
@@ -17,7 +19,7 @@ public:
 	~QCentralWidget();
 
 public slots:
-	void activateMode(Mode mode);
+	void changeMode(TestMode mode);
 
 private:
 	Ui::QCentralWidgetClass ui;

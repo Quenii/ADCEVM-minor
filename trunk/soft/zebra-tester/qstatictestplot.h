@@ -4,8 +4,10 @@
 #include "ui_qstatictestplot.h"
 
 #include <Qwt_Plot.h>
+#include <QSharedPointer>
 
 class QwtPlotCurve;
+class QTester;
 
 class QStaticTestPlot : public QwtPlot
 {
@@ -24,6 +26,8 @@ private:
 
 	QwtPlotCurve* ideaCurve;
 	QwtPlotCurve* realCurve;
+
+	QSharedPointer<QTester> tester;
 
 };
 

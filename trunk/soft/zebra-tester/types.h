@@ -5,6 +5,15 @@
 #include <QDataStream>
 #include <QVariant>
 
+enum TestMode
+{
+	StaticTest,
+	DynamicTest,
+	InstTest,
+	Calibration
+};
+
+
 struct DacTypeSettings
 {
 	QString type;

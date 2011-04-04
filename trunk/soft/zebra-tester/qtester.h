@@ -1,22 +1,28 @@
 #ifndef QSTATICTESTER_H
 #define QSTATICTESTER_H
 
+#include "types.h"
+
 #include <QObject>
+#include <QWeakPointer>
+#include <QSharedPointer>
 
 class QTimerEvent;
 
-class class QTester : public QObject
+
+class  QTester : public QObject
 {
 	Q_OBJECT
 
 public:
-	static QTester& instance();
+	static QSharedPointer<QTester> instance();
 
 private:
-	QTester(QObject *parent);
-	~QTester();
-
+	QTester(QObject *parent = 0);
 	Q_DISABLE_COPY(QTester)
+
+public:
+	~QTester();
 
 signals:
 	void started();
@@ -34,6 +40,8 @@ protected:
 private:	
 	bool m_bStarted;
 	int m_timerId;
+
+	//static QWeakPointer<QTester> _instance;
 };
 
 #endif // QSTATICTESTER_H

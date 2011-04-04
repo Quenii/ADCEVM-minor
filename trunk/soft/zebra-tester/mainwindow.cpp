@@ -3,7 +3,6 @@
 #include "qdactypedialog.h"
 #include "qclockfreqdialog.h"
 #include "DacAnalyzerSettings.h"
-#include "qtestwidget.h"
 #include "qcentralwidget.h"
 #include "qpowermonitor.h"
 
@@ -19,9 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
 	QCentralWidget* centralWidget = new QCentralWidget(this);
 	setCentralWidget(centralWidget);
 
-	bool ok = connect(ui.testWidget, SIGNAL(modeActivated(Mode)), centralWidget, SLOT(activateMode(Mode)));
+	/*bool ok = connect(ui.staticTestWidget, SIGNAL(modeChanged(TestMode)), centralWidget, SLOT(changeMode(TestMode)));
 	Q_ASSERT(ok);
-
+*/
 	ui.menuWindow->addAction(ui.dockWidgetConsole->toggleViewAction());
 	m_powerMonitorWidget = new QPowerMonitor(this);
 	ui.menuWindow->addAction(m_powerMonitorWidget->toggleViewAction());

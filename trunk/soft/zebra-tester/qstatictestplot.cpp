@@ -47,13 +47,13 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 
 	reset();
 
-	QTester* staticTester = &(QTester::instance());
-	bool ok = connect(staticTester, SIGNAL(newData()), this, SLOT(setData()));
+	tester = QTester::instance();
+
+	bool ok = connect(tester.data(), SIGNAL(newData()), this, SLOT(setData()));
 	Q_ASSERT(ok);
 
-	ok = connect(staticTester, SIGNAL(started()), this, SLOT(reset()));
+	ok = connect(tester.data(), SIGNAL(started()), this, SLOT(reset()));
 	Q_ASSERT(ok);
-
 }
 
 QStaticTestPlot::~QStaticTestPlot()

@@ -20,7 +20,7 @@ QCentralWidget::~QCentralWidget()
 
 }
 
-void QCentralWidget::activateMode(Mode mode)
+void QCentralWidget::changeMode(TestMode mode)
 {
 	QWidget* widget = 0;
 	switch (mode)

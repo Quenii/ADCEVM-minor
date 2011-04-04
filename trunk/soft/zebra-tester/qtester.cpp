@@ -1,5 +1,8 @@
 #include "qtester.h"
 
+// QWeakPointer<QTester> QTester::_instance;
+#include <QPointer>
+
 QTester::QTester(QObject *parent)
 	: QObject(parent)
 	, m_bStarted(false)
@@ -12,10 +15,14 @@ QTester::~QTester()
 
 }
 
-QTester& QTester::instance()
+
+QSharedPointer<QTester> QTester::instance()
 {
-	static QTester tester(0);
-	return tester;
+	static QPointer<QTester> _instance;
+	if (_instance.isNull())
+		_instance = new QTester();
+
+	return QSharedPointer<QTester>(_instance.data());
 }
 
 void QTester::start()

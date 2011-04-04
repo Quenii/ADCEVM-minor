@@ -76,7 +76,7 @@
    <property name="minimumSize">
     <size>
      <width>244</width>
-     <height>186</height>
+     <height>219</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -130,7 +130,31 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
-         <widget class="QTestWidget" name="testWidget" native="true"/>
+         <widget class="QTabWidget" name="test">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QStaticTestWidget" name="staticTestWidget">
+           <attribute name="title">
+            <string>静态</string>
+           </attribute>
+          </widget>
+          <widget class="QDynamicTestWidget" name="dynamicTestWidget">
+           <attribute name="title">
+            <string>动态</string>
+           </attribute>
+          </widget>
+          <widget class="QInstTestWidget" name="instTestWidget">
+           <attribute name="title">
+            <string>瞬态</string>
+           </attribute>
+          </widget>
+          <widget class="QCalibrationWidget" name="calibrationWidget">
+           <attribute name="title">
+            <string>校准</string>
+           </attribute>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -243,9 +267,27 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QTestWidget</class>
+   <class>QStaticTestWidget</class>
    <extends>QWidget</extends>
-   <header>qtestwidget.h</header>
+   <header>qstatictestwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QDynamicTestWidget</class>
+   <extends>QWidget</extends>
+   <header>qdynamictestwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QInstTestWidget</class>
+   <extends>QWidget</extends>
+   <header>qinsttestwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QCalibrationWidget</class>
+   <extends>QWidget</extends>
+   <header>qcalibrationwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

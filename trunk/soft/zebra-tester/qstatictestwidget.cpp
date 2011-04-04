@@ -10,3 +10,8 @@ QStaticTestWidget::~QStaticTestWidget()
 {
 
 }
+
+void QStaticTestWidget::on_pushButtonStartStop_clicked()
+{
+
+}
