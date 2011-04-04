@@ -65,8 +65,6 @@ QStaticTestPlot::~QStaticTestPlot()
 void QStaticTestPlot::reset()
 {
 	
-
-
 }
 
 void QStaticTestPlot::setData()
