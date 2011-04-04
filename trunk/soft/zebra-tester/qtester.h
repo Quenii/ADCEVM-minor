@@ -5,21 +5,23 @@
 
 class QTimerEvent;
 
-class QStaticTester : public QObject
+class class QTester : public QObject
 {
 	Q_OBJECT
 
 public:
-	static QStaticTester& instance();
+	static QTester& instance();
 
 private:
-	QStaticTester(QObject *parent);
-	~QStaticTester();
+	QTester(QObject *parent);
+	~QTester();
 
-	Q_DISABLE_COPY(QStaticTester)
+	Q_DISABLE_COPY(QTester)
 
 signals:
 	void started();
+	void stopped();
+
 	void newData();
 
 public slots:

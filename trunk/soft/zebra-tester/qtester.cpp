@@ -1,24 +1,24 @@
-#include "qstatictester.h"
+#include "qtester.h"
 
-QStaticTester::QStaticTester(QObject *parent)
+QTester::QTester(QObject *parent)
 	: QObject(parent)
 	, m_bStarted(false)
 {
 
 }
 
-QStaticTester::~QStaticTester()
+QTester::~QTester()
 {
 
 }
 
-QStaticTester& QStaticTester::instance()
+QTester& QTester::instance()
 {
-	static QStaticTester tester(0);
+	static QTester tester(0);
 	return tester;
 }
 
-void QStaticTester::start()
+void QTester::start()
 {
 	if (m_bStarted) return;
 
@@ -29,16 +29,17 @@ void QStaticTester::start()
 }
 
  
-void QStaticTester::stop()
+void QTester::stop()
 {
 	if (!m_bStarted) return ;
 		
 	killTimer(m_timerId);
 	m_bStarted = false;
 
+	emit stopped();
 }
 
-void QStaticTester::timerEvent(QTimerEvent * event)
+void QTester::timerEvent(QTimerEvent * event)
 {	
 	if (!m_bStarted) return;
 
