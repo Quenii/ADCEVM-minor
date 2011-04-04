@@ -21,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
 	/*bool ok = connect(ui.staticTestWidget, SIGNAL(modeChanged(TestMode)), centralWidget, SLOT(changeMode(TestMode)));
 	Q_ASSERT(ok);
 */
-	ui.menuWindow->addAction(ui.dockWidgetConsole->toggleViewAction());
+	ui.menuView->addAction(ui.dockWidgetConsole->toggleViewAction());
 	m_powerMonitorWidget = new QPowerMonitor(this);
-	ui.menuWindow->addAction(m_powerMonitorWidget->toggleViewAction());
+	ui.menuView->addAction(m_powerMonitorWidget->toggleViewAction());
 
 	loadSettings();
 }
