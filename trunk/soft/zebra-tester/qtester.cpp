@@ -38,11 +38,11 @@ QTester::QTester(QObject *parent)
 	// since ipromptf expects to receive far pointers to the format strings.
 
 	ipromptf(id, "*IDN?\n", "%t", buf);
-	printf("%s\n", buf);
-
 	
-
-}
+	double res;
+	/* Take a measurement */
+	ipromptf(id, "MEAS:VOLT:DC?\n", "%lf", &res);
+	}
 
 QTester::~QTester()
 {
