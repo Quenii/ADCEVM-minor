@@ -12,10 +12,10 @@ public:
 
 public:
 	// Declare functions
-	int open_port(QString addr);
+	bool open_port(QString addr);
 	void close();
-	int send_msg(char *Cmds);
-	void get_data(void);
+	bool send_msg(char *Cmds);
+	bool get_data(void);
 
 
 /*	int check_inst_model(CString check_msg, CString msgval);

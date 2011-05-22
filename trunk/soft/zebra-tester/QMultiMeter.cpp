@@ -24,7 +24,7 @@ QMultiMeter::~QMultiMeter(void)
 }
 
 /////////////////////////////////////////////////////////////////////////////
-int QMultiMeter::open_port(QString addr)
+bool QMultiMeter::open_port(QString addr)
 {
 	// This function opens a port (the communication between the instrument and 
 	// computer).
@@ -49,7 +49,7 @@ int QMultiMeter::open_port(QString addr)
 	if (errorStatus < VI_SUCCESS)
 	{
 		AfxMessageBox("Unable to Open port; check address");
-		return -1; // exit(1);
+		return false; // exit(1);
 	}
 
 	// Set timeout to 5 seconds
@@ -73,14 +73,14 @@ int QMultiMeter::open_port(QString addr)
 
 		// Close the session
 		errorStatus = viClose(vi);
-		return 0;
+		return false;
 	}
 
 	// Check error
 	// check_error("open_port");
 	close();
 
-	return 1;	
+	return true;	
 }	
 
 void QMultiMeter::close()
@@ -94,7 +94,7 @@ void QMultiMeter::close()
 	m_connected = false;
 }
 
-int QMultiMeter::send_msg(char *Cmds)
+bool QMultiMeter::send_msg(char *Cmds)
 {
 	// This function will send a  command string to the GPIB
 	// port.
@@ -119,10 +119,44 @@ int QMultiMeter::send_msg(char *Cmds)
 		// Close the session
 		errorStatus = viClose(videfaultRM);
 
-		return -1;
+		return false;
 		// exit(1);
 	}
 
-	return 1;
+	return true;
 
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+bool QMultiMeter::get_data()
+{	
+	// This function reads the string returned by the instrument
+
+	unsigned long	actual; // Number of characters sent/returned
+
+	// Read the response string
+	errorStatus = viRead(vi, (ViBuf)ReturnedData, 2048, &actual);
+
+	// NULL terminate the string and remove carriage return
+	ReturnedData[actual-1]=0;
+
+	// Check I/O error
+	if (errorStatus < VI_SUCCESS)
+	{
+		/* printf("I/O error!\n\n");
+
+		// Close instrument session
+		errorStatus = viClose(vi);
+
+		// Close the session
+		errorStatus = viClose(videfaultRM);
+
+		exit(1);*/
+
+		close();
+		return false;
+	}
+
+	return true;
 }
