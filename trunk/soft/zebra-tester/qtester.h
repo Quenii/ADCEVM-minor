@@ -15,7 +15,7 @@ class  QTester : public QObject
 	Q_OBJECT
 
 public:
-	static QSharedPointer<QTester> instance();
+	static QTester* instance();
 
 private:
 	QTester(QObject *parent = 0);
@@ -30,18 +30,19 @@ signals:
 
 	void newData();
 
-public slots:
-	void start();
+public:
+	bool start(TestMode mode);
 	void stop();
+	bool isRunning() { return m_bStarted; }
+	TestMode currentMode() { return m_mode; }
 
 protected:
 	void timerEvent(QTimerEvent * event);
-
+	
 private:	
 	bool m_bStarted;
 	int m_timerId;
-
-	//static QWeakPointer<QTester> _instance;
+	TestMode m_mode;
 };
 
 #endif // QSTATICTESTER_H

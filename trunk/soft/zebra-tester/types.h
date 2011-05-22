@@ -5,6 +5,7 @@
 #include <QDataStream>
 #include <QVariant>
 
+
 enum TestMode
 {
 	StaticTest,
@@ -12,7 +13,6 @@ enum TestMode
 	InstTest,
 	Calibration
 };
-
 
 struct DacTypeSettings
 {

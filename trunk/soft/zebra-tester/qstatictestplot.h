@@ -26,9 +26,6 @@ private:
 
 	QwtPlotCurve* ideaCurve;
 	QwtPlotCurve* realCurve;
-
-	QSharedPointer<QTester> tester;
-
 };
 
 #endif // QSTATICTESTPLOT_H
