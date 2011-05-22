@@ -234,6 +234,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\QMultiMeter.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\qpowermonitor.cpp"
 				>
 			</File>
@@ -634,6 +638,10 @@
 						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\QMultiMeter.h"
+				>
 			</File>
 			<File
 				RelativePath=".\qpowermonitor.h"
