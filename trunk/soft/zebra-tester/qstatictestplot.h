@@ -7,7 +7,7 @@
 #include <QSharedPointer>
 
 class QwtPlotCurve;
-class QTester;
+class QStaticTester;
 
 class QStaticTestPlot : public QwtPlot
 {

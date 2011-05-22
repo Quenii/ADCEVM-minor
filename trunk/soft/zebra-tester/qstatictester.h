@@ -10,19 +10,19 @@
 class QTimerEvent;
 
 
-class  QTester : public QObject
+class QStaticTester : public QObject
 {
 	Q_OBJECT
 
 public:
-	static QTester* instance();
+	static QStaticTester* instance();
 
 private:
-	QTester(QObject *parent = 0);
-	Q_DISABLE_COPY(QTester)
+	QStaticTester(QObject *parent = 0);
+	Q_DISABLE_COPY(QStaticTester)
 
 public:
-	~QTester();
+	~QStaticTester();
 
 signals:
 	void started();
@@ -31,18 +31,19 @@ signals:
 	void newData();
 
 public:
-	bool start(TestMode mode);
+	bool start();
 	void stop();
 	bool isRunning() { return m_bStarted; }
-	TestMode currentMode() { return m_mode; }
-
+	
 protected:
 	void timerEvent(QTimerEvent * event);
 	
 private:	
 	bool m_bStarted;
 	int m_timerId;
-	TestMode m_mode;
+	
+	StaticTestSettings m_settings;
+	unsigned int m_currentVal;	
 };
 
 #endif // QSTATICTESTER_H

@@ -1,4 +1,6 @@
 #include "qstatictestwidget.h"
+#include "global.h"
+#include "qstatictestsettingsdialog.h"
 
 QStaticTestWidget::QStaticTestWidget(QWidget *parent)
 	: QWidget(parent)
@@ -11,15 +13,31 @@ QStaticTestWidget::~QStaticTestWidget()
 
 }
 
+void QStaticTestWidget::on_pushButtonSetStaticTest_clicked()
+{
+	QStaticTestSettingsDialog dlg;	
+	dlg.exec();
+}
+
 void QStaticTestWidget::on_pushButtonStartStop_clicked()
 {
-	QTester* tester = QTester::instance();
+	QStaticTester* tester = QStaticTester::instance();
 	if (tester->isRunning() != true)
 	{
-		tester->start(StaticTest);
+		if (tester->start())
+		{
+			ui.pushButtonStartStop->setText(QString::fromLocal8Bit("Í£Ö¹"));
+			ui.pushButtonSetStaticTest->setEnabled(false);
+		}
+		else
+		{
+			claimFailedToStartTester();
+		}
 	}
-	else if (tester->isRunning() && tester->currentMode() == StaticTest)
+	else // if (tester->isRunning())
 	{
 		tester->stop();
+		ui.pushButtonStartStop->setText(QString::fromLocal8Bit("¿ªÊ¼"));
+		ui.pushButtonSetStaticTest->setEnabled(true);
 	}
 }

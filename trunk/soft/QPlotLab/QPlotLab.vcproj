@@ -39,7 +39,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=".\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;.\;..\include\gkhy\qplotlib\plotlab;..\include;..\include\gkhy\qplotlib;.\plotlab"
+				AdditionalIncludeDirectories=".\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;.;.\..\include\gkhy\qplotlib\plotlab;.\..\include;.\..\include\gkhy\qplotlib;.\plotlab"
 				PreprocessorDefinitions="UNICODE,WIN32,QT_THREAD_SUPPORT,QT_NO_DEBUG,NDEBUG,QT_CORE_LIB,QT_GUI_LIB,QPLOTLAB_LIB;QT_DLL"
 				RuntimeLibrary="0"
 				TreatWChar_tAsBuiltInType="false"
@@ -113,7 +113,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;.\;..\include\gkhy\qplotlib\plotlab;..\include;..\include\gkhy\qplotlib;.\plotlab"
+				AdditionalIncludeDirectories=".\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;.;.\..\include\gkhy\qplotlib\plotlab;.\..\include;.\..\include\gkhy\qplotlib;.\plotlab"
 				PreprocessorDefinitions="UNICODE,WIN32,QT_THREAD_SUPPORT,QT_CORE_LIB,QT_GUI_LIB,QPLOTLAB_LIB;QT_DLL"
 				RuntimeLibrary="1"
 				TreatWChar_tAsBuiltInType="false"

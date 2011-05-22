@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "ui_qstatictestwidget.h"
-#include "qtester.h"
+#include "qstatictester.h"
 
 class QStaticTestWidget : public QWidget
 {
@@ -15,6 +15,7 @@ public:
 
 public slots:
 	void on_pushButtonStartStop_clicked();
+	void on_pushButtonSetStaticTest_clicked();
 
 private:
 	Ui::QStaticTestWidgetClass ui;

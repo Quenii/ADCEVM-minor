@@ -3,7 +3,7 @@
 #include "qwt_plot_canvas.h"
 #include "qwt_scale_widget.h"
 #include "qwt_plot_curve.h"
-#include "qtester.h"
+#include "qstatictester.h"
 
 #include <QPen>
 #include <cmath>
@@ -47,7 +47,7 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 
 	reset();
 
-	QTester* tester = QTester::instance();
+	QStaticTester* tester = QStaticTester::instance();
 
 	bool ok = connect(tester, SIGNAL(newData()), this, SLOT(setData()));
 	Q_ASSERT(ok);

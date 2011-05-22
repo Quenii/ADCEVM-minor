@@ -8,6 +8,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DAC-Analyzer", "zebra-teste
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QPlotLab", "..\QPlotLab\QPlotLab.vcproj", "{716F77FC-1A61-41F0-A15F-E97183402C0A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoardApi", "..\BoardApi\BoardApi.vcproj", "{E2FAF345-8481-4A25-A076-65A1EA3B8D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -22,6 +24,10 @@ Global
 		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Debug|Win32.Build.0 = Debug|Win32
 		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Release|Win32.ActiveCfg = Release|Win32
 		{716F77FC-1A61-41F0-A15F-E97183402C0A}.Release|Win32.Build.0 = Release|Win32
+		{E2FAF345-8481-4A25-A076-65A1EA3B8D37}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E2FAF345-8481-4A25-A076-65A1EA3B8D37}.Debug|Win32.Build.0 = Debug|Win32
+		{E2FAF345-8481-4A25-A076-65A1EA3B8D37}.Release|Win32.ActiveCfg = Release|Win32
+		{E2FAF345-8481-4A25-A076-65A1EA3B8D37}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
