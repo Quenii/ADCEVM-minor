@@ -49,7 +49,8 @@ QStaticTestPlot::QStaticTestPlot(QWidget *parent)
 
 	QStaticTester* tester = QStaticTester::instance();
 
-	bool ok = connect(tester, SIGNAL(newData()), this, SLOT(setData()));
+	bool ok = connect(tester, SIGNAL(newData(float, float)), 
+		this, SLOT(addData(float, float)));
 	Q_ASSERT(ok);
 
 	ok = connect(tester, SIGNAL(started()), this, SLOT(reset()));
@@ -64,17 +65,19 @@ QStaticTestPlot::~QStaticTestPlot()
 
 void QStaticTestPlot::reset()
 {
-	
+	xs.clear();
+	ys.clear();
+
+	ideaCurve->setRawSamples(&xs[0],&ys[0],xs.size());
+	replot();
 }
 
-void QStaticTestPlot::setData()
+void QStaticTestPlot::addData(float output, float measured)
 {
-	static std::vector<double> xs;
-	static std::vector<double> ys;
 	for (double x = 0; x < 2.0 * M_PI; x+=(M_PI / 100.0))
 	{
-		xs.push_back(x);
-		ys.push_back(std::sin(x));
+		xs.push_back(output);
+		ys.push_back(measured);
 	}
 	ideaCurve->setRawSamples(&xs[0],&ys[0],xs.size());
 	replot();

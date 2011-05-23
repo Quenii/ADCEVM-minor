@@ -5,6 +5,7 @@
 
 #include <Qwt_Plot.h>
 #include <QSharedPointer>
+#include <vector>
 
 class QwtPlotCurve;
 class QStaticTester;
@@ -19,13 +20,16 @@ public:
 
 public slots:
 	void reset();
-	void setData();
+	void addData(float output, float measured);
 
 private:
 	Ui::QStaticTestPlotClass ui;
 
 	QwtPlotCurve* ideaCurve;
 	QwtPlotCurve* realCurve;
+
+	std::vector<double> xs;
+	std::vector<double> ys;
 };
 
 #endif // QSTATICTESTPLOT_H
