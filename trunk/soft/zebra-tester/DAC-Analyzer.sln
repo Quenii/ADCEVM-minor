@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DAC-Analyzer", "zebra-tester.vcproj", "{AA70D80E-0373-45E7-8AE3-7D33AA31E5E5}"
 	ProjectSection(ProjectDependencies) = postProject
+		{E2FAF345-8481-4A25-A076-65A1EA3B8D37} = {E2FAF345-8481-4A25-A076-65A1EA3B8D37}
 		{716F77FC-1A61-41F0-A15F-E97183402C0A} = {716F77FC-1A61-41F0-A15F-E97183402C0A}
 	EndProjectSection
 EndProject

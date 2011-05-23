@@ -1,6 +1,3 @@
-#include "..\include\gkhy\BoardApi\Board.h"
-#include "CyAPI.h"
-
 #include <windows.h>
 #include <qmath.h>
 #include <vector>
@@ -11,10 +8,31 @@
 #include <QList>
 #include <QTimer>
 #include <QSettings>
+#include <QThread>
+
+#include "CyAPI.h"
+#include "..\include\gkhy\BoardApi\Board.h"
 
 #pragma comment(lib, "CyAPI.lib")
 
 using namespace std;
+
+
+
+class QThreadL : public QThread
+{
+public:
+	static void msleep (unsigned long msecs)
+	{
+		QThread::msleep(msecs);
+	}
+};
+
+static void msleep (unsigned long msecs)
+{
+	QThreadL::msleep(msecs);
+}
+
 
 class DummyWidget : public QWidget
 {
@@ -35,6 +53,7 @@ private:
 	bool bPnP_Removal;
 };
 
+#include "Board.moc"
 
 DummyWidget::DummyWidget(QWidget* parent /*= 0*/, Qt::WindowFlags f /*= 0*/ ) : QWidget(parent, f) 
 {
@@ -72,7 +91,7 @@ bool DummyWidget::winEvent(MSG * message, long * result)
 			//DisplayDevices();
 			bPnP_Removal = false;
 			bPnP_DevNodeChange = false;
-			//gkhy::MfcMinus::Win32App::sleep(10);
+			//msleep(10);
 			emit devChanged();
 		}
 		// If DBT_DEVICEARRIVAL followed by DBT_DEVNODES_CHANGED
@@ -90,7 +109,6 @@ Board* Board::_inst = 0;
 Board::Board(QObject* parent /* = 0 */) 
 : QObject(parent)
 , pi(3.141592653589793f)
-, m_timerId(0)
 {
 	widget = new DummyWidget();
 	bool okay = connect(widget, SIGNAL(devChanged()), this, SLOT(devChanged()));
@@ -115,7 +133,7 @@ Board::~Board()
 
 void Board::devChanged()
 {
-	QList<AdcBoardInfo> devList;
+	QList<BoardInfo> devList;
 	if (!(usbDev->DeviceCount()))
 	{
 		devList.clear();
@@ -124,7 +142,7 @@ void Board::devChanged()
 	{
 		if (usbDev->Open(i))
 		{
-			AdcBoardInfo info;
+			BoardInfo info;
 			info.usbAddr = i;
 			info.devName = QString(usbDev->DeviceName);
 			info.infName = QString(usbDev->FriendlyName);
@@ -209,12 +227,12 @@ bool Board::readReg24b(unsigned short addr,unsigned short& val)
 	if (!writeReg(0x1002, w1))
 		return false;
 
-	gkhy::MfcMinus::Win32App::sleep(100);
+	msleep(100);
 
 	if (!writeReg(0x1003, w2))
 		return false;
 
-	gkhy::MfcMinus::Win32App::sleep(300);
+	msleep(300);
 
 	unsigned short temp[1024];
 
