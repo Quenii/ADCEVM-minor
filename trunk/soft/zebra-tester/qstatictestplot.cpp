@@ -68,7 +68,7 @@ void QStaticTestPlot::reset()
 	xs.clear();
 	ys.clear();
 
-	ideaCurve->setRawSamples(&xs[0],&ys[0],xs.size());
+	ideaCurve->setRawSamples(0, 0, 0);
 	replot();
 }
 

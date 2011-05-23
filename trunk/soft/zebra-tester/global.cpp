@@ -16,9 +16,3 @@ bool checkInputValidity(QLineEdit* input)
 	return true;
 }
 
-void claimFailedToStartTester()
-{
-	QMessageBox::warning(0, 
-		QString::fromLocal8Bit("警告"),
-		QString::fromLocal8Bit("开始测试失败，板卡被占用。"));
-}

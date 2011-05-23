@@ -53,18 +53,24 @@ bool QStaticTester::start()
 	m_settings = DacAnalyzerSettings().staticTestSettings();
 	m_currentVal = 0;
 
-	Board* board = Board::instance();
-	board->close();
-	if (!board->open())
-		return false;
 
 	QMultiMeter* meter = QMultiMeter::instance();
 	meter->close();
 	if (!meter->open_port())
 	{
+		QMessageBox::critical(0, "", QString::fromLocal8Bit("打开数字万用表失败。"));
 		return false;
 	}
-	
+
+
+	Board* board = Board::instance();
+	board->close();
+	if (!board->open())
+	{
+		QMessageBox::critical(0, "", QString::fromLocal8Bit("打开板卡失败。"));
+		return false;
+	}
+
 	m_bStarted = true;
 	emit started();
 	m_timerId = startTimer(1);	

@@ -15,7 +15,7 @@ public:
 
 public:
 	// Declare functions
-	bool open_port(QString addr = "GPIB0::22::INSTR");
+	bool open_port(char* addr = "GPIB0::22::INSTR");
 	void close();
 	bool isOpen() { return m_connected; }
 	bool send_msg(char *Cmds);

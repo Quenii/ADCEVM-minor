@@ -29,10 +29,6 @@ void QStaticTestWidget::on_pushButtonStartStop_clicked()
 			ui.pushButtonStartStop->setText(QString::fromLocal8Bit("ֹͣ"));
 			ui.pushButtonSetStaticTest->setEnabled(false);
 		}
-		else
-		{
-			claimFailedToStartTester();
-		}
 	}
 	else // if (tester->isRunning())
 	{

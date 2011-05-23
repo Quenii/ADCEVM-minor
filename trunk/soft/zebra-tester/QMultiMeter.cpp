@@ -1,6 +1,7 @@
 #include "QMultiMeter.h"
 
 #include <QMessageBox>
+#include <Windows.h>
 
 #pragma comment(lib, "visa32.lib")
 
@@ -25,7 +26,7 @@ QMultiMeter::~QMultiMeter(void)
 }
 
 /////////////////////////////////////////////////////////////////////////////
-bool QMultiMeter::open_port(QString addr)
+bool QMultiMeter::open_port(char* addr)
 {
 	// This function opens a port (the communication between the instrument and 
 	// computer).
@@ -36,9 +37,13 @@ bool QMultiMeter::open_port(QString addr)
 		close();
 
 	// convert CString to char
+	char* instr_addr = addr; // .toLocal8Bit().data();
 
-	addr.append("::INSTR");
-	char* instr_addr = addr.toLocal8Bit().data();
+	// convert CString to char
+// 	LPTSTR instr_addr = new TCHAR[addr.GetLength()+1];
+// 	_tcscpy(instr_addr, addr);
+// 	_tcscat(instr_addr, "::INSTR");
+
 	
 	// Open the VISA session
 	errorStatus = viOpenDefaultRM(&videfaultRM);

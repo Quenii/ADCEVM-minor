@@ -6,6 +6,6 @@
 class QLineEdit;
 
 bool checkInputValidity(QLineEdit* input);
-void claimFailedToStartTester();
+
 
 #endif // GLOBAL_H
