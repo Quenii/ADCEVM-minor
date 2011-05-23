@@ -28,7 +28,7 @@ signals:
 	void started();
 	void stopped();
 
-	void newData();
+	void newData(float output, float measured);
 
 public:
 	bool start();

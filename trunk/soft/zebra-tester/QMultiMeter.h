@@ -7,13 +7,17 @@
 class QMultiMeter
 {
 public:
-	QMultiMeter(void);
+	static QMultiMeter* instance() { static QMultiMeter _inst; return & _inst; }
+private:
+	QMultiMeter();
+public:
 	virtual ~QMultiMeter(void);
 
 public:
 	// Declare functions
-	bool open_port(QString addr);
+	bool open_port(QString addr = "GPIB0::22::INSTR");
 	void close();
+	bool isOpen() { return m_connected; }
 	bool send_msg(char *Cmds);
 	bool get_data(void);
 

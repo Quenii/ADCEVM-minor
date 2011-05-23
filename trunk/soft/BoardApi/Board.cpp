@@ -17,8 +17,6 @@
 
 using namespace std;
 
-
-
 class QThreadL : public QThread
 {
 public:
@@ -105,10 +103,10 @@ bool DummyWidget::winEvent(MSG * message, long * result)
 	return false;
 }
 
-Board* Board::_inst = 0;
 Board::Board(QObject* parent /* = 0 */) 
 : QObject(parent)
 , pi(3.141592653589793f)
+, usbDev(0)
 {
 	widget = new DummyWidget();
 	bool okay = connect(widget, SIGNAL(devChanged()), this, SLOT(devChanged()));
@@ -153,9 +151,23 @@ void Board::devChanged()
 	emit devListChanged(devList);
 }
 
+
 bool Board::open(int usbAddr)
 {
-	return usbDev->Open((UCHAR)usbAddr);
+	return (usbDev && usbDev->Open((UCHAR)usbAddr)) ? true : false;
+}
+
+void Board::close()
+{
+	if (usbDev && usbDev->IsOpen())
+	{
+		usbDev->Close();
+	}
+}
+
+bool Board::isOpen()
+{
+	return (usbDev && usbDev->IsOpen()) ? true : false;
 }
 
 bool Board::read(unsigned short addr, unsigned short *buf, unsigned int len)

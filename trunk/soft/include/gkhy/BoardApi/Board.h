@@ -16,29 +16,22 @@ class DummyWidget;
 class QObject;
 class QEvent;
 
-struct BoardInfo 
+struct BOARDAPI_EXPORT BoardInfo 
 {
 	int usbAddr;
 	QString devName;
 	QString infName;
 };
 
-class Board : public QObject
+class BOARDAPI_EXPORT Board : public QObject
 {
 	Q_OBJECT
-
-private:
-	static Board* _inst;
 
 public:
 	static Board* instance() 
 	{
-		if (!_inst)
-		{
-			_inst = new Board(0);
-		}
-
-		return _inst;
+		static Board _inst(0);		
+		return &_inst;
 	}
 
 public:	
@@ -49,11 +42,18 @@ private:
 	Q_DISABLE_COPY(Board);
 
 public:
+	bool open(int usbAddr = 0);
+	void close();
+	bool isOpen();
+
 	bool readReg(unsigned short addr,unsigned short& val);
 	bool writeReg(unsigned short addr,unsigned short val);
 
 	bool readReg24b(unsigned short addr,unsigned short& val);
 	bool writeReg24b(unsigned short addr,unsigned short val);
+
+signals:
+	void devListChanged(const QList<BoardInfo>& lst);
 
 protected:	
 	// len - number of unsigned-short's
@@ -61,18 +61,12 @@ protected:
 	// len - number of unsigned-short's
 	//bool write(unsigned int addr, const unsigned short* buf, int len);
 
-
 private:
 	bool writeIOCmd(unsigned short addr, bool dirRead, unsigned short data);
 	unsigned short CalcReg(float v);
 
-signals:
-	void devListChanged(const QList<BoardInfo>& lst);
-
-public slots:
-		bool open(int usbAddr);
 private slots:
-    	void devChanged();
+    void devChanged();
 
 private:
 	CCyUSBDevice* usbDev;

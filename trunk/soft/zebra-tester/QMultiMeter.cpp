@@ -14,7 +14,8 @@ static bool check_inst_model(QString check_msg, QString msgval)
 	return check_msg.contains(msgval, Qt::CaseInsensitive);
 }
 
-QMultiMeter::QMultiMeter(void)
+QMultiMeter::QMultiMeter(void) 
+: m_connected(false)
 {
 }
 
@@ -78,20 +79,26 @@ bool QMultiMeter::open_port(QString addr)
 
 	// Check error
 	// check_error("open_port");
-	close();
+	// close();
+
+	m_connected = true;
 
 	return true;	
 }	
 
 void QMultiMeter::close()
 {
-	// Close the instrument session
-	errorStatus = viClose(vi);
+	if (m_connected)
+	{
+		// Close the instrument session
+		errorStatus = viClose(vi);
 
-	// Close the interface session
-	errorStatus = viClose(videfaultRM);
+		// Close the interface session
+		errorStatus = viClose(videfaultRM);
 
-	m_connected = false;
+		m_connected = false;
+
+	}
 }
 
 bool QMultiMeter::send_msg(char *Cmds)
