@@ -1,4 +1,4 @@
-#include "..\include\gkhy\BoardApi\DacBoard.h"
+#include "DacBoard.h"
 
 
 DacBoard::DacBoard(QObject* parent) 
