@@ -23,13 +23,17 @@ public:
 private:
 	Q_DISABLE_COPY(DacBoard)
 	DacBoard(QObject* parent = 0);
-	static DacBoard m_inst;
 
 signals:
 	void powerMonitorDataUpdated(const PowerMonitorData& data);
 
 public:
-	static DacBoard* instance() { return &m_inst; }
+	static DacBoard* instance() 
+	{ 
+		static DacBoard inst;
+		return &inst; 
+	}
+
 	bool readPowerMonitorData(PowerMonitorData& powerStatus);
 	bool setDacOutput(unsigned short val);
 

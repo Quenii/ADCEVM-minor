@@ -9,7 +9,6 @@ class QTimerEvent;
 
 class QMultiMeter : public QObject
 {
-	static QMultiMeter m_inst;
 private:
 	QMultiMeter(QObject* parent = 0);
 public:
@@ -18,7 +17,12 @@ private:
 	Q_DISABLE_COPY(QMultiMeter);	
 
 public:
-	static QMultiMeter* instance() { return &m_inst; }
+	static QMultiMeter* instance() 
+	{ 
+		static QMultiMeter inst;
+		return &inst;
+	}
+
 	bool measureVolt(int averageLevel, float& measured);
 
 private:

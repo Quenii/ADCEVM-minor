@@ -31,8 +31,7 @@ public:
 	Board(QObject* parent = 0);
 	virtual ~Board();
 
-private:
-	
+private:	
 	Q_DISABLE_COPY(Board);
 
 public:

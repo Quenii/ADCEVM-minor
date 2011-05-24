@@ -15,7 +15,6 @@ static bool check_inst_model(QString check_msg, QString msgval)
 	return check_msg.contains(msgval, Qt::CaseInsensitive);
 }
 
-QMultiMeter QMultiMeter::m_inst;
 
 QMultiMeter::QMultiMeter(QObject* parent) 
 : QObject(parent)

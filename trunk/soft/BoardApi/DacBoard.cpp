@@ -1,6 +1,5 @@
 #include "..\include\gkhy\BoardApi\DacBoard.h"
 
-DacBoard DacBoard::m_inst;
 
 DacBoard::DacBoard(QObject* parent) 
 : Board(parent)
