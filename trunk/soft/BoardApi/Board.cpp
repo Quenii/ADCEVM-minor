@@ -13,6 +13,7 @@
 #include "CyAPI.h"
 #include "..\include\gkhy\BoardApi\Board.h"
 
+
 #pragma comment(lib, "CyAPI.lib")
 
 using namespace std;
@@ -154,7 +155,19 @@ void Board::devChanged()
 
 bool Board::open(int usbAddr)
 {
-	return (usbDev && usbDev->Open((UCHAR)usbAddr)) ? true : false;
+	
+	if (!(usbDev && usbDev->Open((UCHAR)usbAddr)))
+		return false;
+
+	unsigned short regValue = 0;
+
+	//regValue = setVoltage(0x3FFF, 0, adcSettings.vd);
+	//setVoltage(0x7FFF, 2, adcSettings.va);
+
+	if (!writeReg(5, regValue)) //设置VIO = VD
+		return false;
+	if (!writeReg(6, 0x0004))  //执行 通道E
+		return false;
 }
 
 void Board::close()
@@ -198,6 +211,31 @@ bool Board::read(unsigned short addr, unsigned short *buf, unsigned int len)
 	return true;
 }
 
+bool Board::write(unsigned short addr, const unsigned short *buf, unsigned int len)
+{	
+	//FOR DAC DYNAMIC TEST
+	//if (! usbDev->BulkOutEndPt)
+	//	return false;
+
+	//if (bulkIOBuff.size() < len) bulkIOBuff.resize(len);
+	//float max = (1 << (m_adcSettings.bitcount - 1));
+
+	//float fs = m_signalSettings.clockFreq;
+	//float fc = m_signalSettings.signalFreq;
+
+	//for (int i=0; i<len/4; ++i)
+	//{
+	//	bulkIOBuff[4*i+0] = 0xbc95;
+	//	bulkIOBuff[4*i+1] = addr;
+	//	bulkIOBuff[4*i+2] = 0x00FF;
+	//	bulkIOBuff[4*i+3] = ((short)((qSin(2*pi*i*fc/fs)+1)*max));
+	//}
+	//long llen = len * sizeof(unsigned short);
+	//if (!usbDev->BulkOutEndPt->XferData((UCHAR*)&bulkIOBuff[0], llen))
+	//	return false;
+
+	return true;
+}
 bool Board::writeIOCmd(unsigned short addr, bool dirRead, unsigned short data)
 {	
 	if (! usbDev->BulkOutEndPt)
@@ -218,7 +256,14 @@ bool Board::writeIOCmd(unsigned short addr, bool dirRead, unsigned short data)
 
 bool Board::readReg(unsigned short addr, unsigned short &val)
 {
-	return read(addr, &val, 1);
+	static unsigned short temp[1024];
+
+	if ( !read(addr, temp, 1024) )
+	{
+		return false;
+	}
+	val = temp[0];
+	return true;
 }
 
 bool Board::writeReg(unsigned short addr, unsigned short val)
@@ -263,4 +308,47 @@ bool Board::readReg24b(unsigned short addr,unsigned short& val)
 	//	val = buff[0];
 
 	return 	true;
+}
+
+
+int Board::setVoltage(int adcChannel, int dacChannel, float v)
+{
+	int fine = 600;
+	int coarse = 100;
+	unsigned short reg = 0;
+
+	int regValue;
+
+	for (int i=coarse; i>0; --i)
+	{
+		if (!writeReg(5, i*65535/coarse))
+			return false;
+		if (!writeReg(6, dacChannel))  //执行 通道A
+			return false;
+		writeReg(9, adcChannel);  //select 3548, select 7th channel
+		writeReg(9, adcChannel);  //select 3548, select 7th channel
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel voltage
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel voltage
+		readReg(0x0009, reg);
+		if ((float(reg>>2)) * 4 / 16384 > v)
+			break;
+	}
+	for (int i=0; i<fine; ++i)
+	{
+		regValue = i*65535/fine;
+		if (!writeReg(5, regValue))
+			return false;
+		if (!writeReg(6, dacChannel))  //执行 通道A
+			return false;
+		writeReg(9, adcChannel);  //select 3548, select 7th channel
+		writeReg(9, adcChannel);  //select 3548, select 7th channel
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel voltage
+		writeReg(9, 0xeFFF);  //select 3548, read out 7th channel voltage
+		readReg(0x0009, reg);
+		if ((float(reg>>2)) * 4 / 16384 < v)
+			break;
+
+	}
+	return regValue;
+
 }

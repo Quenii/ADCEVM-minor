@@ -14,17 +14,60 @@ static bool measureVolt(int averageLevel, float& measured)
 	QMultiMeter* multiMeter = QMultiMeter::instance();
 	for (int i = 0; i < averageLevel + 2; ++i)
 	{
+
 	}
 
 	return true;
 }
 
-static bool output(unsigned short)
+static bool output(unsigned short val)
 {
 	Board* board = Board::instance();
 
+//	board->writeReg(addr, val);
 	return true;
 	
+}
+
+static bool readPowerMonitorData(PowerMonitorData & powerStatus)
+{
+	Board* board = Board::instance();
+
+	unsigned short reg = 0;
+	board->writeReg(9, 0xA400);  //select 3548, work at default mode
+	board->writeReg(9, 0xA400);  //select 3548, work at default mode
+
+	board->writeReg(9, 0x7FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0x7FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->readReg(0x0009, reg);
+	powerStatus.va = (float(reg>>2)) * 4 / 16384;
+
+	board->writeReg(9, 0x3FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0x3FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->readReg(0x0009, reg);
+	powerStatus.vd = (float(reg>>2)) * 4 / 16384;
+
+	board->writeReg(9, 0x4FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0x4FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->readReg(0x0009, reg);
+	powerStatus.ia = (float(reg>>2)) * 500 * 4 / 16384;
+
+	board->writeReg(9, 0x1FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0x1FFF);  //select 3548, select 7th channel
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->writeReg(9, 0xeFFF);  //select 3548, read out 7th channel volage
+	board->readReg(0x0009, reg);
+	powerStatus.id = (float(reg>>2)) * 500 * 4 / 16384;
+
+	powerStatus.p = powerStatus.va * powerStatus.ia + powerStatus.vd * powerStatus.id;
+
+
 }
 
 QStaticTester::QStaticTester(QObject *parent)
