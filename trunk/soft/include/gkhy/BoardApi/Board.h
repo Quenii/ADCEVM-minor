@@ -28,17 +28,11 @@ class BOARDAPI_EXPORT Board : public QObject
 	Q_OBJECT
 
 public:
-	static Board* instance() 
-	{
-		static Board _inst(0);		
-		return &_inst;
-	}
-
-public:	
+	Board(QObject* parent = 0);
 	virtual ~Board();
 
 private:
-	Board(QObject* parent = 0);
+	
 	Q_DISABLE_COPY(Board);
 
 public:

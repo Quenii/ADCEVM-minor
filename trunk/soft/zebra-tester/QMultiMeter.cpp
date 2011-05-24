@@ -15,14 +15,26 @@ static bool check_inst_model(QString check_msg, QString msgval)
 	return check_msg.contains(msgval, Qt::CaseInsensitive);
 }
 
-QMultiMeter::QMultiMeter(void) 
-: m_connected(false)
+QMultiMeter QMultiMeter::m_inst;
+
+QMultiMeter::QMultiMeter(QObject* parent) 
+: QObject(parent)
+, m_connected(false)
 {
+	startTimer(500);
 }
 
 QMultiMeter::~QMultiMeter(void)
 {
 	close();
+}
+
+void QMultiMeter::timerEvent(QTimerEvent* e)
+{
+	if (!isOpen())
+	{
+		open_port();
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -168,6 +180,19 @@ bool QMultiMeter::get_data()
 
 		close();
 		return false;
+	}
+
+	return true;
+}
+
+
+bool QMultiMeter::measureVolt(int averageLevel, float& measured)
+{
+	QVector<float> vect(averageLevel + 2);
+	QMultiMeter* multiMeter = QMultiMeter::instance();
+	for (int i = 0; i < averageLevel + 2; ++i)
+	{
+
 	}
 
 	return true;

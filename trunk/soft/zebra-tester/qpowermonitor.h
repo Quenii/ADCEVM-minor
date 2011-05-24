@@ -4,6 +4,7 @@
 #include "types.h"
 #include "qtoggleviewdialog.h"
 #include "ui_qpowermonitor.h"
+#include "DacBoard.h"
 
 #include <QDialog>
 
@@ -16,7 +17,7 @@ public:
 	~QPowerMonitor();
 
 public slots:
-	void set(const PowerMonitorData& data);
+	void update(const PowerMonitorData& data);
 
 private:
 	Ui::QPowerMonitorClass ui;

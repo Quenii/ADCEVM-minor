@@ -1,9 +1,15 @@
 #include "qpowermonitor.h"
+#include "DacBoard.h"
 
 QPowerMonitor::QPowerMonitor(QWidget *parent)
 	: QToggleViewDialog(parent)
 {
 	ui.setupUi(this);
+
+	DacBoard* board = DacBoard::instance();
+	bool ok = connect(board, SIGNAL(powerMonitorDataUpdated(const PowerMonitorData&)),
+		this, SLOT(update(const PowerMonitorData&)));
+	Q_ASSERT(ok);
 }
 
 QPowerMonitor::~QPowerMonitor()
@@ -11,7 +17,7 @@ QPowerMonitor::~QPowerMonitor()
 
 }
 
-void QPowerMonitor::set(const PowerMonitorData& data)
+void QPowerMonitor::update(const PowerMonitorData& data)
 {
 	ui.ia->setText(QString("%L1").arg(data.ia));
 	ui.id->setText(QString("%L1").arg(data.id));
