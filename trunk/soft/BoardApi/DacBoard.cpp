@@ -75,3 +75,8 @@ bool DacBoard::setDacOutput(unsigned short val)
 
 	return true;
 }
+
+bool DacBoard::setDacTypeSettings(const DacTypeSettings& settings)
+{
+	return true;
+}
