@@ -154,8 +154,7 @@ void Board::devChanged()
 
 
 bool Board::open(int usbAddr)
-{
-	
+{	
 	if (!(usbDev && usbDev->Open((UCHAR)usbAddr)))
 		return false;
 
@@ -168,6 +167,8 @@ bool Board::open(int usbAddr)
 		return false;
 	if (!writeReg(6, 0x0004))  //Ö´ÐÐ Í¨µÀE
 		return false;
+
+	return true;
 }
 
 void Board::close()
