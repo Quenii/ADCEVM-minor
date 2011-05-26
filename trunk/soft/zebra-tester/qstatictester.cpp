@@ -78,7 +78,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	// staticOutput
 	if (! DacBoard::instance()->setDacOutput(m_currentVal))
 	{
-		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作板卡失败"));
+		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作板卡失败。"));
 		stop();
 		return ;
 	}
@@ -87,7 +87,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	// measure
 	if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
 	{
-		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败"));
+		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
 		stop();
 		return ;
 
@@ -96,5 +96,12 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	emit newData(m_currentVal, measured);
 
 	m_currentVal += 1 << m_settings.step2n;
+
+	if (m_currentVal > 2^16)
+	{
+		QMessageBox::information(0, "", QString::fromLocal8Bit("测试完成。"));
+		stop();
+	}
+	
 }
 

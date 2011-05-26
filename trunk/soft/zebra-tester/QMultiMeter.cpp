@@ -20,7 +20,9 @@ QMultiMeter::QMultiMeter(QObject* parent)
 : QObject(parent)
 , m_connected(false)
 {
+	open_port();
 	startTimer(500);
+
 }
 
 QMultiMeter::~QMultiMeter(void)
@@ -167,7 +169,7 @@ bool QMultiMeter::get_data()
 	// Check I/O error
 	if (errorStatus < VI_SUCCESS)
 	{
-		/* printf("I/O error!\n\n");
+		/* printf("I/O error!\n\n"); 
 
 		// Close instrument session
 		errorStatus = viClose(vi);
