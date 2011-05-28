@@ -26,6 +26,7 @@ public:
 	}
 
 	bool setDacTypeSettings(const DacTypeSettings& settings);
+
 	bool readPowerMonitorData(PowerMonitorData& powerStatus);
 	bool setDacOutput(unsigned short val);
 

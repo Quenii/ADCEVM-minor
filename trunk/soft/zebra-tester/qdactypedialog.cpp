@@ -1,5 +1,6 @@
 #include "qdactypedialog.h"
 #include "dacanalyzersettings.h"
+#include "DacBoard.h"
 
 QDacTypeDialog::QDacTypeDialog(QWidget *parent)
 	: QDialog(parent)
@@ -32,8 +33,18 @@ void QDacTypeDialog::accept()
 {
 	DacTypeSettings val;
 
+	val.type = ui.comboBoxDacType->currentText();
+	val.bitCount = ui.spinBoxBitCount->text().toInt();
+	val.va = ui.doubleSpinBoxVa->text().toFloat();
+	val.vd = ui.doubleSpinBoxVd->text().toFloat();
+	val.refVolt = ui.doubleSpinBoxVref->text().toFloat();
+	val.phase = ui.comboBoxPhase->currentText().toInt();
+
+
 	DacAnalyzerSettings s;
 	s.setDacTypeSettings(val);
+
+	DacBoard::instance()->setDacTypeSettings(val);
 
 	QDialog::accept();
 
