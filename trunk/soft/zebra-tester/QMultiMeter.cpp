@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #pragma comment(lib, "visa32.lib")
+#pragma warning(disable:4996)
 
 #define AfxMessageBox(x) \
 	QMessageBox::warning(0, "", (x));
@@ -95,6 +96,10 @@ bool QMultiMeter::open_port(char* addr)
 		return false;
 	}
 
+	if (!setup_inst())
+		return false;
+
+
 	// Check error
 	// check_error("open_port");
 	// close();
@@ -117,6 +122,32 @@ void QMultiMeter::close()
 		m_connected = false;
 
 	}
+}
+
+bool QMultiMeter::setup_inst()
+{
+	// Performs the instrument setup.
+
+	char	*cmds;
+
+	// Setup the 3458A
+	cmds =
+		"PRESET DIG;"		// Preset to the designated state (Digitizing)
+		"MFORMAT DINT;"		// Set the memory storage format (double integer)
+		"OFORMAT ASCII;"	// Set the output format (ASCI)
+		"APER 6E-6;"		// Set the arperature time (
+		"MEM FIFO;"			// Set the meomory staorage type (First In, Fist Out)
+		"TRIG AUTO;"		// Set the trigger source (Auto)
+		//"NRDGS 4100,AUTO;"	// Set the number of readings (4100 readings)
+		"NRDGS 10,AUTO;"	// Set the number of readings (4100 readings)
+		"END ON;"			// Enable EOI function
+		"TARM HOLD";		// Hold the trigger until triggered
+
+	// Execute the commands
+	return send_msg(cmds);
+
+	//Check for errors
+	// check_error("setup");
 }
 
 bool QMultiMeter::send_msg(char *Cmds)
@@ -185,15 +216,65 @@ bool QMultiMeter::get_data()
 	return true;
 }
 
+bool QMultiMeter::get_rdgs(int n)
+{
+	// This function triggers the instrument and takes readings.
+
+	ViUInt16	rdcnt;
+	char		cmd_str[50], cmd_str1[50];
+
+	
+	// Trigger the 3458A
+	send_msg("TARM SGL");
+
+	// char* cmd = const_cast<char*>(qPrintable(QString("NRDGS %,AUTO; TARM SGL").arg(n)));
+	// send_msg(cmd);
+
+	// Read status byte to determine when measurements are complete
+	do
+		errorStatus = viReadSTB(vi, &rdcnt);
+	while ((rdcnt & 128) != 128);
+
+	// Get number of readings taken
+	send_msg("MCOUNT?");
+	get_data();
+	int num_rdgs = atoi(ReturnedData);
+
+	/*strcat(ReturnedData," mesurements made; takes some time to return them.");
+	AfxMessageBox(ReturnedData);
+	*/	
+
+	// Setup 'viQueryf' to: viQueryf(vi, "REM 1,4100\n", "%,4100lf", rdgs)'
+	// to return readings
+	sprintf(cmd_str, "%s %d\n", "RMEM 1,", num_rdgs);
+	sprintf(cmd_str1, "%%,%dlf", num_rdgs);
+
+	// Return the readings
+	errorStatus=viQueryf(vi, cmd_str,cmd_str1,rdgs);
+	
+	return true;
+	//Check for errors
+	// check_error("get_rdgs");
+}
 
 bool QMultiMeter::measureVolt(int averageLevel, float& measured)
 {
-	QVector<float> vect(averageLevel + 2);
+	const int nMeasures = averageLevel + 2;
+	QVector<float> vect(nMeasures);
 	QMultiMeter* multiMeter = QMultiMeter::instance();
-	for (int i = 0; i < averageLevel + 2; ++i)
-	{
 
+	if (!get_rdgs(nMeasures))
+	{
+		return false;
 	}
+	
+	float f = 0;
+	for (int i = 0; i < 10; ++i)
+	{		
+		f += rdgs[i];
+	}
+
+	measured = float(f / 10);
 
 	return true;
 }

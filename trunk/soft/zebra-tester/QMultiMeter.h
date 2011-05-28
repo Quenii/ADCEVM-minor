@@ -24,20 +24,21 @@ public:
 	}
 
 	bool measureVolt(int averageLevel, float& measured);
-
 private:
 	bool open_port(char* addr = "GPIB0::22::INSTR");
 	void close();
+	bool setup_inst();
 	bool isOpen() { return m_connected; }
 	bool send_msg(char *Cmds);
-	virtual bool get_data(void);
-	/*	int check_inst_model(CString check_msg, CString msgval);
+	bool get_data();
+	bool get_rdgs(int n);
+		
+	/*	
+	int check_inst_model(CString check_msg, CString msgval);
 	void setup_inst(void);
 	void get_rdgs(void);
 	void check_error(CString msg);
 	*/
-
-
 
 	void timerEvent(QTimerEvent* e);
 
@@ -47,5 +48,6 @@ private:
 	ViStatus errorStatus;
 	ViSession vi;	
 	ViChar	ReturnedData[2048];
+	ViReal64	rdgs[11000];
 	bool m_connected;
 };
