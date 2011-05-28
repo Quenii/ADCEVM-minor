@@ -2,6 +2,7 @@
 
 #include <QMessageBox>
 #include <Windows.h>
+#include <QElapsedTimer>
 
 #pragma comment(lib, "visa32.lib")
 #pragma warning(disable:4996)
@@ -22,7 +23,7 @@ QMultiMeter::QMultiMeter(QObject* parent)
 , m_connected(false)
 {
 	open_port();
-	startTimer(500);
+	startTimer(10);
 
 }
 
@@ -223,10 +224,15 @@ bool QMultiMeter::get_rdgs(int n)
 	ViUInt16	rdcnt;
 	char		cmd_str[50], cmd_str1[50];
 
+	setup_inst();
+
+	QElapsedTimer timer;	
+	timer.restart();
 	
 	// Trigger the 3458A
 	send_msg("TARM SGL");
-
+	qDebug(qPrintable(QString("send_msg: ").arg(timer.restart())));
+	
 	// char* cmd = const_cast<char*>(qPrintable(QString("NRDGS %,AUTO; TARM SGL").arg(n)));
 	// send_msg(cmd);
 
@@ -234,11 +240,14 @@ bool QMultiMeter::get_rdgs(int n)
 	do
 		errorStatus = viReadSTB(vi, &rdcnt);
 	while ((rdcnt & 128) != 128);
+	qDebug(qPrintable(QString("do: ").arg(timer.restart())));
+	
 
 	// Get number of readings taken
 	send_msg("MCOUNT?");
 	get_data();
 	int num_rdgs = atoi(ReturnedData);
+	qDebug(qPrintable(QString("get_data: ").arg(timer.restart())));
 
 	/*strcat(ReturnedData," mesurements made; takes some time to return them.");
 	AfxMessageBox(ReturnedData);
@@ -248,10 +257,13 @@ bool QMultiMeter::get_rdgs(int n)
 	// to return readings
 	sprintf(cmd_str, "%s %d\n", "RMEM 1,", num_rdgs);
 	sprintf(cmd_str1, "%%,%dlf", num_rdgs);
+	qDebug(qPrintable(QString("sprintf * 2: ").arg(timer.restart())));
+
 
 	// Return the readings
 	errorStatus=viQueryf(vi, cmd_str,cmd_str1,rdgs);
-	
+	qDebug(qPrintable(QString("viQueryf: ").arg(timer.restart())));
+
 	return true;
 	//Check for errors
 	// check_error("get_rdgs");
