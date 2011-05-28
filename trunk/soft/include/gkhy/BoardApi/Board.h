@@ -53,15 +53,10 @@ protected:
 	// len - number of unsigned-short's
 	bool read(unsigned short addr, unsigned short* buf, unsigned int len);
 	// len - number of unsigned-short's
-	bool write(unsigned short addr, const unsigned short *buf, unsigned int len);
-
-	//bool write(unsigned int addr, const unsigned short* buf, int len);
+	bool write(unsigned short addr, const unsigned short* buf, unsigned int len);
 
 private:
 	bool writeIOCmd(unsigned short addr, bool dirRead, unsigned short data);
-	unsigned short CalcReg(float v);
-
-
 
 private slots:
     void devChanged();

@@ -158,16 +158,6 @@ bool Board::open(int usbAddr)
 	if (!(usbDev && usbDev->Open((UCHAR)usbAddr)))
 		return false;
 
-	//unsigned short regValue = 0;
-
-	//regValue = setVoltage(0x3FFF, 0, adcSettings.vd);
-	//setVoltage(0x7FFF, 2, adcSettings.va);
-
-	//if (!writeReg(5, regValue)) //设置VIO = VD
-	//	return false;
-	//if (!writeReg(6, 0x0004))  //执行 通道E
-	//	return false;
-
 	return true;
 }
 
@@ -215,25 +205,26 @@ bool Board::read(unsigned short addr, unsigned short *buf, unsigned int len)
 bool Board::write(unsigned short addr, const unsigned short *buf, unsigned int len)
 {	
 	//FOR DAC DYNAMIC TEST
-	//if (! usbDev->BulkOutEndPt)
-	//	return false;
+	if (! usbDev->BulkOutEndPt)
+		return false;
 
-	//if (bulkIOBuff.size() < len) bulkIOBuff.resize(len);
+	if (bulkIOBuff.size() < len*4 ) bulkIOBuff.resize(len*4);
 	//float max = (1 << (m_adcSettings.bitcount - 1));
 
 	//float fs = m_signalSettings.clockFreq;
 	//float fc = m_signalSettings.signalFreq;
+    //((short)((qSin(2*pi*i*fc/fs)+1)*max))
 
-	//for (int i=0; i<len/4; ++i)
-	//{
-	//	bulkIOBuff[4*i+0] = 0xbc95;
-	//	bulkIOBuff[4*i+1] = addr;
-	//	bulkIOBuff[4*i+2] = 0x00FF;
-	//	bulkIOBuff[4*i+3] = ((short)((qSin(2*pi*i*fc/fs)+1)*max));
-	//}
-	//long llen = len * sizeof(unsigned short);
-	//if (!usbDev->BulkOutEndPt->XferData((UCHAR*)&bulkIOBuff[0], llen))
-	//	return false;
+	for (int i=0; i<len; ++i)
+	{
+		bulkIOBuff[4*i+0] = 0xbc95;
+		bulkIOBuff[4*i+1] = addr;
+		bulkIOBuff[4*i+2] = 0x00FF;
+		bulkIOBuff[4*i+3] = buf[i];
+	}
+	long llen = len * 4 * sizeof(unsigned short);
+	if (!usbDev->BulkOutEndPt->XferData((UCHAR*)&bulkIOBuff[0], llen))
+		return false;
 
 	return true;
 }
@@ -297,6 +288,12 @@ bool Board::readReg24b(unsigned short addr,unsigned short& val)
 	return 	true;
 }
 
+bool Board::writeReg24b(unsigned short addr,unsigned short val)
+{
+	unsigned short w1 = ((addr & 0xFF) << 8) | (val & 0xFF);
+	unsigned short w2 = (addr & 0xFF00) >> 8;
+	return (writeReg(0x1002, w1)  && writeReg(0x1003, w2));
+}
 
 int Board::setVoltage(int adcChannel, int dacChannel, float v)
 {

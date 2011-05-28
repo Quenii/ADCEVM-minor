@@ -8,6 +8,21 @@
 #include <QMessageBox>
 #include <QPointer>
 #include <QVector>
+#include <QThread>
+
+class QThreadL : public QThread
+{
+public:
+	static void msleep (unsigned long msecs)
+	{
+		QThread::msleep(msecs);
+	}
+};
+
+static void msleep (unsigned long msecs)
+{
+	QThreadL::msleep(msecs);
+}
 
 QStaticTester::QStaticTester(QObject *parent)
 	: QObject(parent)
@@ -54,6 +69,14 @@ bool QStaticTester::start()
 
 	m_bStarted = true;
 	emit started();
+
+	DacBoard* board = DacBoard::instance();
+
+	board->writeReg(0x1008, 0x8001); //bit 15: static/dynamic; bit 0: reset dut;
+	msleep(100);
+
+	board->writeReg(0x1008, 0x8000); //bit 15: static/dynamic; bit 0: reset dut;
+
 	m_timerId = startTimer(1);	
 
 	return true;
@@ -86,13 +109,13 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	float measured;
 	// measure
-	if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
-	{
-		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
-		stop();
-		return ;
+	//if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
+	//{
+	//	QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
+	//	stop();
+	//	return ;
 
-	}
+	//}
 
 	emit newData(m_currentVal, measured);
 
