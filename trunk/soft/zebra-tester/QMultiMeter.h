@@ -30,7 +30,7 @@ private:
 	void close();
 	bool isOpen() { return m_connected; }
 	bool send_msg(char *Cmds);
-	virtual bool get_data(void) sealed;
+	virtual bool get_data(void);
 	/*	int check_inst_model(CString check_msg, CString msgval);
 	void setup_inst(void);
 	void get_rdgs(void);
