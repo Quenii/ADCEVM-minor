@@ -4,6 +4,7 @@
 #include "DacBoard.h"
 #include "QMultiMeter.h"
 
+#include <cmath>
 #include <QMessageBox>
 #include <QPointer>
 #include <QVector>
@@ -97,7 +98,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	m_currentVal += 1 << m_settings.step2n;
 
-	if (m_currentVal > pow(2, 16))
+	if (m_currentVal > pow(2.0, 16))
 	{
 		QMessageBox::information(0, "", QString::fromLocal8Bit("≤‚ ‘ÕÍ≥…°£"));
 		stop();
