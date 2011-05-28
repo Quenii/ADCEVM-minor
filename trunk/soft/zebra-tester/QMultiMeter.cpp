@@ -157,7 +157,6 @@ bool QMultiMeter::send_msg(char *Cmds)
 bool QMultiMeter::get_data()
 {	
 	// This function reads the string returned by the instrument
-
 	unsigned long	actual; // Number of characters sent/returned
 
 	// Read the response string
