@@ -4,6 +4,12 @@
 DacBoard::DacBoard(QObject* parent) 
 : Board(parent)
 {
+	DacTypeSettings settings;
+	settings.va = 1.8f;
+	settings.vd = 1.8f;
+
+	setDacTypeSettings(settings);
+
 	startTimer(500);
 }
 
@@ -78,5 +84,15 @@ bool DacBoard::setDacOutput(unsigned short val)
 
 bool DacBoard::setDacTypeSettings(const DacTypeSettings& settings)
 {
+	unsigned short regValue = 0;
+
+	regValue = setVoltage(0x3FFF, 0, settings.vd);
+	setVoltage(0x7FFF, 2, settings.va);
+
+	if (!writeReg(5, regValue)) //设置VIO = VD
+		return false;
+	if (!writeReg(6, 0x0004))  //执行 通道E
+		return false;
+
 	return true;
 }

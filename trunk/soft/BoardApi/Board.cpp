@@ -158,15 +158,15 @@ bool Board::open(int usbAddr)
 	if (!(usbDev && usbDev->Open((UCHAR)usbAddr)))
 		return false;
 
-	unsigned short regValue = 0;
+	//unsigned short regValue = 0;
 
 	//regValue = setVoltage(0x3FFF, 0, adcSettings.vd);
 	//setVoltage(0x7FFF, 2, adcSettings.va);
 
-	if (!writeReg(5, regValue)) //设置VIO = VD
-		return false;
-	if (!writeReg(6, 0x0004))  //执行 通道E
-		return false;
+	//if (!writeReg(5, regValue)) //设置VIO = VD
+	//	return false;
+	//if (!writeReg(6, 0x0004))  //执行 通道E
+	//	return false;
 
 	return true;
 }
@@ -292,21 +292,7 @@ bool Board::readReg24b(unsigned short addr,unsigned short& val)
 
 	msleep(300);
 
-	unsigned short temp[1024];
-
-	memset(temp, 0, sizeof(temp));
-	if ( !read(0x1002, temp, 1024)  )
-	{
-		return false;
-	}
-	val = temp[0];
-
-	//if ( !read(0x1002, &buff[0], 1024)  )
-	//{
-	//	return false;
-	//}
-
-	//	val = buff[0];
+	readReg(0x1002, val);
 
 	return 	true;
 }
