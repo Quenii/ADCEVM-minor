@@ -120,8 +120,6 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	}
 
-	emit newData(m_currentVal, measured);
-
 	m_currentVal += 1 << m_staticTestSettings.step2n;
 
 	//if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
