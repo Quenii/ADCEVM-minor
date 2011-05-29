@@ -78,6 +78,8 @@ bool DacBoard::readPowerMonitorData(PowerMonitorData & powerStatus)
 
 bool DacBoard::setDacOutput(unsigned short val)
 {
+	if(!(writeReg(0x1009, val)))
+		return false;
 
 	return true;
 }

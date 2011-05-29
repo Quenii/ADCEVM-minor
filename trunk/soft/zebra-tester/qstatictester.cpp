@@ -109,13 +109,13 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	float measured;
 	// measure
-	//if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
-	//{
-	//	QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
-	//	stop();
-	//	return ;
+	if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
+	{
+		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
+		stop();
+		return ;
 
-	//}
+	}
 
 	emit newData(m_currentVal, measured);
 
