@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormRegAccess</class>
+ <widget class="QWidget" name="FormRegAccess">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>674</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SPI控制</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pushButtonResetCircuit">
+        <property name="text">
+         <string>复位电路</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButtonOpenScan">
+        <property name="text">
+         <string>打开扫描链</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="3">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" colspan="4">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="title">
+         <string>引脚说明</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="gpio0">
+           <property name="text">
+            <string>GPIO0: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QRadioButton" name="radioButton_00">
+           <property name="text">
+            <string>0</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup0</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QRadioButton" name="radioButton_01">
+           <property name="text">
+            <string>1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup0</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="2">
+          <widget class="QRadioButton" name="radioButton_10">
+           <property name="text">
+            <string>0</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup1</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QRadioButton" name="radioButton_11">
+           <property name="text">
+            <string>1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup1</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="gpio1">
+           <property name="text">
+            <string>GPIO1: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="gpio2">
+           <property name="text">
+            <string>GPIO2: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="gpio3">
+           <property name="text">
+            <string>GPIO3: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QRadioButton" name="radioButton_0z">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup0</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QRadioButton" name="radioButton_1z">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup1</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QRadioButton" name="radioButton_30">
+           <property name="text">
+            <string>0</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup3</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QRadioButton" name="radioButton_31">
+           <property name="text">
+            <string>1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup3</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QRadioButton" name="radioButton_2z">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup2</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QRadioButton" name="radioButton_3z">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup3</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QRadioButton" name="radioButton_20">
+           <property name="text">
+            <string>1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup2</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QRadioButton" name="radioButton_21">
+           <property name="text">
+            <string>0</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string>buttonGroup2</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="4">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="title">
+         <string>相关设置</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="sbResetTime">
+           <property name="maximum">
+            <number>255</number>
+           </property>
+           <property name="value">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="cbSPIWidth">
+           <item>
+            <property name="text">
+             <string>8 bit</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16 bit</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>ms</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>复位电平</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>复位时间</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="sbResetDelay">
+           <property name="maximum">
+            <number>2000</number>
+           </property>
+           <property name="value">
+            <number>600</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>ms</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>复位后保持时间</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>SPI地址位宽</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="cbResetLevel">
+           <item>
+            <property name="text">
+             <string>高电平</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>低电平</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButtonSaveSettings">
+        <property name="text">
+         <string>保存设置</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButtonReadSettings">
+        <property name="text">
+         <string>读入设置</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButtonBack2Top">
+        <property name="text">
+         <string>至首行</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QPushButton" name="pushButtonStep">
+        <property name="text">
+         <string>单步执行</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QPushButton" name="pushButtonAutoExec">
+        <property name="text">
+         <string>自动执行</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="5">
+       <widget class="QGroupBox" name="groupBoxRegAcessItems">
+        <property name="title">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup0"/>
+  <buttongroup name="buttonGroup1"/>
+  <buttongroup name="buttonGroup2"/>
+  <buttongroup name="buttonGroup3"/>
+ </buttongroups>
+</ui>
