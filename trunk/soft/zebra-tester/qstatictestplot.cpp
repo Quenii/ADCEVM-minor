@@ -69,6 +69,7 @@ void QStaticTestPlot::reset()
 	ys.clear();
 
 	ideaCurve->setRawSamples(0, 0, 0);
+	realCurve->setRawSamples(0, 0, 0);
 	replot();
 }
 
@@ -78,7 +79,9 @@ void QStaticTestPlot::addData(float output, float measured)
 	{
 		xs.push_back(output);
 		ys.push_back(measured);
+
 	}
-	ideaCurve->setRawSamples(&xs[0],&ys[0],xs.size());
+	realCurve->setRawSamples(&xs[0],&ys[0],xs.size());
+	ideaCurve->setRawSamples(&xs[0],&xs[0],xs.size());
 	replot();
 }
