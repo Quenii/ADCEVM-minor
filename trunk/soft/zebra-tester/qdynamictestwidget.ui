@@ -19,7 +19,14 @@
      <item row="0" column="0" colspan="2">
       <widget class="QLabel" name="label_16">
        <property name="text">
-        <string>INL</string>
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;V&lt;/span&gt;&lt;span style=&quot; font-size:8pt; vertical-align:sub;&quot;&gt;PP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
        </property>
       </widget>
      </item>
@@ -49,7 +56,7 @@ p, li { white-space: pre-wrap; }
      <item row="0" column="3">
       <widget class="QLabel" name="label_17">
        <property name="text">
-        <string>LSB</string>
+        <string>V</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -59,7 +66,7 @@ p, li { white-space: pre-wrap; }
      <item row="1" column="0" colspan="2">
       <widget class="QLabel" name="label_18">
        <property name="text">
-        <string>DNL</string>
+        <string>位数</string>
        </property>
       </widget>
      </item>
@@ -89,7 +96,7 @@ p, li { white-space: pre-wrap; }
      <item row="1" column="3">
       <widget class="QLabel" name="label_19">
        <property name="text">
-        <string>LSB</string>
+        <string>Bit</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -99,7 +106,7 @@ p, li { white-space: pre-wrap; }
      <item row="2" column="0" colspan="2">
       <widget class="QLabel" name="label_20">
        <property name="text">
-        <string>失调电压</string>
+        <string>时钟频率</string>
        </property>
       </widget>
      </item>
@@ -129,7 +136,7 @@ p, li { white-space: pre-wrap; }
      <item row="2" column="3">
       <widget class="QLabel" name="label_21">
        <property name="text">
-        <string>uV</string>
+        <string>MHz</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -139,7 +146,7 @@ p, li { white-space: pre-wrap; }
      <item row="3" column="0" colspan="2">
       <widget class="QLabel" name="label_22">
        <property name="text">
-        <string>增益误差</string>
+        <string>信号频率</string>
        </property>
       </widget>
      </item>
@@ -166,6 +173,16 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </item>
+     <item row="3" column="3">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>MHz</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -184,7 +201,7 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButtonSetStaticTest">
+      <widget class="QPushButton" name="pushButtonSetDynTest">
        <property name="text">
         <string>设置</string>
        </property>

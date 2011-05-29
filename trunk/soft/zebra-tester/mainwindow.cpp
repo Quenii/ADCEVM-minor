@@ -5,6 +5,7 @@
 #include "DacAnalyzerSettings.h"
 #include "qcentralwidget.h"
 #include "qpowermonitor.h"
+#include "RegAccess.hpp"
 
 #include <QPushButton>
 #include <QList>
@@ -30,6 +31,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+	if (regAccess)
+		regAccess->deleteLater();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -68,6 +71,17 @@ void MainWindow::on_actionClockFrequency_triggered(bool checked)
 	{
 		ui.clockFreqWidget->reloadSettings();
 	}
+}
+
+void MainWindow::on_action_Reset_GPIO_SPI_triggered(bool checked)
+{
+	if (!regAccess)
+	{
+		regAccess = new RegAccess(0, 0);
+		regAccess->setAttribute(Qt::WA_DeleteOnClose,true);
+	}
+
+	regAccess->show();
 }
 
 void MainWindow::on_actionAboutCETC58DACAnalyzer_triggered(bool checked)

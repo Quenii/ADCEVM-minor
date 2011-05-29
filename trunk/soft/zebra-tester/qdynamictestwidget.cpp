@@ -10,3 +10,9 @@ QDynamicTestWidget::~QDynamicTestWidget()
 {
 
 }
+
+void QDynamicTestWidget::on_pushButtonSetDynTest_clicked()
+{
+	//QDynamicTestSettingsDialog dlg;	
+	//dlg.exec();
+}

@@ -266,6 +266,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\RegAccess.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RegAccessItem.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\types.cpp"
 				>
 			</File>
@@ -830,6 +838,58 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\RegAccess.hpp"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Moc&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;  &quot;$(InputPath)&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQWT_DLL -DQT_DLL &quot;-I.\GeneratedFiles&quot; &quot;-I$(QTDIR)\include&quot; &quot;-I.\GeneratedFiles\$(ConfigurationName)\.&quot; &quot;-I$(QTDIR)\include\qtmain&quot; &quot;-I$(QTDIR)\include\QtCore&quot; &quot;-I$(QTDIR)\include\QtGui&quot; &quot;-I.&quot; &quot;-ID:\Compiler\qwt\src&quot; &quot;-I.\..\include\gkhy\boardapi&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="&quot;$(QTDIR)\bin\moc.exe&quot;;$(InputPath)"
+						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Moc&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;  &quot;$(InputPath)&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQWT_DLL -DQT_DLL &quot;-I.\GeneratedFiles&quot; &quot;-I$(QTDIR)\include&quot; &quot;-I.\GeneratedFiles\$(ConfigurationName)\.&quot; &quot;-I$(QTDIR)\include\qtmain&quot; &quot;-I$(QTDIR)\include\QtCore&quot; &quot;-I$(QTDIR)\include\QtGui&quot; &quot;-I.&quot; &quot;-ID:\Compiler\qwt\src&quot; &quot;-I.\..\include\gkhy\boardapi&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="&quot;$(QTDIR)\bin\moc.exe&quot;;$(InputPath)"
+						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\RegAccessItem.h"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Moc&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;  &quot;$(InputPath)&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQWT_DLL -DQT_DLL &quot;-I.\GeneratedFiles&quot; &quot;-I$(QTDIR)\include&quot; &quot;-I.\GeneratedFiles\$(ConfigurationName)\.&quot; &quot;-I$(QTDIR)\include\qtmain&quot; &quot;-I$(QTDIR)\include\QtCore&quot; &quot;-I$(QTDIR)\include\QtGui&quot; &quot;-I.&quot; &quot;-ID:\Compiler\qwt\src&quot; &quot;-I.\..\include\gkhy\boardapi&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="&quot;$(QTDIR)\bin\moc.exe&quot;;$(InputPath)"
+						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Moc&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;  &quot;$(InputPath)&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQWT_DLL -DQT_DLL &quot;-I.\GeneratedFiles&quot; &quot;-I$(QTDIR)\include&quot; &quot;-I.\GeneratedFiles\$(ConfigurationName)\.&quot; &quot;-I$(QTDIR)\include\qtmain&quot; &quot;-I$(QTDIR)\include\QtCore&quot; &quot;-I$(QTDIR)\include\QtGui&quot; &quot;-I.&quot; &quot;-ID:\Compiler\qwt\src&quot; &quot;-I.\..\include\gkhy\boardapi&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="&quot;$(QTDIR)\bin\moc.exe&quot;;$(InputPath)"
+						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\types.h"
 				>
 			</File>
@@ -997,6 +1057,32 @@
 			</File>
 			<File
 				RelativePath=".\qdactypewidget.ui"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\qdynamictestdialog.ui"
 				>
 				<FileConfiguration
 					Name="Release|Win32"
@@ -1255,6 +1341,58 @@
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\RegAccess.ui"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\RegAccessItem.ui"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Uic&apos;ing $(InputFileName)..."
+						CommandLine="&quot;$(QTDIR)\bin\uic.exe&quot; -o &quot;.\GeneratedFiles\ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="&quot;.\GeneratedFiles\ui_$(InputName).h&quot;"
+					/>
+				</FileConfiguration>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -1344,6 +1482,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\generatedfiles\ui_qdynamictestdialog.h"
+				>
+			</File>
+			<File
 				RelativePath=".\generatedfiles\ui_qdynamictestplot.h"
 				>
 			</File>
@@ -1377,6 +1519,14 @@
 			</File>
 			<File
 				RelativePath=".\generatedfiles\ui_qstatictestwidget.h"
+				>
+			</File>
+			<File
+				RelativePath=".\generatedfiles\ui_RegAccess.h"
+				>
+			</File>
+			<File
+				RelativePath=".\generatedfiles\ui_RegAccessItem.h"
 				>
 			</File>
 			<Filter
@@ -1602,6 +1752,30 @@
 				</File>
 				<File
 					RelativePath=".\generatedfiles\Release\moc_qtoggleviewdialog.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\generatedfiles\release\moc_RegAccess.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\generatedfiles\release\moc_RegAccessItem.cpp"
 					>
 					<FileConfiguration
 						Name="Debug|Win32"
@@ -1854,6 +2028,52 @@
 						>
 						<Tool
 							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\generatedfiles\debug\moc_RegAccess.cpp"
+					>
+					<FileConfiguration
+						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\generatedfiles\debug\moc_RegAccessItem.cpp"
+					>
+					<FileConfiguration
+						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 						/>
 					</FileConfiguration>
 				</File>

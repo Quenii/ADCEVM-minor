@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPointer>
 #include "ui_mainwindow.h"
 
 class QPushButton;
@@ -9,6 +10,7 @@ class QWidget;
 class QMdiSubWindowEx;
 class QCloseEvent;
 class QPowerMonitor;
+class RegAccess;
 
 class MainWindow : public QMainWindow
 {
@@ -26,6 +28,8 @@ public slots:
 	void on_actionDacType_triggered(bool checked);
 	void on_actionClockFrequency_triggered(bool checked);
 	void on_actionAboutCETC58DACAnalyzer_triggered(bool checked);
+	void on_action_Reset_GPIO_SPI_triggered(bool checked);
+
 
 protected:
 	void closeEvent(QCloseEvent *event);
@@ -33,6 +37,7 @@ protected:
 private:
 	Ui::MainWindowClass ui;
 	QPowerMonitor* m_powerMonitorWidget;
+	QPointer<RegAccess> regAccess;
 };
 
 #endif // MAINWINDOW_H

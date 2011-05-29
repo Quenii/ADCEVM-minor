@@ -12,6 +12,10 @@ public:
 	QDynamicTestWidget(QWidget *parent = 0);
 	~QDynamicTestWidget();
 
+public slots:
+	void on_pushButtonSetDynTest_clicked();
+
+
 private:
 	Ui::QDynamicTestWidgetClass ui;
 };
