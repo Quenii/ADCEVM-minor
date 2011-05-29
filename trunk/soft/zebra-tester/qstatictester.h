@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QWeakPointer>
 #include <QSharedPointer>
+#include <QFile>
 
 class QTimerEvent;
 
@@ -45,6 +46,8 @@ private:
 	DacTypeSettings m_dacTypeSettings;
 	StaticTestSettings m_staticTestSettings;
 	unsigned int m_currentVal;	
+
+	QFile m_file;
 };
 
 #endif // QSTATICTESTER_H

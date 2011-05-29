@@ -9,6 +9,12 @@
 #include <QPointer>
 #include <QVector>
 #include <QThread>
+#include <Qdir>
+#include <QTime>
+#include <QDate>
+#include <QCoreApplication>
+#include <QTextStream>
+
 
 class QThreadL : public QThread
 {
@@ -80,6 +86,17 @@ bool QStaticTester::start()
 
 	board->writeReg(0x1008, 0x8000); //bit 15: static/dynamic; bit 0: reset dut;
 
+	
+	QString fileName = QString("%1-%2.txt").arg(
+		QDate::currentDate().toString("yyMMdd"),
+		QTime::currentTime().toString("hhmmss"));
+
+	QString filePath = QDir(qApp->applicationDirPath()).filePath(fileName);
+
+	m_file.setFileName(filePath);
+	if (!m_file.open(QIODevice::ReadOnly | QIODevice::Text))
+		return false;
+
 	m_timerId = startTimer(1);	
 
 	return true;
@@ -89,6 +106,8 @@ bool QStaticTester::start()
 void QStaticTester::stop()
 {
 	if (!m_bStarted) return ;
+
+	m_file.close();
 		
 	killTimer(m_timerId);
 	m_bStarted = false;
@@ -135,6 +154,9 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	float ideal = float(m_currentVal) * m_dacTypeSettings.refVolt / fullScale;
 
 	emit newData(ideal, measured);
+
+	QTextStream out(&m_file);
+	out << QString("%1\t%2\n").arg(ideal, measured);
 
 //	m_currentVal += 1 << m_staticTestSettings.step2n;
 
