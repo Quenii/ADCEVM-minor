@@ -32,4 +32,5 @@ void WaveWnd::update(const std::vector<float> & xdata, const std::vector<float> 
 	if (xdata.size() > 0 && ydata.size() > 0)
 		scope.Channels[0].Data.SetXYData(&xdata[0], &ydata[0], (int)xdata.size());
 
+
 }

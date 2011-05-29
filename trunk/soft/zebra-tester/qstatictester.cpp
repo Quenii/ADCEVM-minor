@@ -46,11 +46,24 @@ bool QStaticTester::start()
 {
 	if (m_bStarted) 
 		return false;
+<<<<<<< HEAD
 	
 	m_settings = DacAnalyzerSettings().staticTestSettings();
 	m_currentVal = 0;
 
 
+=======
+
+	DacAnalyzerSettings s;
+	
+	m_staticTestSettings = s.staticTestSettings();
+	m_dacTypeSettings = s.dacTypeSettings();
+
+	m_currentVal = 0;
+
+
+
+>>>>>>> 577d7d1b8d5bbbb9316b79ee1fd586bc68ee9fe4
 	/*QMultiMeter* meter = QMultiMeter::instance();
 	meter->close();
 	if (!meter->open_port())
@@ -109,6 +122,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	float measured;
 	// measure
+<<<<<<< HEAD
 	if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
 	{
 		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
@@ -122,6 +136,25 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	m_currentVal += 1 << m_settings.step2n;
 
 	if (m_currentVal > pow(2.0, 16))
+=======
+	//if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
+	//{
+	//	QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
+	//	stop();
+	//	return ;
+
+	//}
+
+	const unsigned int fullScale = 1 << m_dacTypeSettings.bitCount;
+
+	float ideal = float(m_currentVal) * fullScale / m_dacTypeSettings.refVolt
+
+	emit newData(ideal, measured);
+
+	m_currentVal += 1 << m_staticTestSettings.step2n;
+
+	if (m_currentVal > fullScale)
+>>>>>>> 577d7d1b8d5bbbb9316b79ee1fd586bc68ee9fe4
 	{
 		QMessageBox::information(0, "", QString::fromLocal8Bit("测试完成。"));
 		stop();

@@ -42,7 +42,8 @@ private:
 	bool m_bStarted;
 	int m_timerId;
 	
-	StaticTestSettings m_settings;
+	DacTypeSettings m_dacTypeSettings;
+	StaticTestSettings m_staticTestSettings;
 	unsigned int m_currentVal;	
 };
 
