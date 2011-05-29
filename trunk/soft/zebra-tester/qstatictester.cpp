@@ -46,9 +46,14 @@ bool QStaticTester::start()
 {
 	if (m_bStarted) 
 		return false;
+
+	DacAnalyzerSettings s;
 	
-	m_settings = DacAnalyzerSettings().staticTestSettings();
+	m_staticTestSettings = s.staticTestSettings();
+	m_dacTypeSettings = s.dacTypeSettings();
+
 	m_currentVal = 0;
+
 
 
 	/*QMultiMeter* meter = QMultiMeter::instance();
@@ -117,11 +122,15 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	//}
 
-	emit newData(m_currentVal, measured);
+	const unsigned int fullScale = 1 << m_dacTypeSettings.bitCount;
 
-	m_currentVal += 1 << m_settings.step2n;
+	float ideal = float(m_currentVal) * fullScale / m_dacTypeSettings.refVolt
 
-	if (m_currentVal > pow(2.0, 16))
+	emit newData(ideal, measured);
+
+	m_currentVal += 1 << m_staticTestSettings.step2n;
+
+	if (m_currentVal > fullScale)
 	{
 		QMessageBox::information(0, "", QString::fromLocal8Bit("≤‚ ‘ÕÍ≥…°£"));
 		stop();
