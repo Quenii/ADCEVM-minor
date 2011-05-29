@@ -132,11 +132,11 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	const unsigned int fullScale = 1 << m_dacTypeSettings.bitCount;
 
-	float ideal = float(m_currentVal) * fullScale / m_dacTypeSettings.refVolt;
+	float ideal = float(m_currentVal) * m_dacTypeSettings.refVolt / fullScale;
 
 	emit newData(ideal, measured);
 
-	m_currentVal += 1 << m_staticTestSettings.step2n;
+//	m_currentVal += 1 << m_staticTestSettings.step2n;
 
 	if (m_currentVal > fullScale)
 	{

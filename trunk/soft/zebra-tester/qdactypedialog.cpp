@@ -19,9 +19,11 @@ void QDacTypeDialog::loadSettings()
 {
 	const DacTypeSettings& val = DacAnalyzerSettings().dacTypeSettings();
 
-	/* ui.comboBoxDacType->setText(val.type);
-	ui.spinBoxVa->set
-	float va;
+//	ui.comboBoxDacType->setText(val.type);
+	ui.doubleSpinBoxVa->setValue(val.va);
+	ui.doubleSpinBoxVd->setValue(val.vd);
+	ui.spinBoxBitCount->setValue(val.bitCount);
+/*	float va;
 	float vd;
 	int bitCount;
 	float refVolt;
