@@ -94,7 +94,7 @@ bool QStaticTester::start()
 	QString filePath = QDir(qApp->applicationDirPath()).filePath(fileName);
 
 	m_file.setFileName(filePath);
-	if (!m_file.open(QIODevice::ReadOnly | QIODevice::Text))
+	if (!m_file.open(QIODevice::WriteOnly | QIODevice::Text))
 		return false;
 
 	m_timerId = startTimer(1);	
@@ -156,7 +156,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	emit newData(ideal, measured);
 
 	QTextStream out(&m_file);
-	out << QString("%1\t%2\n").arg(ideal, measured);
+	out << QString("%1\t%2\n").arg(ideal).arg(measured);
 
 //	m_currentVal += 1 << m_staticTestSettings.step2n;
 
