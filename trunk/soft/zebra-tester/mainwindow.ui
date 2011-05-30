@@ -25,7 +25,7 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>文件（&amp;F）</string>
+     <string>文件(&amp;F)</string>
     </property>
     <addaction name="actionFileImport"/>
     <addaction name="actionFileSave"/>
@@ -33,12 +33,12 @@
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
-     <string>查看（&amp;V）</string>
+     <string>查看(&amp;V)</string>
     </property>
    </widget>
    <widget class="QMenu" name="menu_Settings">
     <property name="title">
-     <string>设置（&amp;S）</string>
+     <string>设置(&amp;S)</string>
     </property>
     <addaction name="action_Clock"/>
     <addaction name="actionDacType"/>
@@ -47,13 +47,13 @@
    </widget>
    <widget class="QMenu" name="menuInterface_Control">
     <property name="title">
-     <string>端口控制（&amp;C）</string>
+     <string>端口控制(&amp;C)</string>
     </property>
     <addaction name="action_Reset_GPIO_SPI"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
-     <string>帮助（&amp;H）</string>
+     <string>帮助(&amp;H)</string>
     </property>
     <addaction name="action_Help_Topics"/>
     <addaction name="actionAboutCETC58DACAnalyzer"/>
@@ -187,7 +187,7 @@
      <normaloff>:/images/images/open.png</normaloff>:/images/images/open.png</iconset>
    </property>
    <property name="text">
-    <string>导入（&amp;I）</string>
+    <string>导入(&amp;I)</string>
    </property>
   </action>
   <action name="actionFileSave">
@@ -216,12 +216,12 @@
   </action>
   <action name="actionDacType">
    <property name="text">
-    <string>DAC类型（&amp;T）</string>
+    <string>DAC类型(&amp;T)</string>
    </property>
   </action>
   <action name="actionClockFrequency">
    <property name="text">
-    <string>时钟频率（&amp;P）</string>
+    <string>时钟频率(&amp;P)</string>
    </property>
   </action>
   <action name="action_GPIB">
@@ -231,17 +231,17 @@
   </action>
   <action name="action_Reset_GPIO_SPI">
    <property name="text">
-    <string>Reset/GPIO/SPI（&amp;R）</string>
+    <string>Reset/GPIO/SPI(&amp;R)</string>
    </property>
   </action>
   <action name="action_Help_Topics">
    <property name="text">
-    <string>帮助主题（&amp;H）</string>
+    <string>帮助主题(&amp;H)</string>
    </property>
   </action>
   <action name="actionAboutCETC58DACAnalyzer">
    <property name="text">
-    <string>关于 CETC58 DAC Analyze （&amp;A）</string>
+    <string>关于 CETC58 DAC Analyze (&amp;A)</string>
    </property>
   </action>
  </widget>
