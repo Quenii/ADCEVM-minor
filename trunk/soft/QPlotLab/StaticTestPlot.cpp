@@ -12,7 +12,7 @@ QScope(parent, f)
 
 	CTSLScope& scope = rawScope();
 
-	scope.Legend.Channels.Visible = false;	
+	scope.Legend.Channels.Visible = true;	
 	scope.Title.Visible = false;	
 	scope.XAxis.AxisLabel.Visible = false;
 	scope.YAxis.AxisLabel.Visible = false;
