@@ -1,7 +1,6 @@
 #include "qcentralwidget.h"
 
-#include "qstatictestplot.h"
-#include "qdynamictestplot.h"
+
 
 QCentralWidget::QCentralWidget(QWidget *parent)
 	: QStackedWidget(parent)

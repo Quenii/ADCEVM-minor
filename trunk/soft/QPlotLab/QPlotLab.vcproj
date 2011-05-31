@@ -196,6 +196,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\StaticTestPlot.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -277,6 +281,10 @@
 			</File>
 			<File
 				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\gkhy\qplotlib\StaticTestPlot.hpp"
 				>
 			</File>
 			<File

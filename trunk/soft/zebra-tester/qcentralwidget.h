@@ -2,13 +2,14 @@
 #define QCENTRALWIDGET_H
 
 #include "types.h"
-
 #include "ui_qcentralwidget.h"
+#include "gkhy/qplotlib/StaticTestPlot.hpp"
+#include "qdynamictestplot.h"
 
 #include <QStackedWidget>
 
-class QStaticTestPlot;
-class QDynamicTestPlot;
+
+using namespace gkhy::QPlotLab;
 
 class QCentralWidget : public QStackedWidget
 {
