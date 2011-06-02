@@ -43,7 +43,7 @@ void QStaticTestPlot::addData(float ideal, float measured)
 		rawScope().Channels[0].Data.SetYData(&m_ideal[0], (int)m_ideal.size()); 	
 
 	if(m_measured.size() > 0)
-		rawScope().Channels[0].Data.SetYData(&m_measured[0], (int)m_measured.size()); 	
+		rawScope().Channels[1].Data.SetYData(&m_measured[0], (int)m_measured.size()); 	
 
 }
 
