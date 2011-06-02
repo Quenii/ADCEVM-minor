@@ -139,7 +139,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	}
 
-	m_currentVal += (1 << m_staticTestSettings.step2n);
+//	m_currentVal += (1 << m_staticTestSettings.step2n);
 
 	//if (! QMultiMeter::instance()->measureVolt(m_settings.averageLevel, measured))
 	//{
@@ -156,9 +156,9 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	emit newData(ideal, measured);
 
 	QTextStream out(&m_file);
-	out << QString("%1\t%2\n").arg(ideal).arg(measured);
+	out << QString("%1\t%2\n").arg(ideal, 0, 'f', 5).arg(measured, 0, 'f', 5);
 
-//	m_currentVal += 1 << m_staticTestSettings.step2n;
+	m_currentVal += 1 << m_staticTestSettings.step2n;
 
 	if (m_currentVal > fullScale)
 	{

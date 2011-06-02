@@ -8,15 +8,18 @@ namespace gkhy
 	namespace QPlotLab
 	{
 		class QPLOTLAB_EXPORT QStaticTestPlot : public gkhy::QPlotLab::QScope
-		{		
+		{
+			Q_OBJECT
+
 		public:
 			QStaticTestPlot(QWidget* parent = 0, Qt::WindowFlags f = 0);
 			virtual ~QStaticTestPlot();
 		private:
 			Q_DISABLE_COPY(QStaticTestPlot)
 
-		public:
+		public slots:
 			void addData(float ideal, float measured);
+		public:
 			void clear();
 
 		private:

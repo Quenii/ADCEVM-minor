@@ -1,4 +1,5 @@
 #include "qcentralwidget.h"
+#include "qstatictester.h"
 
 
 
@@ -8,6 +9,9 @@ QCentralWidget::QCentralWidget(QWidget *parent)
 	ui.setupUi(this);
 	
 	staticPlot = new QStaticTestPlot(this);
+	bool ok = connect( QStaticTester::instance(), SIGNAL(newData(float, float)), 
+		staticPlot, SLOT(addData(float, float)) );
+
 	dynamicPlot = new QDynamicTestPlot(this);
 
 	addWidget(staticPlot);
