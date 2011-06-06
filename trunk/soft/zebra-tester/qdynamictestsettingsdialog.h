@@ -4,7 +4,7 @@
 #include "types.h"
 
 #include <QDialog>
-#include "ui_qdynamictestdialog.h"
+#include "ui_qdynamictestsettingsdialog.h"
 
 
 class QDynamicTestSettingsDialog : public QDialog
@@ -19,10 +19,11 @@ protected:
 	void accept();
 
 private:
-	bool validate(QLineEdit* lineEdit);
+	bool validate(QDoubleSpinBox *);
+	bool validate(QSpinBox * spinBox);
 
 private:
-	Ui::QDynamicTestDialogClass ui;
+	Ui::QDynamicTestSettingsDialogClass ui;
 };
 
 #endif // QDYNAMICTESTSETTINGSDIALOG_H

@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 
 	REGISTER_METATYPE_HELPER(DacTypeSettings);
 	REGISTER_METATYPE_HELPER(StaticTestSettings);
+	REGISTER_METATYPE_HELPER(DynamicTestSettings);
 
 	MainWindow w;
 	w.showMaximized();

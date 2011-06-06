@@ -208,7 +208,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButtonStartStaticTest">
+      <widget class="QPushButton" name="pushButtonStartDynamicTest">
        <property name="text">
         <string>开始</string>
        </property>

@@ -14,7 +14,7 @@ public:
 
 public slots:
 	void on_pushButtonSetDynTest_clicked();
-
+	void on_pushButtonStartDynamicTest_clicked();
 
 private:
 	Ui::QDynamicTestWidgetClass ui;

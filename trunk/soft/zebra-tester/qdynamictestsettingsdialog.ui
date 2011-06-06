@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QDynamicTestDialogClass</class>
- <widget class="QWidget" name="QDynamicTestDialogClass">
+ <class>QDynamicTestSettingsDialogClass</class>
+ <widget class="QWidget" name="QDynamicTestSettingsDialogClass">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>354</width>
-    <height>174</height>
+    <height>196</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>QDynamicTestWidget</string>
+   <string>动态测试参数设置</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -19,11 +19,11 @@
      <x>10</x>
      <y>10</y>
      <width>341</width>
-     <height>157</height>
+     <height>183</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" colspan="4">
+    <item row="0" column="0" colspan="2">
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="label_16">
@@ -172,49 +172,52 @@ p, li { white-space: pre-wrap; }
      </layout>
     </item>
     <item row="1" column="0">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButtonSetStaticTest">
-      <property name="text">
-       <string>设置</string>
+      <property name="centerButtons">
+       <bool>true</bool>
       </property>
      </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButtonStartStaticTest">
-      <property name="text">
-       <string>开始</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>QDynamicTestSettingsDialogClass</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>176</x>
+     <y>97</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>QDynamicTestSettingsDialogClass</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>176</x>
+     <y>97</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -46,6 +46,8 @@ public:
 	bool writeReg24b(unsigned short addr,unsigned short val);
 	int setVoltage(int adcChannel, int dacChannel, float v);
 
+	bool write(unsigned short addr, const unsigned short* buf, unsigned int len);
+
 signals:
 	void devListChanged(const QList<BoardInfo>& lst);
 
@@ -53,7 +55,6 @@ protected:
 	// len - number of unsigned-short's
 	bool read(unsigned short addr, unsigned short* buf, unsigned int len);
 	// len - number of unsigned-short's
-	bool write(unsigned short addr, const unsigned short* buf, unsigned int len);
 
 private:
 	bool writeIOCmd(unsigned short addr, bool dirRead, unsigned short data);

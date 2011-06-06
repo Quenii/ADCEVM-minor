@@ -9,13 +9,17 @@ QDynamicTestSettingsDialog::QDynamicTestSettingsDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	//ui.lineEditAverageLevel->setValidator(new QIntValidator(1, 999, this));
-	//ui.lineEditStep2n->setValidator(new QIntValidator(1, 32, this));
+	//ui.doubleSpinBoxVpp->setRange();
+	//ui.spinBoxBitCount->setRange();
+	//ui.doubleSpinBoxClockFreq->setRange();
+	//ui.doubleSpinBoxSignalFreq.setRange();
 	
 	DynamicTestSettings val =  DacAnalyzerSettings().dynamicTestSettings();
-	ui.
-	//ui.lineEditAverageLevel->setText(QString::number(val.averageLevel));
-	//ui.lineEditStep2n->setText(QString::number(val.step2n));
+	ui.doubleSpinBoxVpp->setValue(val.vpp);
+	ui.spinBoxBitCount->setValue(val.bitCount);
+	ui.doubleSpinBoxClockFreq->setValue(val.clockFreq);
+	ui.doubleSpinBoxSignalFreq->setValue(val.signalFreq);
+
 }
 
 QDynamicTestSettingsDialog::~QDynamicTestSettingsDialog()
@@ -23,14 +27,33 @@ QDynamicTestSettingsDialog::~QDynamicTestSettingsDialog()
 
 }
 
-bool QDynamicTestSettingsDialog::validate(QLineEdit* inputFreqlineEdit)
+bool QDynamicTestSettingsDialog::validate(QDoubleSpinBox * doubleSpinBox)
 {
-	return checkInputValidity(inputFreqlineEdit);
+//	return checkInputValidity(doubleSpinBox);
+	return true;
+}
+
+bool QDynamicTestSettingsDialog::validate(QSpinBox * spinBox)
+{
+	//	return checkInputValidity(spinBox);
+	return true;
 }
 
 void QDynamicTestSettingsDialog::accept()
 {
 	DynamicTestSettings val;
+
+	if (! validate(ui.doubleSpinBoxVpp)) return ;
+	val.vpp = ui.doubleSpinBoxVpp->value();
+
+	if (! validate(ui.doubleSpinBoxClockFreq)) return ;
+	val.clockFreq = ui.doubleSpinBoxClockFreq->value();
+
+	if (! validate(ui.doubleSpinBoxSignalFreq)) return ;
+	val.signalFreq = ui.doubleSpinBoxSignalFreq->value();
+
+	if (! validate(ui.spinBoxBitCount)) return ;
+	val.bitCount = ui.spinBoxBitCount->value();
 
 	//if (! validate(ui.lineEditAverageLevel)) return ;
 	//val.averageLevel = ui.lineEditAverageLevel->text().toInt();
