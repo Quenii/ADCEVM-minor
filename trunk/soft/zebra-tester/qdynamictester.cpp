@@ -89,7 +89,7 @@ bool QDynamicTester::start()
 		buff[i] = ((short)((sin(2*pi*i*fc/fs)+1)*max));
 	}
 
-	bool okay = board->write(0x1005, &buff[0], 20*1000*4);
+	bool okay = board->write(0x1005, &buff[0], buffer_cnt);
 	board->writeReg(0x1006, 0);
 	board->writeReg(0x1007, 1);
 

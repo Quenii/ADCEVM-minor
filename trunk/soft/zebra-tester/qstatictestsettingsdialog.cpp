@@ -44,6 +44,7 @@ void QStaticTestSettingsDialog::accept()
 	
 	if (! validate(ui.lineEditRight)) return;
 	val.right = ui.lineEditRight->text().toInt();
+	
 
 	DacAnalyzerSettings().setStaticTestSettings(val);
 	QDialog::accept();
