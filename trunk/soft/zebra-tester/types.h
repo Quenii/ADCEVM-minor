@@ -17,6 +17,8 @@ struct StaticTestSettings
 {
 	int averageLevel;
 	int step2n;
+	int left;
+	int right;
 	
 	operator QVariant() const {	return QVariant::fromValue(*this); }	
 };
@@ -27,6 +29,8 @@ inline QDataStream& operator<<(QDataStream& out, const StaticTestSettings& val)
 {
 	out << val.averageLevel;
 	out << val.step2n;
+	out << val.left;
+	out << val.right;
 
 	return out;
 }
@@ -35,10 +39,43 @@ inline QDataStream& operator>>(QDataStream& in, StaticTestSettings& val)
 {
 	in >> val.averageLevel;
 	in >> val.step2n;
+	in >> val.left;
+	in >> val.right;
 
 	return in;
 }
 
+struct DynamicTestSettings
+{
+	float vpp;
+	int bitCount;
+	float clockFreq;
+	float signalFreq;
+
+	operator QVariant() const {	return QVariant::fromValue(*this); }	
+};
+
+Q_DECLARE_METATYPE(DynamicTestSettings);
+
+inline QDataStream& operator<<(QDataStream& out, const DynamicTestSettings& val)
+{
+	out << val.vpp;
+	out << val.bitCount;
+	out << val.clockFreq;
+	out << val.signalFreq;
+
+	return out;
+}
+
+inline QDataStream& operator>>(QDataStream& in, DynamicTestSettings& val)
+{
+	in >> val.vpp;
+	in >> val.bitCount;
+	in >> val.clockFreq;
+	in >> val.signalFreq;
+
+	return in;
+}
 
 struct PowerMonitorData
 {

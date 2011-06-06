@@ -4,6 +4,7 @@
 
 static const char* dacTypeSettingsKey = "DacTypeSettings";
 static const char* staticTestSettingsKey = "StaticTestSettings";
+static const char* dynamicTestSettingsKey = "DynamicTestSettings";
 
 static const char* clockFreqKey = "ClockFreq";
 static const char* powerMonitorPoskey = "PowerMonitorPos";
@@ -57,6 +58,16 @@ void DacAnalyzerSettings::setStaticTestSettings(const StaticTestSettings& val)
 StaticTestSettings DacAnalyzerSettings::staticTestSettings() const
 {
 	return m_s.value(staticTestSettingsKey).value<StaticTestSettings>();
+}
+
+void DacAnalyzerSettings::setDynamicTestSettings(const DynamicTestSettings& val)
+{
+	m_s.setValue(dynamicTestSettingsKey, val);
+}
+
+DynamicTestSettings DacAnalyzerSettings::dynamicTestSettings() const
+{
+	return m_s.value(dynamicTestSettingsKey).value<DynamicTestSettings>();
 }
 
 void DacAnalyzerSettings::setClockFreq(const float& val)

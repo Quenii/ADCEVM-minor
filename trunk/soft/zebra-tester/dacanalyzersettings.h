@@ -16,7 +16,10 @@ public:
 	
 	StaticTestSettings staticTestSettings() const;
 	void setStaticTestSettings(const StaticTestSettings& val);
-	
+
+	DynamicTestSettings dynamicTestSettings() const;
+	void setDynamicTestSettings(const DynamicTestSettings& val);
+
 	float clockFreq() const;
 	void setClockFreq(const float& val);
 	

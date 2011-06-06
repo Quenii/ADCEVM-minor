@@ -1,4 +1,5 @@
 #include "qdynamictestwidget.h"
+#include "qdynamictestsettingsdialog.h"
 
 QDynamicTestWidget::QDynamicTestWidget(QWidget *parent)
 	: QWidget(parent)
@@ -13,6 +14,6 @@ QDynamicTestWidget::~QDynamicTestWidget()
 
 void QDynamicTestWidget::on_pushButtonSetDynTest_clicked()
 {
-	//QDynamicTestSettingsDialog dlg;	
-	//dlg.exec();
+	QDynamicTestSettingsDialog dlg;	
+	dlg.exec();
 }

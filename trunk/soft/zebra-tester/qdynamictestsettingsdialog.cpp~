@@ -15,8 +15,6 @@ QStaticTestSettingsDialog::QStaticTestSettingsDialog(QWidget *parent)
 	StaticTestSettings val =  DacAnalyzerSettings().staticTestSettings();
 	ui.lineEditAverageLevel->setText(QString::number(val.averageLevel));
 	ui.lineEditStep2n->setText(QString::number(val.step2n));
-	ui.lineEditLeft->setText(QString::number(val.left));
-	ui.lineEditRight->setText(QString::number(val.right));
 }
 
 QStaticTestSettingsDialog::~QStaticTestSettingsDialog()

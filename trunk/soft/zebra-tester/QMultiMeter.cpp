@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <Windows.h>
 #include <QElapsedTimer>
+#include <cmath>
 
 #pragma comment(lib, "visa32.lib")
 #pragma warning(disable:4996)
@@ -279,14 +280,27 @@ bool QMultiMeter::measureVolt(int averageLevel, float& measured)
 	{
 		return false;
 	}
-	
+
+#if 0
 	float f = 0;
+	float max = rdgs[0];
+	float min = rdgs[0];
 	for (int i = 0; i < 10; ++i)
 	{		
 		f += rdgs[i];
+		max = (rdgs[i] > max) ? rdgs[i] : max;
+		min = (rdgs[i] > min) ? rdgs[i] : min;
+
 	}
-
-	measured = float(f / 10);
-
+	f = f - max - min;
+	measured = float(f / 8);
+#endif
+	// use RMS 
+	float f = 0;
+	for (int i = 0; i < 10; ++i)
+	{		
+		f += rdgs[i] * rdgs[i];
+	}
+	measured = sqrt(f/10);
 	return true;
 }
