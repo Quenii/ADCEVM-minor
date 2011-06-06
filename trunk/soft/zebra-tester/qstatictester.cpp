@@ -131,7 +131,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 
 	float measured;
 	// measure
-	if (! QMultiMeter::instance()->measureVolt(m_staticTestSettings.averageLevel, measured))
+	if (! QMultiMeter::instance()->measureVolt(m_staticTestSettings.averageLevel, measured, true))
 	{
 		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
 		stop();
@@ -146,7 +146,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 	emit newData(ideal, measured);
 
 	QTextStream out(&m_file);
-	out << QString("%1\t%2\n").arg(ideal, 0, 'f', 8).arg(measured, 0, 'f', 8);
+	out << QString("%1\t%2\n").arg(ideal, 0, 'f', 10).arg(measured, 0, 'f', 10);
 
 	m_currentVal += 1 << m_staticTestSettings.step2n;
 

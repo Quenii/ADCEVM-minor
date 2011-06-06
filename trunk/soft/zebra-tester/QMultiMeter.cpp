@@ -270,7 +270,7 @@ bool QMultiMeter::get_rdgs(int n)
 	// check_error("get_rdgs");
 }
 
-bool QMultiMeter::measureVolt(int averageLevel, float& measured)
+bool QMultiMeter::measureVolt(int averageLevel, float& measured, bool rms)
 {
 	const int nMeasures = averageLevel + 2;
 	QVector<float> vect(nMeasures);
@@ -281,26 +281,30 @@ bool QMultiMeter::measureVolt(int averageLevel, float& measured)
 		return false;
 	}
 
-#if 0
-	float f = 0;
-	float max = rdgs[0];
-	float min = rdgs[0];
-	for (int i = 0; i < 10; ++i)
-	{		
-		f += rdgs[i];
-		max = (rdgs[i] > max) ? rdgs[i] : max;
-		min = (rdgs[i] > min) ? rdgs[i] : min;
-
-	}
-	f = f - max - min;
-	measured = float(f / 8);
-#endif
 	// use RMS 
-	float f = 0;
-	for (int i = 0; i < 10; ++i)
-	{		
-		f += rdgs[i] * rdgs[i];
+	if (rms)
+	{
+		float f = 0;
+		for (int i = 0; i < 10; ++i)
+		{		
+			f += rdgs[i] * rdgs[i];
+		}
+		measured = sqrt(f/10);
+	}else 
+	{
+		float f = 0;
+		float max = rdgs[0];
+		float min = rdgs[0];
+		for (int i = 0; i < 10; ++i)
+		{		
+			f += rdgs[i];
+			max = (rdgs[i] > max) ? rdgs[i] : max;
+			min = (rdgs[i] > min) ? rdgs[i] : min;
+
+		}
+		f = f - max - min;
+		measured = float(f / 8);
 	}
-	measured = sqrt(f/10);
+	
 	return true;
 }

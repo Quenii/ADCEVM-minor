@@ -23,7 +23,7 @@ public:
 		return &inst;
 	}
 
-	bool measureVolt(int averageLevel, float& measured);
+	bool measureVolt(int averageLevel, float& measured, bool rms=true);
 private:
 	bool open_port(char* addr = "GPIB0::22::INSTR");
 	void close();
