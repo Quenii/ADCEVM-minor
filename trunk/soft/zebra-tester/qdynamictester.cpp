@@ -74,7 +74,7 @@ bool QDynamicTester::start()
 
 	board->writeReg(0x1008, 0x0000); //bit 15: static/dynamic; bit 0: reset dut;
 
-	board->writeReg(0x1004, 0);
+	board->writeReg(0x1004, buffer_cnt);
 	if (buff.size() < buffer_cnt)
 		buff.resize(buffer_cnt);
 
