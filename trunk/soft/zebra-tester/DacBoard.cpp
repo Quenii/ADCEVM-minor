@@ -78,10 +78,25 @@ bool DacBoard::readPowerMonitorData(PowerMonitorData & powerStatus)
 
 bool DacBoard::setDacOutput(unsigned short val)
 {
-	if(!(writeReg(0x1009, val)))
-		return false;
+	const int len = 100;
+	static unsigned short buff[len];
+	for (int i=0; i<len; ++i)
+	{
+		buff[i] = val;
+	}
 
-	return true;
+	writeReg(0x1004, len);
+
+	bool okay = write(0x1005, &buff[0], len);
+	writeReg(0x1006, 0);
+	writeReg(0x1007, 1);
+
+	return okay;
+
+// 	if(!(writeReg(0x1009, val)))
+// 		return false;
+// 
+// 	return true;
 }
 
 bool DacBoard::setDacTypeSettings(const DacTypeSettings& settings)

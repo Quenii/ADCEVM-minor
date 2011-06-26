@@ -3,6 +3,7 @@
 
 #include "types.h"
 
+#include <vector>
 #include <QObject>
 #include <QWeakPointer>
 #include <QSharedPointer>
@@ -45,9 +46,11 @@ private:
 	
 	DacTypeSettings m_dacTypeSettings;
 	StaticTestSettings m_staticTestSettings;
-	unsigned int m_currentVal;	
+	unsigned int m_currentVal;
+	unsigned int m_fullScale;
 
 	QFile m_file;
+
 };
 
 #endif // QSTATICTESTER_H

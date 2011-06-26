@@ -12,6 +12,7 @@ QCentralWidget::QCentralWidget(QWidget *parent)
 	bool ok = connect( QStaticTester::instance(), SIGNAL(newData(float, float)), 
 		staticPlot, SLOT(addData(float, float)) );
 
+
 	dynamicPlot = new QDynamicTestPlot(this);
 
 	addWidget(staticPlot);

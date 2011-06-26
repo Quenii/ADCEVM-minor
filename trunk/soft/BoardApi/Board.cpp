@@ -209,11 +209,6 @@ bool Board::write(unsigned short addr, const unsigned short *buf, unsigned int l
 		return false;
 
 	if (bulkIOBuff.size() < len*4 ) bulkIOBuff.resize(len*4);
-	//float max = (1 << (m_adcSettings.bitcount - 1));
-
-	//float fs = m_signalSettings.clockFreq;
-	//float fc = m_signalSettings.signalFreq;
-    //((short)((qSin(2*pi*i*fc/fs)+1)*max))
 
 	for (int i=0; i<len; ++i)
 	{

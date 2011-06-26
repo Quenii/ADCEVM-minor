@@ -58,7 +58,19 @@ bool QStaticTester::start()
 	m_staticTestSettings = s.staticTestSettings();
 	m_dacTypeSettings = s.dacTypeSettings();
 
-	m_currentVal = 0;
+	if (m_staticTestSettings.left != 0)
+	{
+		m_currentVal = m_staticTestSettings.left;
+	}
+	if (m_staticTestSettings.right == 0)
+	{
+		m_fullScale = 1 << m_dacTypeSettings.bitCount - 1;
+	}
+	else 
+	{
+		m_fullScale = m_staticTestSettings.right;
+	}
+
 
 	m_bStarted = true;
 	emit started();
@@ -112,7 +124,7 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 		stop();
 		return ;
 	}
-
+	msleep(5);
 	float measured;
 	// measure
 	if (! QMultiMeter::instance()->measureVolt(m_staticTestSettings.averageLevel, measured, true))
@@ -120,21 +132,18 @@ void QStaticTester::timerEvent(QTimerEvent * event)
 		QMessageBox::critical(0, "", QString::fromLocal8Bit("操作数字万用表失败。"));
 		stop();
 		return ;
-
 	}
 
-	const unsigned int fullScale = 1 << m_dacTypeSettings.bitCount;
-
-	float ideal = float(m_currentVal) * m_dacTypeSettings.refVolt / fullScale;
+	float ideal = float(m_currentVal) * m_dacTypeSettings.refVolt / (1 << m_dacTypeSettings.bitCount-1);
 
 	emit newData(ideal, measured);
 
 	QTextStream out(&m_file);
-	out << QString("%1\t%2\n").arg(ideal, 0, 'f', 10).arg(measured, 0, 'f', 10);
+	out << QString("%1\\n").arg(measured, 0, 'f', 10);
 
-	m_currentVal += 1 << m_staticTestSettings.step2n;
+	m_currentVal += (1 << m_staticTestSettings.step2n);
 
-	if (m_currentVal > fullScale)
+	if (m_currentVal > m_fullScale)
 	{
 		QMessageBox::information(0, "", QString::fromLocal8Bit("测试完成。"));
 		stop();

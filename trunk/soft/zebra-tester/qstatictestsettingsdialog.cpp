@@ -36,7 +36,7 @@ void QStaticTestSettingsDialog::accept()
 	if (! validate(ui.lineEditAverageLevel)) return ;
 	val.averageLevel = ui.lineEditAverageLevel->text().toInt();
 
-	if (! validate(ui.lineEditStep2n)) return ;
+//	if (! validate(ui.lineEditStep2n)) return ;
 	val.step2n = ui.lineEditStep2n->text().toInt();
 
 	if (! validate(ui.lineEditLeft)) return;

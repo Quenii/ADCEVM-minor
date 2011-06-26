@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
 	m_powerMonitorWidget = new QPowerMonitor(this);
 	ui.menuView->addAction(m_powerMonitorWidget->toggleViewAction());
 
+
 	loadSettings();
 }
 

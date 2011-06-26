@@ -50,8 +50,8 @@ QDynamicTester* QDynamicTester::instance()
 
 bool QDynamicTester::start()
 {
-	if (m_bStarted) 
-		return false;
+	//if (m_bStarted) 
+	//	return false;
 
 	DacAnalyzerSettings s;
 	
@@ -78,7 +78,7 @@ bool QDynamicTester::start()
 	if (buff.size() < buffer_cnt)
 		buff.resize(buffer_cnt);
 
-	float max = (1 << (m_dacTypeSettings.bitCount - 1));
+	float max = (1 << (m_dacTypeSettings.bitCount - 1)) - 1;
 
 	float fs = m_dynamicTestSettings.clockFreq;
 	float fc = m_dynamicTestSettings.signalFreq;
@@ -86,15 +86,15 @@ bool QDynamicTester::start()
 
 	for (int i=0; i<buffer_cnt; ++i)
 	{
-		buff[i] = ((short)((sin(2*pi*i*fc/fs)+1)*max));
+		buff[i] = ((short)((sin(2*pi*i*fc/fs)+1)*(max+0.5)));
 	}
 
 	bool okay = board->write(0x1005, &buff[0], buffer_cnt);
 	board->writeReg(0x1006, 0);
 	board->writeReg(0x1007, 1);
 
-	m_bStarted = true;
-	emit started();
+	//m_bStarted = true;
+	//emit started();
 
 	
 	return true;

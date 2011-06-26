@@ -6,6 +6,9 @@ QStaticTestWidget::QStaticTestWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	connect(QStaticTester::instance(), SIGNAL(stopped()), this, SLOT(stopped_Received()));
+
+
 }
 
 QStaticTestWidget::~QStaticTestWidget()
@@ -36,4 +39,10 @@ void QStaticTestWidget::on_pushButtonStartStop_clicked()
 		ui.pushButtonStartStop->setText(QString::fromLocal8Bit("开始"));
 		ui.pushButtonSetStaticTest->setEnabled(true);
 	}
+}
+
+void QStaticTestWidget::stopped_Received()
+{
+	ui.pushButtonStartStop->setText(QString::fromLocal8Bit("开始"));
+	ui.pushButtonSetStaticTest->setEnabled(true);
 }

@@ -16,6 +16,7 @@ public:
 public slots:
 	void on_pushButtonStartStop_clicked();
 	void on_pushButtonSetStaticTest_clicked();
+	void stopped_Received();
 
 private:
 	Ui::QStaticTestWidgetClass ui;
