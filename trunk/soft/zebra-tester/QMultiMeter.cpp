@@ -218,7 +218,7 @@ bool QMultiMeter::get_data()
 	return true;
 }
 
-bool QMultiMeter::get_rdgs(int n)
+bool QMultiMeter::get_rdgs(int n, int nplc)
 {
 	// This function triggers the instrument and takes readings.
 
@@ -231,6 +231,9 @@ bool QMultiMeter::get_rdgs(int n)
 	timer.restart();
 	
 	// Trigger the 3458A
+	char cmd_str2[5];
+	sprintf(cmd_str2, "NPLC %d", nplc);
+	send_msg(cmd_str2);
 	send_msg("TARM SGL");
 	qDebug(qPrintable(QString("send_msg: ").arg(timer.restart())));
 	
@@ -270,13 +273,13 @@ bool QMultiMeter::get_rdgs(int n)
 	// check_error("get_rdgs");
 }
 
-bool QMultiMeter::measureVolt(int averageLevel, float& measured, bool rms)
+bool QMultiMeter::measureVolt(int averageLevel, float& measured, int nplc, bool rms)
 {
 	const int nMeasures = averageLevel + 2;
 	QVector<float> vect(nMeasures);
 	QMultiMeter* multiMeter = QMultiMeter::instance();
 
-	if (!get_rdgs(nMeasures))
+	if (!get_rdgs(nMeasures, nplc))
 	{
 		return false;
 	}

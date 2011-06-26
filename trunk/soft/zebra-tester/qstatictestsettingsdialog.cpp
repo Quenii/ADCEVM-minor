@@ -14,7 +14,7 @@ QStaticTestSettingsDialog::QStaticTestSettingsDialog(QWidget *parent)
 	
 	StaticTestSettings val =  DacAnalyzerSettings().staticTestSettings();
 	ui.lineEditAverageLevel->setText(QString::number(val.averageLevel));
-	ui.lineEditStep2n->setText(QString::number(val.step2n));
+	ui.lineEditStep2n->setText(QString::number(val.nplc));
 	ui.lineEditLeft->setText(QString::number(val.left));
 	ui.lineEditRight->setText(QString::number(val.right));
 }
@@ -37,7 +37,7 @@ void QStaticTestSettingsDialog::accept()
 	val.averageLevel = ui.lineEditAverageLevel->text().toInt();
 
 //	if (! validate(ui.lineEditStep2n)) return ;
-	val.step2n = ui.lineEditStep2n->text().toInt();
+	val.nplc = ui.lineEditStep2n->text().toInt();
 
 	if (! validate(ui.lineEditLeft)) return;
 	val.left = ui.lineEditLeft->text().toInt();

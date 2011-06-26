@@ -16,7 +16,7 @@ enum TestMode
 struct StaticTestSettings
 {
 	int averageLevel;
-	int step2n;
+	int nplc;
 	int left;
 	int right;
 	
@@ -28,7 +28,7 @@ Q_DECLARE_METATYPE(StaticTestSettings);
 inline QDataStream& operator<<(QDataStream& out, const StaticTestSettings& val)
 {
 	out << val.averageLevel;
-	out << val.step2n;
+	out << val.nplc;
 	out << val.left;
 	out << val.right;
 
@@ -38,7 +38,7 @@ inline QDataStream& operator<<(QDataStream& out, const StaticTestSettings& val)
 inline QDataStream& operator>>(QDataStream& in, StaticTestSettings& val)
 {
 	in >> val.averageLevel;
-	in >> val.step2n;
+	in >> val.nplc;
 	in >> val.left;
 	in >> val.right;
 

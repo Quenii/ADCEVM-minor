@@ -23,7 +23,7 @@ public:
 		return &inst;
 	}
 
-	bool measureVolt(int averageLevel, float& measured, bool rms=true);
+	bool measureVolt(int averageLevel, float& measured, int nplc, bool rms=true);
 private:
 	bool open_port(char* addr = "GPIB0::22::INSTR");
 	void close();
@@ -31,7 +31,7 @@ private:
 	bool isOpen() { return m_connected; }
 	bool send_msg(char *Cmds);
 	bool get_data();
-	bool get_rdgs(int n);
+	bool get_rdgs(int n, int nplc);
 		
 	/*	
 	int check_inst_model(CString check_msg, CString msgval);
